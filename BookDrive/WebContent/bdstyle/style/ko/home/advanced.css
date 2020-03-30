@@ -1,0 +1,83 @@
+@charset "utf-8";
+#divContents{overflow:hidden}
+
+#divSearchMenu {height:40px;border-bottom:1px solid #8b847a;margin-bottom:30px}
+#divSearchMenu ul {overflow:hidden}
+#divSearchMenu li {float:left;width:119px;height:39px;border:1px solid #8b847a;border-left:0 none;font-size:16px;text-align:center}
+#divSearchMenu li a {display:block;height:100%;color:#726859;line-height:2.5em}
+#divSearchMenu li:first-child {border-left:1px solid #8b847a;}
+#divSearchMenu li.selected {background:#8b847a;}
+#divSearchMenu li.selected a {color:#fff}
+
+.advancedSearch select {background:#fff;-webkit-border-radius:0}
+.advancedSearch {line-height:1}
+.advancedSearch .searchKeyword {height:35px;margin-bottom:10px}
+.advancedSearch .searchKeyword input, .advancedSearch .searchKeyword .searchOpt1 {float:left}
+.advancedSearch .selectSearchItem {width:150px;margin-right:10px}
+.advancedSearch .inputSearchKeyword {width:610px;margin-right:10px;background:#fff;-webkit-border-radius:0}
+.advancedSearch .selectBoolean {width:110px}
+.advancedSearch .btnLanguage {width:78px;text-align:center;color:#51421a;background-color: #fece4c;;border:1px solid #f5c238;line-height: 2.5em}
+.advancedSearch .btnLanguage.selected {font-weight:bold}
+
+.searchLimit {padding:30px 0 0 0}
+.searchLimit dl {overflow:hidden}
+.searchLimit dt {float:left;width:140px;padding:0 20px 0 0;text-align:right}
+.searchLimit dd {padding-left:160px}
+
+.searchLimitSelect {margin-bottom:13px}
+.searchLimitSelect:first-child {margin-bottom:11px}
+.searchLimitSelect li {float:left;margin-right:10px;margin-bottom:8px}
+.searchLimitSelect li input {vertical-align:-2px}
+
+.searchLimitCondition {margin-bottom:10px}
+.searchLimitCondition:last-child {margin-bottom:0}
+.searchLimitCondition dt {line-height:35px}
+.searchLimitCondition select {width:150px}
+.searchLimitCondition .bunch {line-height:2.4em}
+.searchLimitCondition .datePicker {width:98px;padding:0 10px;}
+
+
+@media screen and (min-width:768px) and (max-width:1024px){
+#divSearchMenu {padding-top:0}
+}
+
+@media screen and (min-width:768px) and (max-width:980px) {
+.advancedSearch .inputSearchKeyword {width:395px}
+}
+
+
+@media screen and (min-width:0px) and (max-width:767px){
+a.selectSearchItem{max-width:100% !important;}
+a.selectBoolean{max-width:100% !important;min-width:30px !important;width:80px !important;}
+
+#divSearchMenu {padding-top:0;margin-bottom:20px}
+#divSearchMenu ul {width:361px;margin:0 auto}
+
+.advancedSearch .inputTextType1, .advancedSearch .selectOpt1 {height:35px;-webkit-box-sizing:border-box;box-sizing:border-box}
+.advancedSearch {width:100%}
+.advancedSearch .searchKeyword {overflow:hidden;height:auto;margin-bottom:10px}
+.advancedSearch .selectSearchItem {float:none;width:38%;margin-bottom:10px}
+.advancedSearch .inputSearchKeyword {width:67.5%;margin-right:1.5%}
+.advancedSearch .selectBoolean {width:30.8%}
+.advancedSearch .btnLanguage {display:none}
+
+.searchLimit {padding-top:0}
+.searchLimit dd {width:100%;padding:0}
+
+.searchLimitSelect {margin-bottom:10px}
+.searchLimitSelect:first-child {margin-bottom:0}
+.searchLimitSelect dt {float:none;width:100%;margin-bottom:10px;padding:10px 0;background:url(../../../../image/ko/solution/common/btn/arrowMoreDown.png) no-repeat right center;background-size:13px 10px;border-bottom:1px solid #e6e6e6;text-align:left;color:#000}
+.searchLimitSelect dt.on {background-image:url(../../../../image/ko/solution/common/btn/arrowMoreUp.png)}
+.searchLimitSelect li {float:none;width:100%}
+
+.searchLimitCondition {margin-bottom:10px}
+.searchLimitCondition dt{float:none;width:auto;text-align:left}
+.searchLimitCondition select {width:38%}
+.searchLimitCondition .datePicker {width:42.3%}
+}
+
+@media screen and (min-width:0px) and (max-width:400px){
+#divSearchMenu ul {width:304px;margin:0 auto}
+#divSearchMenu li {width:100px}
+}
+

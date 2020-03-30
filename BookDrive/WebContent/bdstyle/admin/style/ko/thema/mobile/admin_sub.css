@@ -1,0 +1,100 @@
+@charset "utf-8";
+
+/* Layout */
+#divWrapper{min-width:320px;}
+
+/* hidden */
+.hiddenM{display:none;}
+
+/* divGlobalMenu */
+#divGlobalMenu{position:relative;z-index:110;}
+#divGlobalMenu > div{width:auto;padding:0 10px;}
+#divGlobalMenu > div .myMenuBtn{top:63px;right:60px;background:url(../../../../image/ko/local/infoIcoT.png) no-repeat 0 6px;width:0;text-indent:-9999px;}
+#divGlobalMenu > div > ul li{display:none;}
+#divGlobalMenu > div > ul li.login{display:block;margin:0;}
+
+/* 마이메뉴 */
+#divGlobalMenu .myMenu{top:122px;width:100%;}
+#divGlobalMenu .myMenu > div{padding:19px 0 50px}
+#divGlobalMenu .myMenu > div > div{float:none;margin:0 10px}
+#divGlobalMenu .myMenu .myMenuList{float:none;width:auto;height:auto;margin:20px 10px 0;border:none;border-left:1px solid #686868;overflow:hidden}
+#divGlobalMenu .myMenu .myMenuList > li{width:33%;height:auto;padding:0 0 0 0;border:none;}
+#divGlobalMenu .myMenu .myMenuList > li:first-child{border-left:none;}
+#divGlobalMenu .myMenu .myMenuList > li > span{display:block;height:100px;padding:0 6px;border:1px solid #686868;border-left:none}
+#divGlobalMenu .myMenu .myMenuList > li span a.myMenuTit{margin:0;padding:10px 0}
+#divGlobalMenu .myMenu .summary{overflow:hidden}
+#divGlobalMenu .myMenu .close{bottom:10px}
+
+/* 모바일 대출증 */
+#divGlobalMenu .mobileCard{display:block;}
+
+/* Header */
+.header{width:auto;height:90px;}
+.header .logo{left:10px;top:28px;}
+.header .logo img{width:139px;height:33px;}
+
+/* divTopMenu */
+#divTopMenu{display:none;}
+
+/* wholeMenu */
+.wholeMenuOpen{right:20px;top:39px;}
+.wholeMenuOpen.on{display:inline-block;top:24px;right:0;padding:23px 20px;background:#e5e4df;}
+.wholeMenu{top:84px;right:0;width:100%;background:#e5e4df;border:none;}
+.wholeMenu > ul > li{height:auto;padding:0;background:none;}
+.wholeMenu > ul > li h3{position:static;width:auto;padding-left:26px;margin:0;background:url(../../../../image/ko/local/plus.png) no-repeat 93% 50%;border-bottom:1px solid #5c5252;font-size:16px;cursor:pointer;}
+.wholeMenu > ul > li:first-child h3{border-top:none;}
+.wholeMenu > ul > li ul{display:none;}
+.wholeMenu > ul > li ul li{float:none;height:40px;padding-left:26px;margin-left:0;border-top:1px solid #746c6c;background:#5c5252;font-size:13px;font-weight:600;line-height:40px;}
+.wholeMenu > ul > li ul li:first-child{padding-left:26px;border-top:none;background:#5c5252;}
+.wholeMenu > ul > li ul li a{display:block;color:#c1c1c1;}
+.wholeMenu > ul > li.last h3{border-bottom:none;}
+.wholeMenu .wholeMenuClose{display:none;}
+
+/* 전체메뉴 hover */
+.wholeMenu.on{display:block;}
+.wholeMenu > ul > li.on{background:none;border:none;margin-top:0;}
+.wholeMenu > ul > li h3:hover{background:url(../../../../image/ko/local/plus.png) no-repeat 93% 50% #bf4040;border-top:1px solid #bf4040;border-bottom:1px solid #bf4040;color:#fff;margin-top:-1px;}
+.wholeMenu > ul > li.on h3{background:url(../../../../image/ko/local/minus.gif) no-repeat 93% 50% #bf4040;border-top:1px solid #bf4040;border-bottom:1px solid #bf4040;margin-top:-1px;}
+.wholeMenu > ul > li.on h3 a{color:#fff}
+.wholeMenu > ul > li.on ul{display:block;}
+.wholeMenu > ul > li.on ul li{background:#5c5252;}
+.wholeMenu > ul > li.on ul li:first-child{background:#5c5252;}
+.wholeMenu > ul > li.on ul li a{color:#c1c1c1;}
+.wholeMenu > ul > li.on ul li a:hover{color:#fff;text-decoration:none;}
+
+/* divSearch */
+#divSearch{position:static;padding-top:10px;}
+#divSearch form{width:auto;height:45px;}
+#divSearch input[type='text']{height:45px;}
+#divSearch input.placeholder{line-height:45px;}
+#divSearch input[type='image']{top:10px;}
+
+/* divTabMenu */
+#divTabMenu{margin-top:0;}
+#divTabMenu > div{position:relative;height:40px;padding:0 40px;background:#f4f4f4;overflow:hidden;}
+
+/* divContents */
+#divContents{width:auto;min-height:0;padding:0 0 30px 0;}
+
+/* divTitle divLocation */
+#divTitle{padding:18px 0;background:#eee;font-size:20px;font-weight:normal;text-align:center;}
+#divLocation{display:none;}
+
+/* divContent */
+#divContent{padding:0 10px;margin-top:15px;}
+
+/* divQuick */
+#divQuick{display:none;}
+
+/* footer banner */
+.banner{display:none;}
+
+/* footer */
+.footer{width:auto;padding:20px 10px;}
+.footer .footerMenu{margin-bottom:15px;}
+.footer address{padding-right:53px;}
+.footer .copyright{display:none;}
+.footer .copyrightM{display:block}
+
+/* ui-datepicker */
+.ui-datepicker{z-index:110 !important;}
