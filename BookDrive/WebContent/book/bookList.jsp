@@ -233,53 +233,11 @@
 							<div class="briefHeader sort">
 
 								<div class="searchBtns2">
-									<span><input type="checkbox" name="allcheck"
-										onclick="checkedAll(this, 'briefFrm', 'data')"
-										class="checkbox" title="전체선택" id="selectAll"><label
-										for="selectAll">전체선택</label></span> <a
-										href="javascript:addBasketSelect();"><img
-										src="bdstyle/image/ko/local/bookimages/basket.jpg"
-										alt="바구니 담기">바구니 담기</a>
+									
 								</div>
 
 								<div class="sortOptions">
 
-									<form id="searchOption" name="searchOption" action="#"
-										method="get">
-										<fieldset>
-											<legend>Search Option</legend>
-
-											<input type="hidden" name="msc" value="10000"> <select
-												id="oi" name="oi" class="searchOpt2 selectBox" title="항목선택"
-												style="display: none;">
-												<option value="">항목선택</option>
-												<option value="DISP01">서명</option>
-												<option value="DISP02">저자</option>
-												<option value="DISP03">출판사</option>
-												<option value="DISP04">청구기호</option>
-												<option value="DISP06">출판년</option>
-											</select> <select id="os" name="os" class="searchOpt2 selectBox"
-												title="정렬" style="display: none;">
-												<option value="">정렬</option>
-												<option value="ASC">오름차순</option>
-												<option value="DESC">내림차순</option>
-											</select> <select id="cpp" name="cpp" class="searchOpt2 selectBox"
-												title="쪽당 출력 건수" style="display: none;"><option
-													value="5">5</option>
-												<option value="10" selected="selected">10</option>
-												<option value="15">15</option>
-												<option value="20">20</option>
-												<option value="30">30</option>
-												<option value="50">50</option>
-												<option value="100">100</option></select> <a href="#"
-												class="selectBox searchOpt2 selectBox-dropdown"
-												title="쪽당 출력 건수" tabindex="NaN"
-												style="width: 48px; display: inline-block;"><span
-												class="selectBox-label" style="width: 25px;">10</span><span
-												class="selectBox-arrow"></span></a> <input type="submit"
-												value="조회" class="btnType6">
-										</fieldset>
-									</form>
 								</div>
 							</div>
 							<!-- //listInfo -->
@@ -297,13 +255,8 @@
 											value="${fn:replace(list.bookName, param.value, replace_hilight)}" />
 										<li id="item_CATTOT000000498079" class="items">
 											<dl>
-												<dt class="title">선택</dt>
-												<dd class="dataCheck">
-													<input type="checkbox" name="data" value="CAT000000498079"
-														title="선택">
-												</dd>
 												<dt class="title">No</dt>
-												<dd class="num">${status.index + ((pageInfo.page-1)*5) + 1 }.</dd>
+												<dd class="dataCheck">${status.index + ((pageInfo.page-1)*5) + 1 }.</dd>
 												<dt class="title">표지이미지</dt>
 
 												<dd class="book">
