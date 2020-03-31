@@ -79,17 +79,19 @@
 						,<span>${pageInfo.startPage}</span>/${pageInfo.endPage}페이지
 					</p>
 				</div>
-				<div class="listInfo2">
-					<div class="fileSend">
-						<ul>
-							<li>
-							 	<a class="btnType1" href="freeBoardWriteForm.bo?flag=4" title="글작성">
-							 		글작성
-							 	</a>
-							</li>
-						</ul>
+				<c:if test="${sessionScope.userID ne null}">
+					<div class="listInfo2">
+						<div class="fileSend">
+							<ul>
+								<li>
+								 	<a class="btnType1" href="freeBoardWriteForm.bo?flag=4" title="글작성">
+								 		글작성
+								 	</a>
+								</li>
+							</ul>
+						</div>
 					</div>
-				</div>
+				</c:if>
 			</div>
 
 			<form name="boardList" method="post"

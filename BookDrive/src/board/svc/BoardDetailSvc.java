@@ -2,6 +2,7 @@ package board.svc;
 
 import java.sql.Connection;
 import java.util.ArrayList;
+import java.util.Hashtable;
 
 import board.vo.Board;
 import dao.BoardDAO;
@@ -30,15 +31,15 @@ public class BoardDetailSvc {
 		return board;
 	}
 
-	public ArrayList<Board> getBoardNum(int boardNum) { //이전글, 다음글
+	public Board getBoardNum(int boardNum, String flag) { //이전글, 다음글
 		// TODO Auto-generated method stub
-		ArrayList<Board> list = new ArrayList<>();
+		Board board = null;
 		Connection con = getConnection();
 		BoardDAO boardDAO = BoardDAO.getInstance();
 		boardDAO.setConnection(con);
-		list = boardDAO.getBoardNum(boardNum);
+		board = boardDAO.getBoardNum(boardNum, flag);
 		close(con);
-		return list;
+		return board;
 	}
 	
 	public Board selectBoardReplyDetail(int boardNum) { //QnA 답글
