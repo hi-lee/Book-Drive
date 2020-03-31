@@ -67,7 +67,6 @@ public class BookSearchProAction implements Action {
 		request.setAttribute("bookList", bookList);
 		
 //		검색히스토리 리스트 생성 
-		
 		HttpSession session = request.getSession();
 		ArrayList<SearchHistory> searchList = (ArrayList<SearchHistory>) session.getAttribute("searchList");
 		if (searchList == null) {
