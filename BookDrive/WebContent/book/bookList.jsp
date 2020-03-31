@@ -11,9 +11,6 @@
 
 <div id="divContentsW">
 	<div id="divContents">
-		<script type="text/javascript"
-			src="./전체 _ 경일대학교 도서관_files/cookie.js" charset="utf-8"></script>
-
 		<h2 id="divTitle">전체</h2>
 		<div id="divLocation">
 			<ul>
@@ -121,16 +118,6 @@
 						<fieldset>
 
 							<legend>검색항목</legend>
-							<div class="searchSelect">
-								<span> <input type="radio" id="stKWRD" name="st"
-									value="KWRD" checked="checked"> <label for="stKWRD"
-									class="cursor">키워드 </label>
-								</span> <span> <input type="radio" id="stFRNT" name="st"
-									value="FRNT"> <label for="stFRNT" class="cursor">전방일치</label>
-								</span> <span> <input type="radio" id="stEXCT" name="st"
-									value="EXCT"> <label for="stEXCT" class="cursor">완전일치</label>
-								</span>
-							</div>
 
 							<select id="si1" name="search" title="검색 항목을 선택하는곳"
 								class="searchOpt1 selectBox" style="display: none;">
@@ -160,10 +147,8 @@
 							<div class="searchW">
 
 								<span class="keyword"><input type="text" name="value"
-									title="검색어를 입력하세요" placeholder="${ value }"></span> <span
-									class="refine"><input type="checkbox" id="refine"
-									name="refine" value="Y"> <label for="refine">결과내
-										검색</label></span> <input type="submit" value="검색" class="searchBtn">
+									title="검색어를 입력하세요" placeholder="${ value }"></span> 
+								 <input type="submit" value="검색" class="searchBtn">
 
 							</div>
 						</fieldset>
@@ -174,8 +159,22 @@
 				<div class="searchWords">
 					<dl class="searchKeyword">
 						<dt>검색어</dt>
-						<dd>
-							<span class="keyword">[키워드 / ${search }:${value }]</span>
+						<dd><c:set var="search" value=""/>
+							<c:choose>
+								<c:when test = "${param.search eq 'bookName' }">
+									<c:set var="search" value="서명"/>
+								</c:when>
+								<c:when test = "${param.search eq 'bookWriter' }">
+									<c:set var="search" value="저자"/>
+								</c:when>
+								<c:when test = "${param.search eq 'bookPub' }">
+									<c:set var="search" value="출판사"/>
+								</c:when>
+								<c:when test = "${param.search eq 'ISBN' }">
+									<c:set var="search" value="ISBN"/>
+								</c:when>
+							</c:choose>
+							<span class="keyword">[키워드 / ${search }:${param.value }]</span>
 						</dd>
 					</dl>
 					<ul class="selectedFacet">
