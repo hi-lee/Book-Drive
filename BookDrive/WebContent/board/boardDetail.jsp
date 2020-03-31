@@ -70,42 +70,30 @@
 				</div>
 				<!-- writer list start -->
 				<div class="boardList">
-				<c:set var="loop_flag1" value="false" />
-				<c:set var="loop_flag2" value="false" />
 					<ul>
 						<li class="prev">
 							<span class="prevWriting">이전글</span>
-							<c:forEach var="prev" items="${list}">
-								<c:if test="${not loop_flag1}">
-									<c:choose>
-										<c:when test="${prev.boardNum < param.boardNum}">
-											<a href="boardDetail.bo?boardNum=${prev.boardNum}&page=${param.page}" title="이전글">${prev.boardSubject}</a>
-											<span class="writeListDate">${prev.boardDate}</span>
-											<c:set var="loop_flag1" value="true" />
-										</c:when>
-										<c:otherwise>
-											이전글이 없습니다.
-										</c:otherwise>
-									</c:choose>
-								</c:if>
-							</c:forEach>
+							<c:choose>
+								<c:when test="${prevBoard ne null}">
+									<a href="boardDetail.bo?boardNum=${prevBoard.boardNum}&page=${param.page}" title="이전글">${prevBoard.boardSubject}</a>
+									<span class="writeListDate">${prevBoard.boardDate}</span>
+								</c:when>
+								<c:otherwise>
+									이전글이 없습니다.
+								</c:otherwise>
+							</c:choose>
 						</li>
 						<li class="next">
 							<span class="nextWriting">다음글</span>
-							<c:forEach var="next" items="${list}">
-								<c:if test="${not loop_flag2}">
-									<c:choose>
-										<c:when test="${next.boardNum > param.boardNum}">
-											<a href="boardDetail.bo?boardNum=${next.boardNum}&page=${param.page}" title="다음글">${prev.boardSubject}</a>
-											<span class="writeListDate">${prev.boardDate}</span>
-											<c:set var="loop_flag2" value="true" />
-										</c:when>
-										<c:otherwise>
-											다음글이 없습니다.
-										</c:otherwise>
-									</c:choose>
-								</c:if>
-							</c:forEach>
+							<c:choose>
+								<c:when test="${nextBoard ne null}">
+									<a href="boardDetail.bo?boardNum=${nextBoard.boardNum}&page=${param.page}" title="다음글">${nextBoard.boardSubject}</a>
+									<span class="writeListDate">${nextBoard.boardDate}</span>
+								</c:when>
+								<c:otherwise>
+									다음글이 없습니다.
+								</c:otherwise>
+							</c:choose>
 						</li>
 					</ul>
 				</div>

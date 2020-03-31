@@ -93,11 +93,18 @@
 								<a href="BookImageInsert.bookA" title="도서이미지가져오기">도서이미지가져오기</a>					
 							</li>-->
 							<li>
-								<a href="BookRevList.bookA" title="도서예약내역">도서예약내역</a>
+								<a href="BookRevList.bookA" title="도서예약내역">도서 예약내역</a>
+							</li>
+							<li>
+								<a href="BookBrwList.bookA" title="도서대출내역">도서 대출내역</a>					
+							</li>
+							<li>
+								<a href="BookOutRevList.bookA" title="도서관외예약내역">도서 관외예약출내역</a>					
 							</li>
 							<li class="last">
-								<a href="BookBrwList.bookA" title="도서대출내역">도서대출내역</a>					
+								<a href="BookOutBrwList.bookA" title="도서 괸외대출내역">도서 대출내역</a>					
 							</li>
+							
 						</ul>
 					</div>
 				</li>

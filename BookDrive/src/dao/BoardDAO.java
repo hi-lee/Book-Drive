@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Hashtable;
 
 import board.vo.Board;
 import vo.admin.BoardBean;
@@ -240,17 +241,21 @@ public class BoardDAO {
 		return lastInsertId;
 	}
 
-	public ArrayList<Board> getBoardNum(int boardNum) { //이전글, 다음글 가져오기
+	public Board getBoardNum(int boardNum, String flag) { //이전글, 다음글 가져오기
 		// TODO Auto-generated method stub
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		ArrayList<Board> list = new ArrayList<>();
+		Hashtable<String, Board> list = new Hashtable<>();
 		Board board = null;
-		String query = "SELECT boardNum, boardSubject, boardDate FROM board" + 
-						" WHERE boardNum IN" + 
-						" ((SELECT boardNum FROM board WHERE boardNum < " + boardNum + " ORDER BY boardNum DESC LIMIT 1)," + 
-						" (SELECT boardNum FROM board WHERE boardNum > " + boardNum + " ORDER BY boardNum LIMIT 1))";
-		System.out.println("이전글 다음글 : " + query);
+		String query = "";
+		if (flag.equals("prev")) {
+			query = "SELECT boardNum, boardSubject, boardDate FROM board WHERE boardFlag = 4 and boardNum > " + boardNum + " ORDER BY boardNum LIMIT 1";
+			System.out.println("이전글 :::: " + query);
+		} else {
+			query = "SELECT boardNum, boardSubject, boardDate FROM board WHERE boardFlag = 4 and boardNum < " + boardNum + " ORDER BY boardNum LIMIT 1";
+			System.out.println("다음글 :::: " + query);
+		}
+		
 		try {
 			pstmt = con.prepareStatement(query);
 			rs = pstmt.executeQuery();
@@ -261,7 +266,6 @@ public class BoardDAO {
 					board.setBoardNum(rs.getInt("boardNum"));
 					board.setBoardSubject(rs.getString("boardSubject"));
 					board.setBoardDate(rs.getString("boardDate"));
-					list.add(board);
 				}
 			}
 		} catch (Exception e) {
@@ -270,7 +274,7 @@ public class BoardDAO {
 			if (rs != null) close(rs);
 			if (pstmt != null) close(pstmt);
 		}
-		return list;
+		return board;
 	}
 	
 	public int updateBoard(Board boardBean) { //게시판 글수정

@@ -1,6 +1,7 @@
 package board.action;
 
 import java.util.ArrayList;
+import java.util.Hashtable;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -21,12 +22,13 @@ public class BoardViewAction implements Action {
 		
 		BoardDetailSvc boardDetailsvc = new BoardDetailSvc();
 		Board board = boardDetailsvc.getBoard(boardNum);
-		ArrayList<Board> list = new ArrayList<>();
-		list = boardDetailsvc.getBoardNum(boardNum); //이전글, 다음글
+		Board prevBoard = boardDetailsvc.getBoardNum(boardNum, "prev"); //이전글
+		Board nextBoard = boardDetailsvc.getBoardNum(boardNum, "next"); //다음글
 		forward = new ActionForward();
 		request.setAttribute("page", page);
 		request.setAttribute("board", board);
-		request.setAttribute("list", list);
+		request.setAttribute("prevBoard", prevBoard);
+		request.setAttribute("nextBoard", nextBoard);
 		request.setAttribute("pageIn", "/board/boardDetail.jsp");
 		forward.setPath("template_sub.jsp");
 		
