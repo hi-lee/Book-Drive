@@ -63,47 +63,46 @@
 								onclick="toggleCheckbox(this, document.search)" type="checkbox"
 								value="0"> <label for="lmt00">총류</label></li>
 
-							<li><input id="lmt02" name="category"
+							<li><input id="lmt01" name="category"
 								onclick="toggleCheckbox(this, document.search)" type="checkbox"
 								value="1"> <label for="lmt02">철학</label></li>
 
-							<li><input id="lmt04" name="category"
+							<li><input id="lmt02" name="category"
 								onclick="toggleCheckbox(this, document.search)" type="checkbox"
 								value="2"> <label for="lmt04">종교</label></li>
 
-							<li><input id="lmt06" name="category"
+							<li><input id="lmt03" name="category"
 								onclick="toggleCheckbox(this, document.search)" type="checkbox"
 								value="3"> <label for="lmt06"> 사회과학</label></li>
 
-							<li><input id="lmt016" name="category"
+							<li><input id="lmt04" name="category"
 								onclick="toggleCheckbox(this, document.search)" type="checkbox"
 								value="4"> <label for="lmt016">순수과학</label></li>
 
-							<li><input id="lmt016" name="category"
+							<li><input id="lmt05" name="category"
 								onclick="toggleCheckbox(this, document.search)" type="checkbox"
 								value="5"> <label for="lmt016">기술과학</label></li>
-							<li><input id="lmt016" name="category"
+							<li><input id="lmt06" name="category"
 								onclick="toggleCheckbox(this, document.search)" type="checkbox"
 								value="6"> <label for="lmt016">예술</label></li>
-							<li><input id="lmt016" name="category"
+							<li><input id="lmt07" name="category"
 								onclick="toggleCheckbox(this, document.search)" type="checkbox"
 								value="7"> <label for="lmt016">언어</label></li>
-							<li><input id="lmt016" name="category"
+							<li><input id="lmt08" name="category"
 								onclick="toggleCheckbox(this, document.search)" type="checkbox"
 								value="8"> <label for="lmt016">문학</label></li>
-							<li><input id="lmt016" name="category"
+							<li><input id="lmt09" name="category"
 								onclick="toggleCheckbox(this, document.search)" type="checkbox"
 								value="9"> <label for="lmt016">역사 </label></li>
 						</ul>
 					</dd>
 				</dl>
-
 			</div>
 
 			</fieldset>
 			<div class="buttons">
 				<input type="submit" value="검색" title="검색" class="searchBtn">
-				<a href="#" title="검색 History">검색 History</a> <input id="resetAll"
+				<a href="SearchHistory.bk" title="검색 History">검색 History</a> <input id="resetAll"
 					type="button" value="다시쓰기" title="다시쓰기">
 			</div>
 			</form>
