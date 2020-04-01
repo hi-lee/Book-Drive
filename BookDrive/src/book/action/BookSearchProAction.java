@@ -9,8 +9,10 @@ import javax.servlet.http.HttpSession;
 
 import action.Action;
 import action.ActionForward;
+import book.svc.BookCartListSvc;
 import book.svc.BookListSvc;
 import book.vo.Book;
+import book.vo.Cart;
 import book.vo.SearchHistory;
 
 public class BookSearchProAction implements Action {
@@ -25,8 +27,11 @@ public class BookSearchProAction implements Action {
 		String usage = null; //관외확인
 		String category = ""; // 검색히스토리 카테고리
 		int limit = 0;
+		String memIndex = "";
 		
-		
+		if (request.getParameter("index") != null) {
+			memIndex = request.getParameter("index");
+		}
 		if (request.getParameter("search") != null && !request.getParameter("search").trim().equals("")) {
 //			DriveList: not null이 빈문자가 아니면 getParameter, or 조건이면 Err뜸 
 			search = request.getParameter("search");
@@ -66,21 +71,29 @@ public class BookSearchProAction implements Action {
 		ArrayList<Book> bookList = bookListSvc.getBookList(page, limit, search, value, usage);
 		request.setAttribute("bookList", bookList);
 		
-//		검색히스토리 리스트 생성 
-		HttpSession session = request.getSession();
-		ArrayList<SearchHistory> searchList = (ArrayList<SearchHistory>) session.getAttribute("searchList");
-		if (searchList == null) {
-			searchList = new ArrayList<>();
+//		책보관함 숫자 
+		if (memIndex != null) {
+			BookCartListSvc bookCartListSvc = new BookCartListSvc();
+			ArrayList<Cart> cartList = bookCartListSvc.getCartList(memIndex);
+			request.setAttribute("cartList", cartList);
+			System.out.println("cartList : " + cartList);
 		}
-		SearchHistory history = null;
-		history = new SearchHistory();
-		history.setSearch(search);
-		history.setValue(value);
-		history.setCategory(category);
-		searchList.add(history);
 		
-		session.setAttribute("searchList", searchList);
-		System.out.println("value : " + history.getValue());
+//		검색히스토리 리스트 생성 
+//		HttpSession session = request.getSession();
+//		ArrayList<SearchHistory> searchList = (ArrayList<SearchHistory>) session.getAttribute("searchList");
+//		if (searchList == null) {
+//			searchList = new ArrayList<>();
+//		}
+//		SearchHistory history = null;
+//		history = new SearchHistory();
+//		history.setSearch(search);
+//		history.setValue(value);
+//		history.setCategory(category);
+//		searchList.add(history);
+//		
+//		session.setAttribute("searchList", searchList);
+//		System.out.println("value : " + history.getValue());
 		
 		if(usage != null && !usage.trim().equals("")) {
 			request.setAttribute("pageIn", "book/bookDriveList.jsp");

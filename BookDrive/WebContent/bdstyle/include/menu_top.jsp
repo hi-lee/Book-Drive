@@ -76,12 +76,9 @@
 			<h2 class="skip">전체메뉴보기</h2>
 			<ul>
 				<li><h3>
-						<a href="javascript:return false;" title="소장자료검색">소장자료검색</a>
+						<a href="bookSearch.bk" title="소장자료검색">소장자료검색</a>
 					</h3>
-					<ul>
-						<li><a href="https://cham.kiu.ac.kr/local/html/researchDB"
-							title="전체">전체</a></li>
-					</ul></li>
+					
 				<li><h3>
 						<a href="javascript:return false;" title="개인서비스">개인서비스</a>
 					</h3>
@@ -89,22 +86,22 @@
 						<li><a
 							href="myRentalList.mem?id=${sessionScope.userID }&index=${sessionScope.userIndex }"
 							title="대출/예약내역">대출/예약내역</a></li>
-						<li><a href="https://cham.kiu.ac.kr/purchaserequest/write"
-							title="희망도서">희망도서</a></li>
-						<li><a href="https://cham.kiu.ac.kr/myprofile/profile"
-							title="개인정보 관리">개인정보 관리</a></li>
-
+						<li><a
+								href="bookCartList.bk?index=${sessionScope.userIndex }&page=${param.page }&search=${param.search}&value=${param.value}"
+								title="도서보관함 ">도서 보관함</a></li>
+							<li><a href="qnaBoard.bo?index=${sessionScope.userIndex}" title="내문의사항">내문의사항</a></li>
+							<li class="last"><a
+								href="memInfo.mem?id=${sessionScope.userID }" title="개인정보 관리">개인정보
+									관리</a></li>
 					</ul></li>
 				<li><h3>
 						<a href="javascript:return false;" title="게시판">게시판</a>
 					</h3>
 					<ul>
-						<li><a href="https://cham.kiu.ac.kr/bbs/list/2" title="자유게시판">자유게시판</a>
-						</li>
-						<li><a href="https://cham.kiu.ac.kr/bbs/list/1" title="공지사항">공지사항</a>
-						</li>
-						<li><a href="https://cham.kiu.ac.kr/bbs/list/3"
-							title="도서이용신청">도서이용신청</a></li>
+						<li><a href="freeBoard.bo" title="자유게시판">자유게시판</a></li>
+							<li><a href="noticeBoard.bo" title="공지사항">공지사항</a></li>
+							<li class="last"><a href="wishBoard.bo?index=${sessionScope.userIndex}" title="도서이용신청">도서이용신청</a></li>
+						
 					</ul></li>
 				<li class="last"><h3>
 						<a href="javascript:return false;" title="도서관안내">도서관안내</a>

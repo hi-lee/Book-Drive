@@ -11,9 +11,6 @@
 
 <div id="divContentsW">
 	<div id="divContents">
-		<script type="text/javascript" src="./소장자료검색_files/cookie.js"
-			charset="utf-8"></script>
-
 		<h2 id="divTitle">소장자료검색</h2>
 
 		<div id="divLocation">
@@ -48,55 +45,6 @@
 								onfocus="setTextObj(this)"
 								class="inputTextType1 inputSearchKeyword" title="검색어를 입력하세요">
 						</div>
-			</div>
-
-			<div class="searchLimit">
-				<dl class="searchLimitSelect">
-					<dt>분류유형</dt>
-					<dd>
-						<ul>
-							<li><input id="lmt0tot" name="category"
-								onclick="toggleCheckbox(this, document.search)" type="checkbox"
-								value="TOTAL" checked="checked"> <label for="lmt0tot">전체</label></li>
-
-							<li><input id="lmt00" name="category"
-								onclick="toggleCheckbox(this, document.search)" type="checkbox"
-								value="0"> <label for="lmt00">총류</label></li>
-
-							<li><input id="lmt01" name="category"
-								onclick="toggleCheckbox(this, document.search)" type="checkbox"
-								value="1"> <label for="lmt02">철학</label></li>
-
-							<li><input id="lmt02" name="category"
-								onclick="toggleCheckbox(this, document.search)" type="checkbox"
-								value="2"> <label for="lmt04">종교</label></li>
-
-							<li><input id="lmt03" name="category"
-								onclick="toggleCheckbox(this, document.search)" type="checkbox"
-								value="3"> <label for="lmt06"> 사회과학</label></li>
-
-							<li><input id="lmt04" name="category"
-								onclick="toggleCheckbox(this, document.search)" type="checkbox"
-								value="4"> <label for="lmt016">순수과학</label></li>
-
-							<li><input id="lmt05" name="category"
-								onclick="toggleCheckbox(this, document.search)" type="checkbox"
-								value="5"> <label for="lmt016">기술과학</label></li>
-							<li><input id="lmt06" name="category"
-								onclick="toggleCheckbox(this, document.search)" type="checkbox"
-								value="6"> <label for="lmt016">예술</label></li>
-							<li><input id="lmt07" name="category"
-								onclick="toggleCheckbox(this, document.search)" type="checkbox"
-								value="7"> <label for="lmt016">언어</label></li>
-							<li><input id="lmt08" name="category"
-								onclick="toggleCheckbox(this, document.search)" type="checkbox"
-								value="8"> <label for="lmt016">문학</label></li>
-							<li><input id="lmt09" name="category"
-								onclick="toggleCheckbox(this, document.search)" type="checkbox"
-								value="9"> <label for="lmt016">역사 </label></li>
-						</ul>
-					</dd>
-				</dl>
 			</div>
 
 			</fieldset>

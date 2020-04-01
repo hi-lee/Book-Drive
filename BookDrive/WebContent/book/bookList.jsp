@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <link rel="stylesheet" type="text/css"
 	href="bdstyle/style/ko/home/brief.css">
 <link rel="stylesheet" type="text/css"
@@ -16,103 +16,14 @@
 			<ul>
 				<li><a href="template_main.jsp" title="HOME"> <img
 						src="bdstyle/image/ko/local/home.png" alt="HOME"></a></li>
-				<li><a href="https://cham.kiu.ac.kr/search/tot">소장자료검색</a></li>
-				<li><a href="https://cham.kiu.ac.kr/search/tot#">전체</a></li>
+				<li><a href="#">소장자료검색</a></li>
+				<li><a href="#">전체</a></li>
 			</ul>
 		</div>
 
 		<!-- content -->
 		<div id="divContent">
-			<!-- 검색 연간물 제본정보에 추가비고란(홍대 ct_accession ser_remark:결호내용) -->
-			<!-- 결호내용(홍대) -->
-
-			<script type="text/javascript">
-				//Message
-				var imgPath = "/image/ko/";
-				var noexistSearchDetailDataMsg = "상세정보가 없습니다.";
-				var mediaMsg = "바로가기";
-				var abstractMsg = "초록";
-				var contentsMsg = "메세지가 없습니다";
-				var commentariesMsg = "해제";
-				var urlMsg = "URL";
-				var vodMsg = "VOD";
-				var aodMsg = "AOD";
-				var originalMsg = "원문";
-				var criticismMsg = "메세지가 없습니다";
-
-				var numberMsg = "No.";
-				var bookImageMsg = "책 표지";
-				var shelfMsg = "소장처";
-				var bookShelfMsg = "메세지가 없습니다";
-				var callNoMsg = "청구기호";
-				var shelfinfoMsg = "소장사항";
-				var loaninfoMsg = "대출정보";
-				var bookstateMsg = "도서상태";
-				var reservationMsg = "예약";
-				var remarkMsg = "비고";
-				var returndateMsg = "반납예정일";
-				var checkinMsg = "권호";
-				var branchLoanMsg = "분관대출";
-				var loanreqMsg = "야간대출";
-				var checkBindingMsg = "권호·제본정보 보기";
-				var latestdateMsg = "최근입수호";
-				var missBookMsg = "서가에없는책신고";
-				var missBookReportMsg = "신고";
-				var nonBookMsg = "메세지가 없습니다";
-				var deliveryMsg = "택배배달신청";
-				var deliveryTitleMsg = "메세지가 없습니다";
-				var printMsg = "인쇄";
-				var smsMsg = "SMS발송";
-				var selectMsg = "선택";
-
-				var bookbindMsg = "제본정보";
-				var detailholdinfoMsg = "권호정보";
-				var noItemsMsg = "결과가 없습니다.";
-				var subscriptionMsg = "구독";
-				var checkinyearMsg = "연도별 권호정보";
-				var yearhelpMsg = "연도를 선택하면 해당연도의 상세 권호정보를 보실 수 있습니다.";
-
-				var checkinMsg = "권호";
-				var pubdateMsg = "발행일";
-				var indateMsg = "입수일";
-				var articleMsg = "기사";
-				var appendixMsg = "부록";
-				var accessionnoMsg = "등록번호";
-				var checkinnameMsg = "권호명";
-				var densenoMsg = "밀집번호";
-				var metsMsg = "매체보기";
-
-				var isUseOpacSearch = "false";
-				var serviceMsg = "서비스";
-				var preserveMsg = "보존서고도서 신청";
-
-				var MSG_ERM_PRODUCED_BY = "제공처";
-				var MSG_ERM_COVERAGE_PERIOD = "원문제공기간";
-				var MSG_ERM_RESCNOTE = "주기";
-
-				var isSeriesReserve = "false";
-				var CONST_CHECKINVIEW_TYPE = "radio";
-				var isUseSerRemark = "false";
-				var serRemarkMsg = "결호내용";
-
-				var isDenseNoDisplay = "false";
-				var isUseMypreserve = "false";
-				var isUseSeriesDelivery = "false";
-
-				var isUseLocCheck = "N";
-
-				var infoServiceMsg = "서비스 이용안내";
-
-				var dbNameMsg = "수록DB명";
-				var offerPeriodMsg = "원문제공기간";
-				var delayPeriodMsg = "원문지연기간";
-				var mediaMsg = "바로가기";
-				var msgCheckinButton = "권호정보";
-				var msgBindingButton = "제본정보";
-			</script>
 			<div class="searchBrief">
-
-
 				<div class="dataSearch">
 					<form name="refineSearch" method="get" action="bookSearchPro.bk">
 						<fieldset>
@@ -147,8 +58,8 @@
 							<div class="searchW">
 
 								<span class="keyword"><input type="text" name="value"
-									title="검색어를 입력하세요" placeholder="${ value }"></span> 
-								 <input type="submit" value="검색" class="searchBtn">
+									title="검색어를 입력하세요" placeholder="${ value }"></span> <input
+									type="submit" value="검색" class="searchBtn">
 
 							</div>
 						</fieldset>
@@ -159,19 +70,20 @@
 				<div class="searchWords">
 					<dl class="searchKeyword">
 						<dt>검색어</dt>
-						<dd><c:set var="search" value=""/>
+						<dd>
+							<c:set var="search" value="" />
 							<c:choose>
-								<c:when test = "${param.search eq 'bookName' }">
-									<c:set var="search" value="서명"/>
+								<c:when test="${param.search eq 'bookName' }">
+									<c:set var="search" value="서명" />
 								</c:when>
-								<c:when test = "${param.search eq 'bookWriter' }">
-									<c:set var="search" value="저자"/>
+								<c:when test="${param.search eq 'bookWriter' }">
+									<c:set var="search" value="저자" />
 								</c:when>
-								<c:when test = "${param.search eq 'bookPub' }">
-									<c:set var="search" value="출판사"/>
+								<c:when test="${param.search eq 'bookPub' }">
+									<c:set var="search" value="출판사" />
 								</c:when>
-								<c:when test = "${param.search eq 'ISBN' }">
-									<c:set var="search" value="ISBN"/>
+								<c:when test="${param.search eq 'ISBN' }">
+									<c:set var="search" value="ISBN" />
 								</c:when>
 							</c:choose>
 							<span class="keyword">[키워드 / ${search }:${param.value }]</span>
@@ -206,15 +118,26 @@
 								</div>
 								<div class="listInfo2">
 									<div class="searchBtns">
+										<c:set var="cartNum" value="00" />
+										<c:choose>
+											<c:when test="${cartList != null }">
+												<c:set var="cartNum" value="${fn:length(cartList) }" />
+											</c:when>
+											<c:otherwise>
+												<c:set var="cartNum" value="0" />
+											</c:otherwise>
+										</c:choose>
+
 										<ul>
 											<li class="myHistory"><a
 												href="/search/service/searchHistory" title="검색 History"><img
 													src="bdstyle/image/ko/solution/common/btn/searchBtn03.png"
 													alt="검색 History"></a></li>
-											<li class="myCart"><a href="/search/basket/list"
-												title="바구니보기"><img
+											<li class="myCart"><a
+												href="bookCartList.bk?index=${sessionScope.userIndex }&page=${param.page }&search=${param.search}&value=${param.value}"
+												title="도서보관함 "> <img
 													src="bdstyle/image/ko/solution/common/btn/searchBtn04.png"
-													alt="바구니보기"><span class="cnt" id="basket_count">1</span>
+													alt="바구니보기"><span class="cnt" id="basket_count">${cartNum }</span>
 											</a></li>
 										</ul>
 									</div>
@@ -232,13 +155,9 @@
 							</div>
 							<div class="briefHeader sort">
 
-								<div class="searchBtns2">
-									
-								</div>
+								<div class="searchBtns2"></div>
 
-								<div class="sortOptions">
-
-								</div>
+								<div class="sortOptions"></div>
 							</div>
 							<!-- //listInfo -->
 						</div>
@@ -350,7 +269,10 @@
 
 									<c:choose>
 										<c:when test="${pageInfo.page <= 1 }">
-										<a href="#"><img src="bdstyle/image/ko/solution/common/btn/prevPage.gif"> </a></c:when>
+											<a href="#"><img
+												src="bdstyle/image/ko/solution/common/btn/prevPage.gif">
+											</a>
+										</c:when>
 										<c:otherwise>
 											<a href="bookSearchPro.bk?page=${pageInfo.page - 1 }"> <img
 												src="bdstyle/image/ko/solution/common/btn/prevPage.gif"></a>&nbsp;
@@ -361,22 +283,25 @@
 											end="${pageInfo.endPage }" var="a" step="1">
 											<c:choose>
 												<c:when test="${a == pageInfo.page }">
-												<span> &nbsp;${a }  </span>
+													<span> &nbsp;${a } </span>
 												</c:when>
 												<c:otherwise>
-													<a href="bookSearchPro.bk?page=${a }&search=${param.search}&value=${param.value}">&nbsp;${a }</a>&nbsp;
+													<a
+														href="bookSearchPro.bk?page=${a }&search=${param.search}&value=${param.value}">&nbsp;${a }</a>&nbsp;
 												</c:otherwise>
 											</c:choose>
-										</c:forEach> </span>
-										<!--다음 페이지 생성 조건 --> 
-										<c:choose>
-											<c:when test="${pageInfo.page >= pageInfo.maxPage }">&nbsp;</c:when>
-											<c:otherwise>
-												<a href="bookSearchPro.bk?page=${pageInfo.page + 1 }&search=${param.search}&value=${param.value}">
-													<img src="bdstyle/image/ko/solution/common/btn/nextPage.gif">
-												</a>
-											</c:otherwise>
-										</c:choose>
+										</c:forEach>
+									</span>
+									<!--다음 페이지 생성 조건 -->
+									<c:choose>
+										<c:when test="${pageInfo.page >= pageInfo.maxPage }">&nbsp;</c:when>
+										<c:otherwise>
+											<a
+												href="bookSearchPro.bk?page=${pageInfo.page + 1 }&search=${param.search}&value=${param.value}">
+												<img src="bdstyle/image/ko/solution/common/btn/nextPage.gif">
+											</a>
+										</c:otherwise>
+									</c:choose>
 									<!-- 	</section>  -->
 
 								</div>
@@ -425,68 +350,9 @@
 						}
 					})
 				}
-				var IS_USE_OPAC_SEARCH = "false";
-				var MSG_ERROR_NOT_FIND = "";
-				var MSG_VALID_LOGIN = "로그인 후 이용하세요.";
-				var MSG_VALID_SEND_SMS = "발송하시겠습니까?";
-				var MSG_VALID_COMPLETE_SMS = "발송되었습니다.";
-				var SITE_CODE = "A0000001";
-				var TITLE_BASKET = "바구니";
-				var INFO_BASKET_INPUT = "바구니에 담았습니다.";
-				var INFO_BASKET_DEL = "바구니에서 삭제 하였습니다.";
-				var WARN_CHECK_FIELDS = "항목을 체크하세요."; //항목을 체크하세요.
-
-				var SELECT_HOLDING_MODULE = '';
-				var USE_SERVICE = true;
-
-				var saveBtn = "저장";
-				var mailBtn = "메일";
-				var printBtn = "인쇄";
-				var previewBtn = "미리보기";
-				var endNoteBtn = "EndNote";
-				var refWorksBtn = "RefWorks";
-				var selectBtn = "선택";
-				var imagePath = "/image/ko/";
-				$.global = {
-					resizeMove : null,
-					resizeDraw : null,
-					resizeSelectBox : null
-				};
-
-				var facetYearList = [ '2015', '2009', '2010', '2017', '2005',
-						'2006', '2014', '2003', '2004', '2007', '2008', '2013',
-						'2018', '2019' ];
-
-				var facetYearCount = {};
-				facetYearCount['2015'] = 5;
-				facetYearCount['2009'] = 3;
-				facetYearCount['2010'] = 3;
-				facetYearCount['2017'] = 3;
-				facetYearCount['2005'] = 2;
-				facetYearCount['2006'] = 2;
-				facetYearCount['2014'] = 2;
-				facetYearCount['2003'] = 1;
-				facetYearCount['2004'] = 1;
-				facetYearCount['2007'] = 1;
-				facetYearCount['2008'] = 1;
-				facetYearCount['2013'] = 1;
-				facetYearCount['2018'] = 1;
-				facetYearCount['2019'] = 1;
-			</script>
-			<script type="text/javascript">
-				var isUseMypreserveInfo = "false";
-				var isUseDeliveryInfo = "true";
-				var isUseLoanreqInfo = "false";
-				var isUseMissrepoInfo = "false";
-				var isUseCampusLoanInfo = "false";
-				var isUsePosPrintInfo = "true";
-				var isSendSmsInfo = "false";
-				var isUseBookShelf = "false";
 			</script>
 		</div>
-
 		<ul class="resultList resultDetail">
-
 		</ul>
 	</div>
 </div>
