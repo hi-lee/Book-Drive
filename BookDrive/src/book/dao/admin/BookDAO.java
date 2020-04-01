@@ -306,4 +306,66 @@ public class BookDAO {
 		}
 		return updateCount;
 	}
+
+	public ArrayList<BookRental> getBookOutBrwList() { //도서 관외대출 리스트
+		// TODO Auto-generated method stub
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		BookRental bookRental = null;
+		ArrayList<BookRental> bookOutBrwList = new ArrayList<>();
+		String query = "SELECT * FROM view_member_info WHERE renFlag = 'outbrw'";
+		try {
+			pstmt = con.prepareStatement(query);
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				bookRental = new BookRental();
+				bookRental.setBookName(rs.getString("bookName"));
+				bookRental.setBookWriter(rs.getString("bookWriter"));
+				bookRental.setLibName(rs.getString("libName"));
+				bookRental.setMemId(rs.getString("memId"));
+				bookRental.setMemName(rs.getString("memName"));
+				bookRental.setRenIdvDelFlag(rs.getString("renIdvDelFlag"));
+				bookRental.setRenDate(rs.getString("renBrwDate"));
+				bookRental.setRenIdvDate(rs.getString("renBrwInvDate"));
+				bookOutBrwList.add(bookRental);
+			}
+		} catch (Exception e) {
+			System.out.println("getBookOutBrwList 에러 : " + e);
+		} finally {
+			if (rs != null) close(rs);
+			if (pstmt != null) close(pstmt);
+		}
+		return bookOutBrwList;
+	}
+	
+	public ArrayList<BookRental> getBookOutRevList() { //도서 관외예약 리스트
+		// TODO Auto-generated method stub
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		BookRental bookRental = null;
+		ArrayList<BookRental> bookOutRevList = new ArrayList<>();
+		String query = "SELECT * FROM view_member_info WHERE renFlag = 'outrev'";
+		try {
+			pstmt = con.prepareStatement(query);
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				bookRental = new BookRental();
+				bookRental.setBookName(rs.getString("bookName"));
+				bookRental.setBookWriter(rs.getString("bookWriter"));
+				bookRental.setLibName(rs.getString("libName"));
+				bookRental.setMemId(rs.getString("memId"));
+				bookRental.setMemName(rs.getString("memName"));
+				bookRental.setRenIdvDelFlag(rs.getString("renIdvDelFlag"));
+				bookRental.setRenDate(rs.getString("renBrwDate"));
+				bookRental.setRenIdvDate(rs.getString("renBrwInvDate"));
+				bookOutRevList.add(bookRental);
+			}
+		} catch (Exception e) {
+			System.out.println("getBookOutRevList 에러 : " + e);
+		} finally {
+			if (rs != null) close(rs);
+			if (pstmt != null) close(pstmt);
+		}
+		return bookOutRevList;
+	}
 }

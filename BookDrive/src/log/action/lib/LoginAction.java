@@ -42,9 +42,9 @@ public class LoginAction implements Action {
 				session.setAttribute("id", id); //아이디 세션값
 				session.setAttribute("index", admin.getAdminNum()); //관리자번호 세션값 
 				session.setAttribute("code", admin.getLibCode()); //도서관 코드 세션값
-				session.setAttribute("adminCheck", false); //통합관리자 로그인 세션값
+				session.setAttribute("libname", admin.getLibName()); //도서관 이름 세션값
+				session.setAttribute("libCheck", true); //통합관리자 로그인 세션값
 				session.setMaxInactiveInterval(3600);
-//				request.setAttribute("pagefile", "/member/admin_main.jsp");
 				forward = new ActionForward();
 				forward.setPath("Adminmain.logL");
 			}

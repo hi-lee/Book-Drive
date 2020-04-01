@@ -25,23 +25,7 @@
 
     <script>
         $(function () {
-
-            $("#search").click(function () {
-				alert($("#isbn").val());
-                $.ajax({
-                    method: "GET",
-                    url: "https://dapi.kakao.com/v3/search/book?target=isbn", // 전송 주소
-                    data: { query: $("#isbn").val() }, // 보낼 데이터
-                    headers: { Authorization: "KakaoAK 7c28f9da096eaa302f600c9900820d6e" }
-                })
-                    .done(function (msg) { // 응답이 오면 처리를 하는 코드
-                    	alert('성공');
-                   		$("#result").append('<li>'+msg.documents[0].title+'</li>');
-                   		$("#result").append('<li>'+msg.documents[0].contents+'</li>');
-                   		
-                        console.log(msg);
-                    });
-            })
+            alert('sdfsfd');
         });
 
     </script>

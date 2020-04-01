@@ -16,7 +16,7 @@
 				</c:choose>
 			</li>
 			<li><a>
-				${empty sessionScope.id ? '' : sessionScope.id.concat(' 님').concat('(').concat(sessionScope.code).concat(')') }
+				${empty sessionScope.id ? '' : sessionScope.id.concat(' 님').concat('(').concat(sessionScope.code).concat(', ').concat(sessionScope.libname).concat(')') }
 			</a></li>
 		</ul>
 	</div>
@@ -108,11 +108,8 @@
 							<li>
 								<a href="BoardList2.boardL?libcode=${sessionScope.code}" title="QnA보기">QnA보기</a>					
 							</li>
-							<li>
-								<a href="BoardList3.boardL?libcode=${sessionScope.code}" title="희망도서 요청 보기">희망도서 요청 보기</a>					
-							</li>
 							<li class="last">
-								<a href="BoardList4.boardL" title="통합관리자 요청">통합관리자 요청사항 전달</a>					
+								<a href="BoardList3.boardL?libcode=${sessionScope.code}" title="희망도서 요청 보기">희망도서 요청 보기</a>					
 							</li>
 						</ul>
 					</div>

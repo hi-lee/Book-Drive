@@ -274,5 +274,7 @@ body{font-family:"나눔고딕", NanumGothic, NG, sans-serif;letter-spacing:-0.2
 .footer .visit .title{margin-right:10px;}
 .footer .visit .num{color:#f15857; font-size:11px;}
 .footer address{clear:left;margin-bottom:4px;font-size:12px;letter-spacing:0.25px;}
-.footer .copyright{font-size:12px;letter-spacing:0.25px;}
+/* 박승현 수정 footer 수정 
+.footer .copyright{font-size:12px;letter-spacing:0.25px;} */
+.footer .copyright{font-size: 14px; letter-spacing: 0.25px; text-align: center; color: #ffffff;}
 .footer .copyrightM{display:none;font-size:12px;}

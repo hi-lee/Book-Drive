@@ -11,7 +11,7 @@ import vo.admin.ActionForward;
 import vo.admin.BoardBean;
 import vo.admin.PageInfo;
 
-public class BoardFreeListAction implements Action {
+public class BoardWishBookListAction implements Action {
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		// TODO Auto-generated method stub
@@ -20,13 +20,16 @@ public class BoardFreeListAction implements Action {
 		String kind = request.getParameter("kind") != null ? request.getParameter("kind") : "title"; //제목, 작성자, 내용
 		String keyword = request.getParameter("keyword") != null ? request.getParameter("keyword") : ""; //검색값
 		String os = request.getParameter("os") != null ? request.getParameter("os") : "desc"; //DESC, ASC
-		String flag = "4"; //boardFlag(1 : 공지사항)
+		String flag = "3"; //boardFlag
+		
 		int nowPage = 1; //디폴트(첫페이지)
-		int limit = request.getParameter("countPerPage") != null ? Integer.parseInt(request.getParameter("countPerPage")) : 10; //페이지에 보여줄 목록 수
+		int limit = request.getParameter("CountPerPage") != null ? Integer.parseInt(request.getParameter("CountPerPage")) : 10; //페이지에 보여줄 목록 수
 		int limitPage = 10; //페이지 수
 		
 		if (request.getParameter("page") != null) {
-			nowPage = Integer.parseInt(request.getParameter("page"));
+			if (!request.getParameter("page").equals("")) {
+				nowPage = Integer.parseInt(request.getParameter("page"));
+			}
 		}
 		
 		BoardListService boardListService = new BoardListService();
@@ -44,7 +47,7 @@ public class BoardFreeListAction implements Action {
 		pageInfo.setnowPage(nowPage);
 		pageInfo.setStartPage(startPage);
 		
-		request.setAttribute("pagefile", "/board/admin_boardFreeList.jsp?page="+nowPage+"&kind="+kind+"&keyword="+keyword+"&os="+os+"&limit="+limit);
+		request.setAttribute("pagefile", "/board/admin_boardWishBookList.jsp?page="+nowPage+"&kind="+kind+"&keyword="+keyword+"&os="+os+"&limit="+limit);
 		request.setAttribute("pageinfo", pageInfo);
 		request.setAttribute("boardList", boardList);
 		
@@ -52,5 +55,4 @@ public class BoardFreeListAction implements Action {
 		forward.setPath("admin_template.jsp");
 		return forward;
 	}
-
 }
