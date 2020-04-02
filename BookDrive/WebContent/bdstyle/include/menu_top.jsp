@@ -1,6 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<style>
+#divTopMenu>ul>li>a {
+	font-weight: 200;
+}
+
+#divGlobalMenu>div>ul li.login a {
+	font-weight: 200;
+}
+
+#divGlobalMenu>div>ul li a {
+	font-weight: 200;
+}
+</style>
 <!-- menu_top START -->
 <div id="divHeader">
 	<div id="divGlobalMenu">
@@ -12,6 +25,8 @@
 							<a href="loginForm.log" title="로그인">로그인</a>
 						</c:when>
 						<c:otherwise> ${userID } 님
+				
+				
 				</li>
 				<li><a href="logout.log" title="로그아웃">로그아웃 </a> </c:otherwise> </c:choose></li>
 
@@ -23,7 +38,8 @@
 	<!-- header -->
 	<div class="header">
 		<h1 class="logo">
-			<a href="template_main.jsp" title="Book-Drive">&nbsp;Book-Drive</a>
+			<a href="template_main.jsp" title="Book-Drive"><img
+				src="bdstyle/image/mainlogo.png" height="45px"></a>
 		</h1>
 		<div id="divTopMenu">
 			<h2 class="skip">주메뉴</h2>
@@ -31,8 +47,8 @@
 				<li class=""><a href="bookSearch.bk" title="소장자료검색">소장자료검색</a>
 				</li>
 
-				<li class=""><a href="bookDriveMain.bk" title="book Drive">Book Drive</a>
-					</li>
+				<li class=""><a href="bookDriveMain.bk" title="book Drive">Book
+						Drive</a></li>
 
 				<li class=""><a href="javascript:return false;" title="개인서비스">개인서비스</a>
 					<div>
@@ -43,7 +59,8 @@
 							<li><a
 								href="bookCartList.bk?index=${sessionScope.userIndex }&page=${param.page }&search=${param.search}&value=${param.value}"
 								title="도서보관함 ">도서 보관함</a></li>
-							<li><a href="qnaBoard.bo?index=${sessionScope.userIndex}" title="내문의사항">내문의사항</a></li>
+							<li><a href="qnaBoard.bo?index=${sessionScope.userIndex}"
+								title="내문의사항">내문의사항</a></li>
 							<li class="last"><a
 								href="memInfo.mem?id=${sessionScope.userID }" title="개인정보 관리">개인정보
 									관리</a></li>
@@ -54,7 +71,9 @@
 						<ul>
 							<li><a href="freeBoard.bo" title="자유게시판">자유게시판</a></li>
 							<li><a href="noticeBoard.bo" title="공지사항">공지사항</a></li>
-							<li class="last"><a href="wishBoard.bo?index=${sessionScope.userIndex}" title="도서이용신청">도서이용신청</a></li>
+							<li class="last"><a
+								href="wishBoard.bo?index=${sessionScope.userIndex}"
+								title="도서이용신청">도서이용신청</a></li>
 						</ul>
 					</div></li>
 				<li><a href="javascript:return false;" title="도서관안내">도서관안내</a>
@@ -78,7 +97,6 @@
 				<li><h3>
 						<a href="bookSearch.bk" title="소장자료검색">소장자료검색</a>
 					</h3>
-					
 				<li><h3>
 						<a href="javascript:return false;" title="개인서비스">개인서비스</a>
 					</h3>
@@ -87,21 +105,24 @@
 							href="myRentalList.mem?id=${sessionScope.userID }&index=${sessionScope.userIndex }"
 							title="대출/예약내역">대출/예약내역</a></li>
 						<li><a
-								href="bookCartList.bk?index=${sessionScope.userIndex }&page=${param.page }&search=${param.search}&value=${param.value}"
-								title="도서보관함 ">도서 보관함</a></li>
-							<li><a href="qnaBoard.bo?index=${sessionScope.userIndex}" title="내문의사항">내문의사항</a></li>
-							<li class="last"><a
-								href="memInfo.mem?id=${sessionScope.userID }" title="개인정보 관리">개인정보
-									관리</a></li>
+							href="bookCartList.bk?index=${sessionScope.userIndex }&page=${param.page }&search=${param.search}&value=${param.value}"
+							title="도서보관함 ">도서 보관함</a></li>
+						<li><a href="qnaBoard.bo?index=${sessionScope.userIndex}"
+							title="내문의사항">내문의사항</a></li>
+						<li class="last"><a
+							href="memInfo.mem?id=${sessionScope.userID }" title="개인정보 관리">개인정보
+								관리</a></li>
 					</ul></li>
 				<li><h3>
 						<a href="javascript:return false;" title="게시판">게시판</a>
 					</h3>
 					<ul>
 						<li><a href="freeBoard.bo" title="자유게시판">자유게시판</a></li>
-							<li><a href="noticeBoard.bo" title="공지사항">공지사항</a></li>
-							<li class="last"><a href="wishBoard.bo?index=${sessionScope.userIndex}" title="도서이용신청">도서이용신청</a></li>
-						
+						<li><a href="noticeBoard.bo" title="공지사항">공지사항</a></li>
+						<li class="last"><a
+							href="wishBoard.bo?index=${sessionScope.userIndex}"
+							title="도서이용신청">도서이용신청</a></li>
+
 					</ul></li>
 				<li class="last"><h3>
 						<a href="javascript:return false;" title="도서관안내">도서관안내</a>

@@ -85,3 +85,5 @@ create table cart (cartNum int(11) not null auto_increment primary key, bookNum 
 select count(*) from board where boardSubject like '%'
 
 alter table rentalIdv modify renFlag varchar(10);
+
+select * from cart left join bookInfo on cart.bookNum = bookInfo.bookNum where memIndex = 12

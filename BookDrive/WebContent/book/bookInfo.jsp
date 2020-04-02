@@ -24,7 +24,6 @@ href="bdstyle/style/ko/home/toastr.min.css">
 			</ul>
 		</div>
 
-
 		<div id="divContent">
 			<!-- //검색상세 -->
 			<div class="searchDetail">

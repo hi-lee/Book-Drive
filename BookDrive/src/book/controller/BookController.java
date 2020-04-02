@@ -123,7 +123,6 @@ public class BookController extends HttpServlet {
 				e.printStackTrace();
 			}
 		} else if (command.equals("/SearchHistory.bk")) {	
-			System.out.println("aaaa");
 			forward = new ActionForward();
 			request.setAttribute("pageIn", "/book/SearchHistory.jsp");
 			forward.setPath("template_sub.jsp");

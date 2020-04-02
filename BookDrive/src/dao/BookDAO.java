@@ -436,9 +436,9 @@ public class BookDAO {
 		ResultSet rs = null;
 		ArrayList<Cart> cartList = new ArrayList<Cart>();
 		Cart cart = null;
+		String cart_sql = "select * from cart left join bookInfo on cart.bookNum = bookInfo.bookNum where memIndex = ?";
 		try {
-			pstmt = con.prepareStatement(
-					"select * from cart left join bookInfo on cart.bookNum = bookInfo.bookNum where memIndex = ?");
+			pstmt = con.prepareStatement(cart_sql);
 			pstmt.setString(1, memIndex);
 			rs = pstmt.executeQuery();
 

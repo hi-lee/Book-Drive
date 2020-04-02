@@ -7,9 +7,6 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="description" content="경일대학교 도서관">
-<meta name="keyword"
-	content="경일대학교 전자도서관, 경일대학교, 전자도서관, 경일대학교 도서관, 도서검색">
 <meta name="copyright" content="@copy; KYUNGIL UNIVERSITY LIBRARY.">
 <meta
 	content="initial-scale=1, maximum-scale=1.0, minimum-scale=1.0, width=device-width, user-scalable=no"
@@ -77,7 +74,8 @@
 	border: 3px solid #ddccac;
 	border-radius: 0;
 	box-sizing: border-box;
-	color: #292a2c
+	color: #292a2c;
+	font-weight: 200;
 }
 
 .ikc-search-wrap .ikc-search form input::-webkit-input-placeholder {
@@ -122,22 +120,7 @@
 
 
 <!-- divHeader -->
-<script type="text/javascript">
-	/*
-	 $(document).ready(function(){
-	 callThumbnail('#loanBestList1','9788952932808','CAT','000000501414');
-	 callThumbnail('#loanBestList2','9788991130197','CAT','000000225695');
-	 callThumbnail('#loanBestList3','','CAT','000000176779');
-	 callThumbnail('#loanBestList4','','CAT','000000190415');
-	 callThumbnail('#loanBestList5','895288048X/89','CAT','000000190416');
-	 callThumbnail('#newArrivalList1','9791196457051','CAT','000000507480');
-	 callThumbnail('#newArrivalList2','9788962463958','CAT','000000507383');
-	 callThumbnail('#newArrivalList3','9788935212859','CAT','000000506928');
-	 callThumbnail('#newArrivalList4','9791162540886','CAT','000000507017');
-	 callThumbnail('#newArrivalList5','9791187059509','CAT','000000507404');
-	 });
-	 */
-</script>
+
 </head>
 <body>
 	<div id="divAccessibility">
@@ -161,6 +144,7 @@
 						<div class="ikc-search">
 							<form name="searchForm" ng-submit="search()"
 								class="ng-pristine ng-valid" action="bookSearchPro.bk">
+									<input type="hidden" name="index" value="${sessionScope.userIndex}">
 								<span tabindex="-1" role="presentation"
 									class="k-widget k-autocomplete k-header ikc-search-keyword ng-pristine ng-untouched ng-valid k-state-default"
 									style=""><input ik-auto-complete="" name="value"

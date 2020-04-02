@@ -6,7 +6,13 @@
 <link rel="stylesheet" type="text/css"
 	href="bdstyle/style/ko/home/advanced.css">
 <style>
-#divContents{position:relative;width:1040px;min-height:700px;margin:0 auto;padding:0 0 65px 0;}
+#divContents {
+	position: relative;
+	width: 1040px;
+	min-height: 700px;
+	margin: 0 auto;
+	padding: 0 0 65px 0;
+}
 </style>
 
 <div id="divContentsW">
@@ -15,8 +21,8 @@
 
 		<div id="divLocation">
 			<ul>
-				<li><a href="template_main.jsp" title="HOME"> <img src="bdstyle/image/ko/local/home.png"
-						alt="HOME"></a></li>
+				<li><a href="template_main.jsp" title="HOME"> <img
+						src="bdstyle/image/ko/local/home.png" alt="HOME"></a></li>
 				<li><a href="#">소장자료검색</a></li>
 				<li><a href="#">전체</a></li>
 			</ul>
@@ -28,6 +34,7 @@
 			<div class="advancedSearch">
 				<form id="search" action="bookSearchPro.bk" name="search"
 					method="get">
+					<input type="hidden" name="index" value="${sessionScope.userIndex}">
 					<!-- 디지털컬렉션 파라미터  -->
 					<fieldset>
 						<legend>통합검색 </legend>
@@ -45,13 +52,14 @@
 								onfocus="setTextObj(this)"
 								class="inputTextType1 inputSearchKeyword" title="검색어를 입력하세요">
 						</div>
-			</div>
 
-			</fieldset>
-			<div class="buttons">
-				<input type="submit" value="검색" title="검색" class="searchBtn">
-				<a href="SearchHistory.bk" title="검색 History">검색 History</a> <input id="resetAll"
-					type="button" value="다시쓰기" title="다시쓰기">
+
+					</fieldset>
+					<div class="buttons">
+						<input type="submit" value="검색" title="검색" class="searchBtn">
+						<a href="SearchHistory.bk" title="검색 History">검색 History</a> <input
+							id="resetAll" type="button" value="다시쓰기" title="다시쓰기">
+					</div>
 			</div>
 			</form>
 		</div>

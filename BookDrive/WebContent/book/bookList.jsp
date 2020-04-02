@@ -26,8 +26,8 @@
 			<div class="searchBrief">
 				<div class="dataSearch">
 					<form name="refineSearch" method="get" action="bookSearchPro.bk">
+						<input type="hidden" name="index" value="${sessionScope.userIndex}">
 						<fieldset>
-
 							<legend>검색항목</legend>
 
 							<select id="si1" name="search" title="검색 항목을 선택하는곳"
@@ -130,7 +130,7 @@
 
 										<ul>
 											<li class="myHistory"><a
-												href="/search/service/searchHistory" title="검색 History"><img
+												href="SearchHistory.bk" title="검색 History"><img
 													src="bdstyle/image/ko/solution/common/btn/searchBtn03.png"
 													alt="검색 History"></a></li>
 											<li class="myCart"><a
