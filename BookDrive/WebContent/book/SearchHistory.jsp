@@ -45,21 +45,20 @@
 								<c:when test="${searchList != null }">
 
 									<c:forEach items="${searchList }" var="list" varStatus="hlist">
-										<input type="hidden" name="tempSearch" value="${search }">
-										<input type="hidden" name="tempValue" value="${list.value }">
+										<input type="hidden" name="tempSearch" value="${list.value.search }">
+										<input type="hidden" name="tempValue" value="${list.value.value }">
 										<c:set var="search" value="" />
-										
 										<c:choose>
-											<c:when test="${list.search eq 'bookName' }">
+											<c:when test="${list.value.search eq 'bookName' }">
 												<c:set var="searchV" value="서명" />
 											</c:when>
-											<c:when test="${list.search eq 'bookWriter' }">
+											<c:when test="${list.value.search eq 'bookWriter' }">
 												<c:set var="searchV" value="저자" />
 											</c:when>
-											<c:when test="${list.search eq 'bookPub' }">
+											<c:when test="${list.value.search eq 'bookPub' }">
 												<c:set var="searchV" value="출판사" />
 											</c:when>
-											<c:when test="${list.search eq 'ISBN' }">
+											<c:when test="${list.value.search eq 'ISBN' }">
 												<c:set var="searchV" value="ISBN" />
 											</c:when>
 										</c:choose>
@@ -69,7 +68,7 @@
 													type="radio" name="history" value="" title="검색 History"></td>
 												<td class="num">${hlist.index +1}</td>
 												<td class="search_kind">키워드</td>
-												<td class="display_query expand">[키워드 / ${searchV }:${list.value }]</td>
+												<td class="display_query expand">[키워드 / ${searchV }:${list.value.value }]</td>
 												<td class="search_range">소장자료검색</td>
 
 
@@ -104,7 +103,7 @@
 							form.search.value = form.tempSearch[i].value;
 							form.value.value = form.tempValue[i].value;
 						}
-					}alert("ee");
+					}
 
 				}
 			</script>

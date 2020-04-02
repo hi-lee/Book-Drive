@@ -1,14 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <link rel="stylesheet" type="text/css"
 	href="bdstyle/style/ko/home/brief.css">
 <link rel="stylesheet" type="text/css"
 	href="bdstyle/style/ko/home/toastr.min.css">
 <script type="text/javascript" src="bdstyle/script/jquery.selectBox.js"></script>
 <script type="text/javascript" src="bdstyle/js/common/toastr.min.js"></script>
-
+<style>
+.empty {
+    text-align: center;
+}
+</style>
 <div id="divContentsW">
 	<div id="divContents">
 		<h2 id="divTitle">전체</h2>
@@ -21,12 +25,14 @@
 			</ul>
 		</div>
 
+
 		<!-- content -->
 		<div id="divContent">
 			<div class="searchBrief">
 				<div class="dataSearch">
 					<form name="refineSearch" method="get" action="bookSearchPro.bk">
-						<input type="hidden" name="index" value="${sessionScope.userIndex}">
+						<input type="hidden" name="index"
+							value="${sessionScope.userIndex}">
 						<fieldset>
 							<legend>검색항목</legend>
 
@@ -97,6 +103,9 @@
 
 					<!-- //facet -->
 
+					<c:choose>
+						<c:when test="${fn:length(bookList) ne 0 }">
+						
 					<div class="result">
 						<div class="resultHeader">
 							<p class="searchCnt">
@@ -129,8 +138,8 @@
 										</c:choose>
 
 										<ul>
-											<li class="myHistory"><a
-												href="SearchHistory.bk" title="검색 History"><img
+											<li class="myHistory"><a href="SearchHistory.bk"
+												title="검색 History"><img
 													src="bdstyle/image/ko/solution/common/btn/searchBtn03.png"
 													alt="검색 History"></a></li>
 											<li class="myCart"><a
@@ -145,7 +154,6 @@
 										<p class="typeSelect">
 											<a href="javascript:void(0);"> <img
 												src="/image/ko/solution/common/ico/calNormalOn.png" alt="목록">
-
 												<img src="/image/ko/solution/common/ico/calTypeOpen.png"
 												alt="열기"></a>
 										</p>
@@ -275,7 +283,8 @@
 										</c:when>
 										<c:otherwise>
 											<a href="bookSearchPro.bk?page=${pageInfo.page - 1 }"> <img
-												src="bdstyle/image/ko/solution/common/btn/prevPage.gif"></a>&nbsp;
+												src="bdstyle/image/ko/solution/common/btn/prevPage.gif">
+											</a>&nbsp;
 										</c:otherwise>
 									</c:choose>
 									<!-- 페이지 번호&이동 생성 조 -->
@@ -308,6 +317,11 @@
 							</fieldset>
 						</form>
 					</div>
+					
+					 </c:when>
+						<c:otherwise>
+						<span class="empty"><hr><h2>검색 결과가 없습니다.</h2></span></c:otherwise>
+					</c:choose>
 					<!-- //resultInfo -->
 				</div>
 			</div>
@@ -350,8 +364,12 @@
 						}
 					})
 				}
+				
+				
 			</script>
 		</div>
+
+
 		<ul class="resultList resultDetail">
 		</ul>
 	</div>

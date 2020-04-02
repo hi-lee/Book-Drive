@@ -70,6 +70,7 @@ public class BookSearchProAction implements Action {
 
 		ArrayList<Book> bookList = bookListSvc.getBookList(page, limit, search, value, usage);
 		request.setAttribute("bookList", bookList);
+		System.out.println("bookList : " + bookList.size());
 
 //		북리스트 - 보관함 책 개수 표시 
 		if (memIndex != null) {
@@ -89,23 +90,24 @@ public class BookSearchProAction implements Action {
 			history.setSearch(search);
 			history.setValue(value);
 			searchList.put(search+value, history);
-//			System.out.println("value : " + history.getValue());
 		}
 		
-//		ArrayList<SearchHistory> searchList = (ArrayList<SearchHistory>) session.getAttribute("searchList");
-//		if (searchList == null && value != null && !value.equals("")) { 
-//			searchList = new ArrayList<>();
-//		}
-//		if (value != null && !value.equals("")) {
-//			SearchHistory history = null;
-//			history = new SearchHistory();
-//			history.setSearch(search);
-//			history.setValue(value);
-//			history.setValue(value);
-//			searchList.add(history);
-//
-//			System.out.println("value : " + history.getValue());
-//		}
+/*		ArrayList는 중복된 검색결과도 입력하기때문에 사용X
+ 		ArrayList<SearchHistory> searchList = (ArrayList<SearchHistory>) session.getAttribute("searchList");
+		if (searchList == null && value != null && !value.equals("")) { 
+			searchList = new ArrayList<>();
+		}
+		if (value != null && !value.equals("")) {
+			SearchHistory history = null;
+			history = new SearchHistory();
+			history.setSearch(search);
+			history.setValue(value);
+			history.setValue(value);
+			searchList.add(history);
+
+			System.out.println("value : " + history.getValue());
+		}
+*/
 		session.setAttribute("searchList", searchList);
 
 		if (usage != null && !usage.trim().equals("")) {
