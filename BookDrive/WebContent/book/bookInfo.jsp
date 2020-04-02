@@ -1,9 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<script type="text/javascript"
-	src="./상세정보 _ 경일대학교 도서관_files/cookie.js.다운로드" charset="utf-8"></script>
-
+<script src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
 <link rel="stylesheet" type="text/css"
 	href="bdstyle/style/ko/home/detail.css">
 <link rel="stylesheet" type="text/css"
@@ -207,13 +207,14 @@ href="bdstyle/style/ko/home/toastr.min.css">
 					<div class="searchContents">
 						<div class="mediaContent">
 							<h4 class="skip">네이버정보 미리보기</h4>
-							<div class="brief" id="naverBrief">
+							<div class="brief" id="kakaoBrief">
+							<!-- 
 								<a href="http://book.naver.com/bookdb/book_detail.php?bid=5186"
 									title="새창" target="_blank"># </a>
+							 -->
 							</div>
-							<p class="bookintroLink" id="naverLink">
-								<a href="http://book.naver.com/bookdb/book_detail.php?bid=5186"
-									target="_blank" title="새창">[네이버 제공]</a>
+							<p class="bookintroLink" id="kakaoLink">
+							
 							</p>
 						</div>
 					</div>
@@ -258,64 +259,33 @@ href="bdstyle/style/ko/home/toastr.min.css">
 				}
 				
 					$(document).ready(function() {
-						naverBook("데미안", "8937460440");
+						selectBook(${book.ISBN});
 					});
-
-					function naverBook(keyword, isbn) {
-						$
-								.ajax({
-									contentType : "application/x-www-form-urlencoded; charset=UTF-8",
-									type : "POST",
-									url : "/openapi/naverBook",
-									data : "query="
-											+ encodeURIComponent(keyword)
-											+ "&display=1&d_isbn="
-											+ encodeURIComponent(isbn)
-											+ "&target=book_adv",
-									dataType : "xml",
-									complete : function(xhr, statusText) {
-										if (statusText == "success") {
-											viewNaverBook(xhr, keyword);
-										} else {
-											$("#naverBrief")
-													.append("API 호출 실패");
-										}
-									}
-								});
-					}
-
-					function viewNaverBook(xhr, keyword) {
-						$("#naverSearchInfo").hide();
-						var xmlObj = xhr.responseXML;
-						var arrList = $("item", xmlObj);
-						if (arrList != null) {
-							var listStr = "";
-							var listSize = arrList.length;
-							if (listSize == 0) {
-								return;
-							}
-							for (var i = 0; i < listSize; i++) {
-								var item = arrList[i];
-								listStr = "<a href='"
-										+ $("link", item)[0].firstChild.nodeValue
-										+ "'  title='새창' target='_blank' >"
-										+ $("description", item)[0].firstChild.nodeValue
-										+ "</a>";
-							}
-							if (listStr != "") {
-								$("#naverBrief").append(listStr);
-								$("#naverLink")
-										.append(
-												"<a href="
-														+ $('link', item)[0].firstChild.nodeValue
-														+ " target=\"_blank\" title=\"새창\">[네이버 제공]</a>");
-								$("#naverSearchInfo").show();
-							}
-						}
+					
+					function selectBook(isbn) {
+						$.ajax({
+		                    method: "GET",
+		                    url: "https://dapi.kakao.com/v3/search/book?target=isbn", // 전송 주소
+		                    data: { query: isbn }, // 보낼 데이터
+		                    headers: { Authorization: "KakaoAK 7c28f9da096eaa302f600c9900820d6e" },
+		                success : function (msg) { // 응답이 오면 처리를 하는 코드
+		                	if (msg.documents[0].contents != "") {
+		                		$("#kakaoBrief").append(msg.documents[0].contents);
+		                		$("#kakaoLink").append('<a href='+msg.documents[0].url+' target="_blank" title="새창">[카카오 제공]</a>');
+		                				
+		                	} else {
+		                		$("#kakaoBrief").append('책 정보가 없습니다.');
+		                	}
+	                   		
+	                        console.log(msg);
+		                },
+		                error : function(request, status, error) {
+		                	
+		                }
+						});
 					}
 				</script>
 			</div>
 		</div>
 	</div>
 </div>
-

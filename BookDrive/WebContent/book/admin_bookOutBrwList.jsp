@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<jsp:include page="../bdstyle/admin/include/lib_loginCheck.jsp"/>
+<jsp:include page="../bdstyle/admin/include/admin_loginCheck.jsp"/>
 <link rel="stylesheet" href="bdstyle/admin/style/ko/thema/mobile/admin_mobiletable.css" media="screen and (max-width:767px)">
 <link rel="stylesheet" type="text/css" href="bdstyle/admin/style/ui/jquery.ui.custom.css">
 <link rel="stylesheet" type="text/css" href="bdstyle/admin/style/ko/standard/admin_info.css">
@@ -16,12 +16,12 @@
 		<h2 id="divTitle">도서관리</h2>
 		<div id="divLocation">
 			<ul>
-				<li><a href="Adminmain.logL" title="HOME"><img src="bdstyle/admin/image/ko/local/home.png" alt="HOME"></a></li>
-				<li><a href="BookBrwList.bookL">도서관외대출내역</a></li>
+				<li><a href="Adminmain.logC" title="HOME"><img src="bdstyle/admin/image/ko/local/home.png" alt="HOME"></a></li>
+				<li><a>도서관리</a></li><li><a href="javascript:void();">도서관외대출내역</a></li>
 			</ul>
 		</div>
-		<h2 style="margin: 28px 0 14px 0;color:#4b4b4b;font-size:16px;font-weight:600;">대출 진행중</h2>
-		<!-- List(책 대출중 리스트) -->
+		<h2 style="margin: 28px 0 14px 0;color:#4b4b4b;font-size:16px;font-weight:600;">관외대출 진행중</h2>
+		<!-- List(책 관외대출중 리스트) -->
 		<div class="listTable">
 			<table class="mobileTable default">
 				<caption>게시판 목록</caption>
@@ -55,8 +55,8 @@
 				</tbody>
 			</table>
 		</div>
-		<h2 style="margin: 28px 0 14px 0;color:#4b4b4b;font-size:16px;font-weight:600;">대출완료</h2>
-		<!-- List(책 대출완료 리스트) -->
+		<h2 style="margin: 28px 0 14px 0;color:#4b4b4b;font-size:16px;font-weight:600;">관외대출완료</h2>
+		<!-- List(책 관외대출완료 리스트) -->
 		<div class="listTable">
 			<table class="mobileTable default">
 				<caption>게시판 목록</caption>

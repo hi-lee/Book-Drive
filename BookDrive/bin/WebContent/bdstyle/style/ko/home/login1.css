@@ -1,0 +1,74 @@
+@charset "utf-8";
+/*@media screen and (min-width:768px) and (max-width:1024px){
+#divContentsW {padding:0 20px 40px 20px}
+#divContents {width:100%;padding:0;overflow:hidden}
+}
+@media screen and (min-width:0px) and (max-width:767px){
+#divContentsW {width:100%}
+#divContents {width:100%;padding:0}
+}*/
+
+.loginW {overflow:hidden;position:relative;width:698px;margin:85px auto;border:1px solid #b3b3b3}
+.loginW form {float:left;width:100%}
+.loginW fieldset {width:100%}
+.loginW .loginType {overflow:hidden;height:48px;padding:0 30px;border-bottom:1px solid #e6e6e6;background:#e8f9fe}
+.loginW .loginType li {position:relative;float:left;padding-left:16px;line-height:50px;font-size:16px;color:#1a1a1a;margin-left:10px}
+.loginW .loginType li:first-child {margin-left:0px}
+.loginW .loginType li input {position:absolute;left:0;top:18px;width:13px;height:13px}
+
+.loginW .loginContent {position:relative;padding:40px 96px;margin:0 auto}
+.loginW form dl {overflow:hidden;position:relative;height:36px;padding-left:60px;margin-bottom:10px}
+.loginW form dt {position:absolute;left:0;top:0;width:60px;line-height:35px}
+.loginW form dd {}
+.loginW .inputTextType1 {width:319px;color:#b0afaf}
+.loginW .msg {position:absolute;left:156px;top:215px;width:319px}
+
+.loginW .loginBtn {position:absolute;left:497px;top:123px}
+.loginW .loginBtn input {display:block;width:105px;height:80px;border:1px solid #ffce4d;background:#ffce4d;color:#4d4d4d;font-size:16px;cursor:pointer}
+
+.loginW .intro {overflow:hidden;height:54px;margin-bottom:30px;line-height:1.2em;}
+.loginW .intro img {float:left;width:156px;height:54px;margin-right:18px}
+.loginW .intro img.authentication {float:left;width:242px;height:54px;margin-right:20px}
+.loginW .intro p {font-size:13px;color:#737373}
+.loginW .intro .welcome {margin:16px 0 6px 0;font-size:16px;color:#4d4d4d}
+.loginW .intro .welcome strong{color:#1a1a1a;font-weight:normal;}
+.loginW .intro .welcome span {color:#8f001c}
+
+.keepLogin{position:relative;margin:10px 115px 10px 60px;}
+.keepLogin .keepLoginCheck input{margin-right:5px;vertical-align:middle}
+.keepLogin .keepLoginInfo{display:none;position:absolute;top:20px;left:0;width:100%;padding-top:1px;background:url(../../../../bdstyle/image/ko/solution/common/ico/arrowTop.png) no-repeat 0 0}
+.keepLogin .keepLoginInfo div{border:1px solid #d6d3aa;border-top:none;background-color:#fdfee0;min-height:131px;}
+.keepLogin .keepLoginInfo div p{padding:0 12px 15px 36px;font-size:12px;}
+.keepLogin .keepLoginInfo div p:first-child{padding:19px 12px 15px 36px;margin-top:6px;background:url(../../../../bdstyle/image/ko/solution/common/ico/ingoIcon.gif) no-repeat 12px 21px;font-size:13px;font-weight:600}
+.keepLogin .keepLoginInfo div p:first-child span{color:#ba8e2e;}
+
+.loginW .notice {clear:both;padding:27px 30px 13px 30px;border-top:1px solid #e6e6e6;background:#eee}
+.loginW .notice li {padding-left:15px;margin-bottom:12px;background:url(../../../../bdstyle/image/ko/solution/common/ico/bulLogin01.png) no-repeat 0 6px;line-height:1.5}
+.loginW .notice li span {color:#8f001c; font-weight: bold;}
+.loginW .notice li p {margin-top:5px}
+.loginW .notice li p a {background:#fff;line-height:25px}
+.loginW .notice li p a:first-child {margin-right:10px;border-color:#46b2d0;color:#46a0b6}
+.loginW .notice li li {padding-left:13px;margin-bottom:2px;background:url(../../../../bdstyle/image/ko/solution/common/ico/bulLogin02.png) no-repeat 0 8px;}
+.loginW .notice li li:first-child {margin-top:7px}
+
+@media screen and (min-width:0) and (max-width:767px){
+.loginW {width:auto;margin:10px 10px 0;}
+.loginW .loginContent {padding:25px 20px 25px 20px}
+.loginW form {float:none}
+.loginW .loginType {height:auto;padding:0 20px}
+.loginW form dd {padding-right:2px}
+.loginW .inputTextType1 {width:100%}
+.loginW .msg {position:relative;left:0;top:0;width:auto;margin:15px 0 11px 0}
+.loginW .loginBtn {position:relative;left:0;top:0;height:35px;padding:0 0 0 0}
+.loginW .loginBtn input {width:100%;height:35px}
+
+.loginW .intro {height:auto}
+.loginW .intro img {float:none}
+
+.keepLogin{margin:10px 0 10px 0;top:0 !important;}
+
+.loginW .notice {padding:27px 20px 10px 23px}
+.loginW .notice li:first-child {padding-right:15px}
+.loginW .notice li p a {position:relative;width:113px;padding:0;margin-left:-1px;text-align:center}
+.loginW .notice li p a:first-child {margin-right:0;margin-left:0;z-index:10}
+}

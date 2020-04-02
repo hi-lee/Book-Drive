@@ -1,0 +1,7 @@
+@charset "utf-8";
+.searchArea .inputTextType5, .searchArea .btnType5 {margin-bottom:10px}
+.searchArea .btnType5{cursor:pointer}
+.searchArea .datePicker {width:80px}
+.searchArea .selectBox1 {width:auto; min-width:85px}
+.searchArea span.bunch {line-height:2.4em}
+#subject_code {width:auto; min-width:85px;}

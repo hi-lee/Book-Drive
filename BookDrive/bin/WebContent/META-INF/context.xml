@@ -1,0 +1,13 @@
+<Context>
+	<!-- Resource name, driverClassName, url을 변경, 추가함으로써 각각의 데이터베이스에 접속가능 -->
+	<Resource name="jdbc/mySQLDB"
+	    auth="Container"
+	    type="javax.sql.DataSource"
+	    username="java5pl"
+	    password="java5pl"
+	    driverClassName="com.mysql.cj.jdbc.Driver"
+	    factory="org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory"
+	    url="jdbc:mysql://118.131.179.138:3306/java5pl?serverTimezone=UTC"
+	    maxActive="1000"
+	    maxIdle="100"/>
+</Context>
