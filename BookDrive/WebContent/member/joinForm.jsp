@@ -129,7 +129,7 @@ function selectEmail(sel) {
 		<form class="login-form" id="joinform" name="joinform" action="memberJoinProcess.mem" method="post" onsubmit="return chkForm(this)">
 			<div id="header">
 			<hr color="#4CAF50">
-			<img src="bdstyle/image/ko/solution/common/bkicon.png" width="30px"><h3>회원가입</h3><br>
+			<br><img src="bdstyle/image/mainlogo.png" height="40px"><br><br><br>
 	</div>
 				
 	<label for="memCheck">회원구분 </label><br><br>

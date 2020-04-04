@@ -112,7 +112,7 @@ body{font-family:'Nanum Gothic', NG, sans-serif;letter-spacing:-0.2px;}
 
 /* divContents */
 /* 수정 메인화면 margin-bottom 삭제 */
-#divContents{width:1040px;margin:0 auto;margin-bottom: 29px;}
+#divContents{width:1040px;margin:0 auto;margin-bottom:0;}
 
 /* divSearch */
 #divSearch{float:left;width:669px;height:231px;background:#eeeeee;}

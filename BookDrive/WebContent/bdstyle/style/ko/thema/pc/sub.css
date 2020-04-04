@@ -115,7 +115,7 @@
 #divSearch input[type="image"]{position:absolute;top:14px;right:11px;}
 
 /* divTitle divLocation */
-#divTitle{padding:50px 0 6px 0;color:#333333;font-size:30px;font-weight:600;font-family:"나눔고딕", NanumGothic, NG, sans-serif;letter-spacing:-0.25px;}
+#divTitle{padding:50px 0 6px 0;color:#333333;font-size:30px;font-weight:300;font-family:"나눔고딕", NanumGothic, NG, sans-serif;letter-spacing:-0.25px;}
 #divLocation{height:20px;margin-bottom:42px;line-height:20px;font-family:"나눔고딕", NanumGothic, NG, sans-serif;letter-spacing:-0.5px;overflow:hidden;}
 #divLocation ul{float:left;}
 #divLocation ul li{float:left;padding-left:15px;margin-left:12px;background:url(../../../../../bdstyle/image/ko/local/arrow.png) no-repeat 0 4px;color:#6f7581;}

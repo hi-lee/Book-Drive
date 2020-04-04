@@ -24,7 +24,6 @@ href="bdstyle/style/ko/home/toastr.min.css">
 			</ul>
 		</div>
 
-
 		<div id="divContent">
 			<!-- //검색상세 -->
 			<div class="searchDetail">
@@ -186,18 +185,6 @@ href="bdstyle/style/ko/home/toastr.min.css">
 					</div>
 					<!-- //listTable -->
 				</div>
-				<!-- //searchInfo -->
-
-				<!-- //소장정보 -->
-
-				<!-- //매체정보 -->
-
-				<!-- // 초록 -->
-
-				<!-- //목차정보 -->
-
-				<!-- //NAVER 정보 -->
-
 
 				<div class="searchInfo mediaContents" id="naverSearchInfo"
 					style="display: block;">
@@ -206,16 +193,11 @@ href="bdstyle/style/ko/home/toastr.min.css">
 					</div>
 					<div class="searchContents">
 						<div class="mediaContent">
-							<h4 class="skip">네이버정보 미리보기</h4>
-							<div class="brief" id="kakaoBrief">
-							<!-- 
-								<a href="http://book.naver.com/bookdb/book_detail.php?bid=5186"
-									title="새창" target="_blank"># </a>
-							 -->
-							</div>
+
+							<h4 class="skip">카카정보 미리보기</h4>
+							<div class="brief" id="kakaoBrief"></div>
 							<p class="bookintroLink" id="kakaoLink">
 							
-							</p>
 						</div>
 					</div>
 				</div>
@@ -258,32 +240,35 @@ href="bdstyle/style/ko/home/toastr.min.css">
 					})
 				}
 				
-					$(document).ready(function() {
-						selectBook(${book.ISBN});
+
+				$(document).ready(function() {
+					selectBook(${book.ISBN});
+				});
+				
+				function selectBook(isbn) {
+					$.ajax({
+	                    method: "GET",
+	                    url: "https://dapi.kakao.com/v3/search/book?target=isbn", // 전송 주소
+	                    data: { query: isbn }, // 보낼 데이터
+	                    headers: { Authorization: "KakaoAK 7c28f9da096eaa302f600c9900820d6e" },
+	                success : function (msg) { // 응답이 오면 처리를 하는 코드
+	                	if (msg.documents[0].contents != "") {
+	                		$("#kakaoBrief").append(msg.documents[0].contents+"...");
+	                		$("#kakaoLink").append('<a href='+msg.documents[0].url+' target="_blank" title="새창">[카카오 제공]</a>');
+	                				
+	                	} else {
+	                		$("#kakaoBrief").append('책 정보가 없습니다.');
+	                	}
+                   		
+                        console.log(msg);
+	                },
+	                error : function(request, status, error) {
+	                	
+	                }
 					});
-					
-					function selectBook(isbn) {
-						$.ajax({
-		                    method: "GET",
-		                    url: "https://dapi.kakao.com/v3/search/book?target=isbn", // 전송 주소
-		                    data: { query: isbn }, // 보낼 데이터
-		                    headers: { Authorization: "KakaoAK 7c28f9da096eaa302f600c9900820d6e" },
-		                success : function (msg) { // 응답이 오면 처리를 하는 코드
-		                	if (msg.documents[0].contents != "") {
-		                		$("#kakaoBrief").append(msg.documents[0].contents);
-		                		$("#kakaoLink").append('<a href='+msg.documents[0].url+' target="_blank" title="새창">[카카오 제공]</a>');
-		                				
-		                	} else {
-		                		$("#kakaoBrief").append('책 정보가 없습니다.');
-		                	}
-	                   		
-	                        console.log(msg);
-		                },
-		                error : function(request, status, error) {
-		                	
-		                }
-						});
-					}
+				}
+				
+
 				</script>
 			</div>
 		</div>
