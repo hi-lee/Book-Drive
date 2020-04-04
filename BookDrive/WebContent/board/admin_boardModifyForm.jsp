@@ -102,12 +102,6 @@
 						    </script>
 						</td>
 					</tr>
-					<tr>
-						<th>첨부파일</th>
-						<td colspan="3">
-							${boardBean.boardFile}
-						</td>
-					</tr>
 				</table>
 				
 			</div>

@@ -64,7 +64,9 @@ body{font-family:"나눔고딕", NanumGothic, NG, sans-serif;letter-spacing:-0.2
 
 /* Header */
 .header{position:relative;width:1040px;height:106px;margin:0 auto;z-index:100;}
-.header .logo{position:absolute;top:36px;left:0;}
+/* 박승현 수정 로고이미지 삽입 top 36px -> 28px 수정, .header .logo > a > img 추가 */
+.header .logo{position:absolute;top:14px;left:0;}
+.header .logo > a > img {width:200px;}
 
 /* divTopMenu */
 #divTopMenu{padding:45px 0 0 353px;}
@@ -113,7 +115,7 @@ body{font-family:"나눔고딕", NanumGothic, NG, sans-serif;letter-spacing:-0.2
 /* divContents */
 #divContents{width:1040px;margin:0 auto;padding-bottom:24px;}
 /* 박승현 추가 main의 title dd 추가 */
-#divContents > .mainSubTitle {margin-top: 5px;}
+#divContents > .mainSubTitle {margin-top: 50px;margin-bottom: 10px;}
 #divContents > .mainSubTitle > dt {float: left;}
 #divContents > div {margin-top: 5px;}
 /* 박승현 추가 도서관메인 탑 5->25 */

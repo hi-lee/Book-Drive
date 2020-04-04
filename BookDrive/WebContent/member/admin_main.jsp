@@ -101,7 +101,7 @@
 							<ul>
 								<c:forEach var="boardlist" items="${boardlist2}" varStatus="status">
 									<li>
-										<a href="BoardModifyForm.boardA?boardnum=${boardlist.boardNum}&page=1">
+										<a href="BoardQnADetail.boardA?boardnum=${boardlist.boardNum}&page=1">
 											${boardlist.boardSubject}
 										</a>
 										<span class="date">${boardlist.boardDate}</span>
@@ -128,7 +128,7 @@
 							<ul>
 								<c:forEach var="boardlist" items="${boardlist3}" varStatus="status">
 									<li>
-										<a href="BoardQnADetail.boardA?boardnum=${boardlist.boardNum}&page=1">
+										<a href="BoardModifyForm.boardA?boardnum=${boardlist.boardNum}&page=1">
 											${boardlist.boardSubject}
 										</a>
 										<span class="date">${boardlist.boardDate}</span>

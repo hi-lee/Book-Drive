@@ -23,7 +23,7 @@
 </div>
 <!-- header -->
 <div class="header">
-	<h1 class="logo"><a href="Adminmain.logC" title="BookDrive">BookDrive</a></h1>
+	<h1 class="logo"><a href="Adminmain.logC" title="BookDrive"><img src="bdstyle/admin/image/ko/solution/common/logo_admin.png"></a></h1>
 	<div id="divTopMenu">
 		<h2 class="skip">주메뉴</h2>
 		<ul>
@@ -54,11 +54,11 @@
 					</div>
 				</li>
 			<li class="">
-					<a href="javascript:return false;" title="회원정보">회원정보</a>
+					<a href="javascript:return false;" title="회원관리">회원관리</a>
 					<div>
 					<ul>
 					<li>
-						<a href="MemberList.memA" title="일반회원정보">일반회원목록</a>					
+						<a href="MemberList.memA" title="일반회원 목록">일반회원 목록</a>					
 					</li>
 					<li>
 						<a href="LibAdminList.lib" title="도서관 관리자 정보">도서관 관리자 목록</a>					
@@ -74,7 +74,7 @@
 					<div>
 					<ul>
 					<li>
-						<a href="LibraryList.lib" title="도서관 목록">도서관 리스트</a>					
+						<a href="LibraryList.lib" title="도서관 목록">도서관 목록</a>					
 					</li>
 					<li class="last">
 						<a href="LibraryApvList.lib" title="도서관 관리자 가입신청 확인">도서관 관리자 가입신청 확인</a>					
@@ -87,13 +87,13 @@
 					<div>
 						<ul>
 							<li>
-								<a href="BookList.bookA" title="도서검색">도서검색</a>					
+								<a href="BookList.bookA" title="도서 목록">도서 목록</a>					
 							</li>
 							<!--<li>
 								<a href="BookImageInsert.bookA" title="도서이미지가져오기">도서이미지가져오기</a>					
 							</li>-->
 							<li>
-								<a href="BookBrwList.bookA" title="도서대출내역">도서 대출내역</a>					
+								<a href="BookBrwList.bookA" title="도서대출내역">도서 대출내역</a>
 							</li>
 							<li>
 								<a href="BookRevList.bookA" title="도서예약내역">도서 예약내역</a>
@@ -150,7 +150,7 @@
 					<li><h3><a href="javascript:return false;" title="도서관정보">도서관정보</a></h3>
 						<ul>
 						<li>
-							<a href="https://cham.kiu.ac.kr/local/html/researchDB" title="도서관 리스트">도서관 리스트</a>				
+							<a href="https://cham.kiu.ac.kr/local/html/researchDB" title="도서관 목록">도서관 목록</a>				
 							</li>
 						<li>
 							<a href="https://cham.kiu.ac.kr/local/html/nursingDB" title="도서관 관리자 가입신청 확인">도서관 관리자 가입신청 확인</a>				

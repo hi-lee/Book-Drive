@@ -13,11 +13,11 @@
 <!-- [통합관리자] 도서 대출 목록을 보여주는 페이지 -->
 <div id="divContentsW">
 	<div id="divContents">
-		<h2 id="divTitle">도서대출내역</h2>
+		<h2 id="divTitle">도서관리</h2>
 		<div id="divLocation">
 			<ul>
 				<li><a href="Adminmain.logC" title="HOME"><img src="bdstyle/admin/image/ko/local/home.png" alt="HOME"></a></li>
-				<li><a>도서관리</a></li><li><a href="javascript:void();">도서대출내역</a></li>
+				<li><a>도서관리</a></li><li><a href="javascript:void();">도서 대출내역</a></li>
 			</ul>
 		</div>
 		<h2 style="margin: 28px 0 14px 0;color:#4b4b4b;font-size:16px;font-weight:600;">대출 진행중</h2>
@@ -38,10 +38,11 @@
 				</thead>
 				<tbody>
 					<c:forEach var="list" items="${bookBrwList}">
-						<c:if test="${list.renIdvDelFlag eq '0'}" >
+						<c:if test="${list.renIdvDelFlag eq '0'}">
 							<tr>
 								<td class="libcode footable-first-column">
-									${list.bookName}&nbsp;/&nbsp;${list.bookWriter}
+									<a class="linkA" href="BookList.bookA?libcode=${list.libCode}&search=ISBN&keyword=${list.ISBN}">${list.bookName}</a>
+									&nbsp;/&nbsp;${list.bookWriter}
 								</td>
 								<td>${list.libName}</td>
 								<td>${list.memId}</td>
@@ -76,7 +77,8 @@
 						<c:if test="${list.renIdvDelFlag eq '1'}">
 							<tr>
 								<td class="libcode footable-first-column">
-									${list.bookName}&nbsp;/&nbsp;${list.bookWriter}
+									<a class="linkA" href="BookList.bookA?libcode=${list.libCode}&search=ISBN&keyword=${list.ISBN}">${list.bookName}</a>
+									&nbsp;/&nbsp;${list.bookWriter}
 								</td>
 								<td>${list.libName}</td>
 								<td>${list.memId}</td>

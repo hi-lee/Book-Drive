@@ -23,7 +23,7 @@
 </div>
 <!-- header -->
 <div class="header">
-	<h1 class="logo"><a href="Adminmain.logL" title="BookDrive">BookDrive</a></h1>
+	<h1 class="logo"><a href="Adminmain.logL" title="BookDrive"><img src="bdstyle/admin/image/ko/solution/common/logo_lib.png"></a></h1>
 	<div id="divTopMenu">
 		<h2 class="skip">주메뉴</h2>
 		<ul>
