@@ -36,16 +36,15 @@ public class BookDAO {
 		this.con = con;
 	}
 	
-	public int selectBookListCount(String libCode, String keyword, String bookState) { //책 리스트의 갯수 구하기
-		System.out.println("갯수구하기 들어옴 libCode : " + libCode + ", keyword : " + keyword + ", bookState : " + bookState);
-		
+	public int selectBookListCount(String libCode, String search, String keyword, String bookState) { //책 리스트의 갯수 구하기
 		int listCount = 0;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		
 		String query = "SELECT count(*)" + 
-						" FROM bookInfo" +
-						" where bookName like '%" + keyword + "%'";
+						" FROM bookInfo where ";
+		query = !search.equals("") ? query + search : query + " bookName";
+		query += " like '%" + keyword + "%'";
 		query = !libCode.equals("") ? query + " and libCode = '" + libCode + "'" : query + "";
 		query = !bookState.equals("") ? query + " and bookState = '" + bookState + "'" : query + "";
 		System.out.println("페이징 카운트 쿼리 : " + query);
@@ -66,9 +65,8 @@ public class BookDAO {
 		return listCount;
 	}
 	
-	public ArrayList<Book> getBookList(int page, int limit, String libCode, String keyword, String bookState) {
+	public ArrayList<Book> getBookList(int page, int limit, String libCode, String search, String keyword, String bookState) {
 		//도서 리스트(통합관리자용)
-		System.out.println("libCode : " + libCode + ", keyword : " + keyword);
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		ArrayList<Book> bookList = new ArrayList<>();
@@ -77,9 +75,9 @@ public class BookDAO {
 		String query = "select * from (" + 
 						"SELECT @rownum := @rownum + 1 AS rownum, a.*, b.libName" + 
 						" FROM bookInfo AS a" + 
-						" JOIN library AS b ON a.libCode = b.libCode, (SELECT @rownum:=0) tmp" +
-						" where a.bookName like '%" + keyword + "%' and a.libCode like '%" + libCode + "%' and a.bookState like '%" + bookState + "%') as a";
-//			query += " limit " + startrow + ", " + limit;
+						" JOIN library AS b ON a.libCode = b.libCode, (SELECT @rownum:=0) tmp where a.";
+		query = !search.equals("") ? query + search : query + "bookName";
+		query += " like '%" + keyword + "%' and a.libCode like '%" + libCode + "%' and a.bookState like '%" + bookState + "%') as a";
 		query += " where rownum >= " + (startrow + 1) + " and rownum <= " + (page * limit);
 		System.out.println("Query : " + query);
 		try {
@@ -192,6 +190,8 @@ public class BookDAO {
 				bookRental.setBookName(rs.getString("bookName"));
 				bookRental.setBookWriter(rs.getString("bookWriter"));
 				bookRental.setLibName(rs.getString("libName"));
+				bookRental.setLibCode(rs.getString("libCode"));
+				bookRental.setISBN(rs.getString("ISBN"));
 				bookRental.setMemId(rs.getString("memId"));
 				bookRental.setMemName(rs.getString("memName"));
 				bookRental.setRenIdvDelFlag(rs.getString("renIdvDelFlag"));
@@ -223,6 +223,8 @@ public class BookDAO {
 				bookRental.setBookName(rs.getString("bookName"));
 				bookRental.setBookWriter(rs.getString("bookWriter"));
 				bookRental.setLibName(rs.getString("libName"));
+				bookRental.setLibCode(rs.getString("libCode"));
+				bookRental.setISBN(rs.getString("ISBN"));
 				bookRental.setMemId(rs.getString("memId"));
 				bookRental.setMemName(rs.getString("memName"));
 				bookRental.setRenIdvDelFlag(rs.getString("renIdvDelFlag"));
@@ -305,5 +307,71 @@ public class BookDAO {
 			if (pstmt != null) close(pstmt);
 		}
 		return updateCount;
+	}
+
+	public ArrayList<BookRental> getBookOutBrwList() { //도서 관외대출 리스트
+		// TODO Auto-generated method stub
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		BookRental bookRental = null;
+		ArrayList<BookRental> bookOutBrwList = new ArrayList<>();
+		String query = "SELECT * FROM view_member_info WHERE renFlag = 'outbrw'";
+		try {
+			pstmt = con.prepareStatement(query);
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				bookRental = new BookRental();
+				bookRental.setBookName(rs.getString("bookName"));
+				bookRental.setBookWriter(rs.getString("bookWriter"));
+				bookRental.setLibName(rs.getString("libName"));
+				bookRental.setLibCode(rs.getString("libCode"));
+				bookRental.setISBN(rs.getString("ISBN"));
+				bookRental.setMemId(rs.getString("memId"));
+				bookRental.setMemName(rs.getString("memName"));
+				bookRental.setRenIdvDelFlag(rs.getString("renIdvDelFlag"));
+				bookRental.setRenDate(rs.getString("renBrwDate"));
+				bookRental.setRenIdvDate(rs.getString("renBrwInvDate"));
+				bookOutBrwList.add(bookRental);
+			}
+		} catch (Exception e) {
+			System.out.println("getBookOutBrwList 에러 : " + e);
+		} finally {
+			if (rs != null) close(rs);
+			if (pstmt != null) close(pstmt);
+		}
+		return bookOutBrwList;
+	}
+	
+	public ArrayList<BookRental> getBookOutRevList() { //도서 관외예약 리스트
+		// TODO Auto-generated method stub
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		BookRental bookRental = null;
+		ArrayList<BookRental> bookOutRevList = new ArrayList<>();
+		String query = "SELECT * FROM view_member_info WHERE renFlag = 'outrev'";
+		try {
+			pstmt = con.prepareStatement(query);
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				bookRental = new BookRental();
+				bookRental.setBookName(rs.getString("bookName"));
+				bookRental.setBookWriter(rs.getString("bookWriter"));
+				bookRental.setLibName(rs.getString("libName"));
+				bookRental.setLibCode(rs.getString("libCode"));
+				bookRental.setISBN(rs.getString("ISBN"));
+				bookRental.setMemId(rs.getString("memId"));
+				bookRental.setMemName(rs.getString("memName"));
+				bookRental.setRenIdvDelFlag(rs.getString("renIdvDelFlag"));
+				bookRental.setRenDate(rs.getString("renBrwDate"));
+				bookRental.setRenIdvDate(rs.getString("renBrwInvDate"));
+				bookOutRevList.add(bookRental);
+			}
+		} catch (Exception e) {
+			System.out.println("getBookOutRevList 에러 : " + e);
+		} finally {
+			if (rs != null) close(rs);
+			if (pstmt != null) close(pstmt);
+		}
+		return bookOutRevList;
 	}
 }

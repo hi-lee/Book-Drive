@@ -37,9 +37,10 @@ public class LogDAO {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		Admin admin = null;
-		
+		String query = "select a.*, b.libName from admin as a join library as b on a.libCode = b.libCode";
+		query += " where adminId = ? and adminGrade = 'L' and adminApv = 'YES'";
 		try {
-			pstmt = con.prepareStatement("select * from admin where adminId = ? and adminGrade = 'L' and adminApv = 'YES'");
+			pstmt = con.prepareStatement(query);
 			pstmt.setString(1, id);
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
@@ -47,6 +48,7 @@ public class LogDAO {
 				admin = new Admin();
 				admin.setAdminNum(rs.getString("adminNum"));
 				admin.setLibCode(rs.getString("libCode"));
+				admin.setLibName(rs.getString("libName"));
 				admin.setAdminId(rs.getString("adminId"));
 				admin.setAdminPassword(rs.getString("adminPass"));
 				admin.setAdminName(rs.getString("adminName"));

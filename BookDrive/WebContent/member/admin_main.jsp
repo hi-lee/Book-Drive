@@ -15,22 +15,22 @@
 					<ul>
 						<li>
 							<div class="left">금일 대출건수</div><br>
-							<div class="right"><a href=""><h2 class="MainCountBold">${maincount.todayBrwCount}</h2></a>건</div>
+							<div class="right"><a href="BookBrwList.bookA"><h2 class="MainCountBold">${maincount.todayBrwCount}</h2></a>건</div>
 						</li>
 						
 						<li>
 							<div class="left">금일 예약건수</div><br>
-							<div class="right"><a href=""><h2 class="MainCountBold">${maincount.todayRevCount}</h2></a>건</div>
+							<div class="right"><a href="BookRevList.bookA"><h2 class="MainCountBold">${maincount.todayRevCount}</h2></a>건</div>
 						</li>
 						
 						<li>
 							<div class="left">금일 관외대출건수</div><br>
-							<div class="right"><a href=""><h2 class="MainCountBold">${maincount.todayOutBrwCount}</h2></a>건</div>
+							<div class="right"><a href="BookOutBrwList.bookA"><h2 class="MainCountBold">${maincount.todayOutBrwCount}</h2></a>건</div>
 						</li>
 						
 						<li>
 							<div class="left">금일 관외예약건수</div><br>
-							<div class="right"><a href=""><h2 class="MainCountBold">${maincount.todayOutRevCount}</h2></a>건</div>
+							<div class="right"><a href="BookOutRevList.bookA"><h2 class="MainCountBold">${maincount.todayOutRevCount}</h2></a>건</div>
 						</li>
 					</ul>
 				</div>
@@ -46,22 +46,22 @@
 					<ul>
 						<li>
 							<div class="left">진행중인 대출건수</div><br>
-							<div class="right"><a href=""><h2 class="MainCountBold">${maincount.progressBrwCount}</h2></a>건</div>
+							<div class="right"><a href="BookBrwList.bookA"><h2 class="MainCountBold">${maincount.progressBrwCount}</h2></a>건</div>
 						</li>
 						
 						<li>
 							<div class="left">진행중인 예약건수</div><br>
-							<div class="right"><a href=""><h2 class="MainCountBold">${maincount.progressRevCount}</h2></a>건</div>
+							<div class="right"><a href="BookRevList.bookA"><h2 class="MainCountBold">${maincount.progressRevCount}</h2></a>건</div>
 						</li>
 						
 						<li>
 							<div class="left">진행중인 관외대출건수</div><br>
-							<div class="right"><a href=""><h2 class="MainCountBold">${maincount.progressOutBrwCount}</h2></a>건</div>
+							<div class="right"><a href="BookOutBrwList.bookA"><h2 class="MainCountBold">${maincount.progressOutBrwCount}</h2></a>건</div>
 						</li>
 						
 						<li>
 							<div class="left">진행중인 관외예약건수</div><br>
-							<div class="right"><a href=""><h2 class="MainCountBold">${maincount.progressOutRevCount}</h2></a>건</div>
+							<div class="right"><a href="BookOutRevList.bookA"><h2 class="MainCountBold">${maincount.progressOutRevCount}</h2></a>건</div>
 						</li>
 					</ul>
 				</div>
@@ -101,7 +101,7 @@
 							<ul>
 								<c:forEach var="boardlist" items="${boardlist2}" varStatus="status">
 									<li>
-										<a href="BoardModifyForm.boardA?boardnum=${boardlist.boardNum}&page=1">
+										<a href="BoardQnADetail.boardA?boardnum=${boardlist.boardNum}&page=1">
 											${boardlist.boardSubject}
 										</a>
 										<span class="date">${boardlist.boardDate}</span>

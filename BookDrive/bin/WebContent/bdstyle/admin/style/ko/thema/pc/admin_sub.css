@@ -1,0 +1,186 @@
+@charset "utf-8";
+
+/* Layout */
+#divWrapper{min-width:1176px;background-color:#5c5252;-webkit-text-size-adjust:none}
+#divHeader{background-color:#fff;z-index:100;font-family:"나눔고딕", NanumGothic, NG, sans-serif;letter-spacing:-0.2px;}
+#divContentsW{background-color:#fff;border-top:1px solid #d6d6d6;} /* 박승현 수정 색깔 변경, background-color */
+#divFooter{clear:both;font-family:"나눔고딕", NanumGothic, NG, sans-serif;letter-spacing:-0.2px;}
+
+/* Button Style */
+.btn {padding:7px 15px; border:1px solid #ddd; border-radius:5px; font-size:14px; box-shadow:0 0 10px rgba(0,0,0,.05); background:#fff; display:inline-block;}
+.btn:hover {box-shadow:0 5px 10px rgba(0,0,0,.2) inset}
+.btn:focus {}
+.bg_red {background:red;}
+.bg_blue {background:skyblue;}
+
+.c_fff {color:#fff !important;}
+/* 상단공지 */
+
+/* divGlobalMenu */
+#divGlobalMenu{position:relative;height:32px;background:#8f001c;z-index:110;}
+#divGlobalMenu > div{position:relative;width:1040px;padding-right:136px;margin:0 auto;}
+#divGlobalMenu > div .myMenuBtn{display:inline-block;position:absolute;top:0;right:429px;padding-left:33px;background:url(../../../../../../bdstyle/admin/image/ko/local/infoIco.png) no-repeat 0 6px;color:#ececec;font-size:12px;font-weight:600;line-height:32px;}
+#divGlobalMenu > div > ul{float:right;font-size:12px;font-weight:600;line-height:32px;letter-spacing:-0.25px;}
+#divGlobalMenu > div > ul li{float:left;margin-left:22px;}
+#divGlobalMenu > div > ul li a{color:#e9ccd2;}
+#divGlobalMenu > div > ul li.login{width:82px;margin:0 4px 0 0;background:#c5c5c5;text-align:center;}
+#divGlobalMenu > div > ul li.login a{display:block;color:#383838;}
+
+/* 요약정보 마이메뉴 */
+#divGlobalMenu .myMenu{display:none;position:absolute;top:138px;left:0;width:1040px;font-family:"나눔바른고딕",NanumBarunGothic,sans-serif;}
+#divGlobalMenu .myMenu > div{padding:19px 0 24px;background:url(../../../../../../bdstyle/admin/image/ko/local/myMenuBg.png) repeat 0 0;border-top:3px solid #fda82b;overflow:hidden;}
+#divGlobalMenu .myMenu > div > div{float:left;margin-left:28px;margin-bottom:15px}
+#divGlobalMenu .myMenu .myID{margin-bottom:16px;color:#fff;font-size:16px}
+#divGlobalMenu .myMenu .myID span{color:#fda82b}
+#divGlobalMenu .myMenu .message{margin-bottom:8px;color:#ebff00;font-size:13px}
+#divGlobalMenu .myMenu .message img{margin-top:2px;vertical-align:top}
+#divGlobalMenu .myMenu .summary{color:#bebebe;font-size:13px;overflow:hidden}
+#divGlobalMenu .myMenu .summary li{float:left;margin-left:9px;padding-left:10px;background:url(../../../../../../bdstyle/admin/image/ko/local/bar1.gif) no-repeat 0 0}
+#divGlobalMenu .myMenu .summary li:first-child{margin-left:0;padding-left:0;background:none}
+#divGlobalMenu .myMenu .summary a{color:#bebebe}
+#divGlobalMenu .myMenu #reserveDate{clear:both;color:#bebebe;margin:10px 0 5px}
+#divGlobalMenu .myMenu #campusLoanDate{color:#bebebe}
+#divGlobalMenu .myMenu .myMenuList{float:left;margin-left:28px;}
+#divGlobalMenu .myMenu .myMenuList > li{float:left;width:74px;height:95px;padding:0 6px;border:1px solid #686868;border-left:none;background-color:#353534}
+#divGlobalMenu .myMenu .myMenuList > li:first-child{border-left:1px solid #686868}
+#divGlobalMenu .myMenu .myMenuList > li ul li{margin-top:3px;color:#fff;font-size:12px;background-color:#8b847a;}
+#divGlobalMenu .myMenu .myMenuList > li ul li:first-child{background-color:#e78101;}
+#divGlobalMenu .myMenu .myMenuList > li span a{display:block;text-align:center;}
+#divGlobalMenu .myMenu .myMenuList > li span a.myMenuTit{margin:10px 0 10px;color:#bbb;font-size:13px}
+#divGlobalMenu .myMenu .myMenuList > li span a.myMenuStatus{color:#fff;}
+#divGlobalMenu .myMenu .close{position:absolute;bottom:17px;right:16px}
+
+/* 모바일 대출증 */
+#divGlobalMenu .mobileCard{display:none;position:absolute;top:6px;right:110px;height:19px;padding-left:23px;background:url(../../../../../../bdstyle/admin/image/ko/local/mobileCard.png) no-repeat 0 2px;line-height:19px;}
+#divGlobalMenu .mobileCard a{color:#c5c5c5;font-size:12px;font-weight:600;}
+
+/* Header */ /* 박승현 수정 탑메뉴 높이 조절, height 50px */
+.header{position:relative;width:1040px;height:50px;padding-right:136px;margin:0 auto;z-index:100;}
+.header .logo{position:absolute;top:6px;left:0;}
+
+/* divTopMenu */ /* 박승현 수정 탑메뉴 높이 조절 divTopMenu의 padding 값 조절 */
+#divTopMenu{padding:15px 0 0 353px;}
+#divTopMenu > ul{float:right; margin-right: 50px;} /* 박승현 수정 탑메뉴 우측으로 정렬되어 보이도록 수정 */
+#divTopMenu > ul > li{position:relative;float:left;margin-left:59px;}
+#divTopMenu > ul > li:first-child{margin-left:0;}
+#divTopMenu > ul > li > a{display:inline-block;padding-bottom:18px;color:#383838;font-size:16px;font-weight:600;}
+#divTopMenu > ul > li div{display:none;position:absolute;left:-15px;top:35px;padding:0 1px 1px 0;background:url(../../../../../../bdstyle/admin/image/ko/local/topMenuBg.png) no-repeat right bottom;}
+#divTopMenu > ul > li div ul{background:#fff;border:1px solid #8b847a}
+#divTopMenu > ul > li div ul li{min-width:138px;padding:0 13px;line-height:39px;font-size:13px;font-weight:600;letter-spacing:-0.25px;}
+#divTopMenu > ul > li div ul li a{display:block;border-bottom:1px solid #d1d1d1;color:#666666;}
+#divTopMenu > ul > li div ul li.last a{border-bottom:1px solid #fff;}
+#divTopMenu > ul > li div ul li:first-child{margin-bottom:0;}
+#divTopMenu > ul > li div ul li:first-child a{border-top:none;}
+#divTopMenu > ul > li div ul li:last-child {min-width: 160px;} /* 박승현 수정 탑메뉴 길이에 따른 width 수정 */
+
+/* 메뉴 on */
+#divTopMenu > ul > li.on > a{color:#de7300;}
+#divTopMenu > ul > li.on div{display:block;}
+#divTopMenu > ul > li.on div ul li:hover{background:#5c5252;}
+#divTopMenu > ul > li.on div ul li:hover a{margin-top:-1px;border-top:1px solid #5c5252;border-bottom:1px solid #5c5252;}
+#divTopMenu > ul > li.on div ul li a:hover{color:#ffffff;}
+
+/* wholeMenu */ /* 박승현 수정 탑메뉴 높이 수정, wholeMenuOpen의 top 삭제 */
+.wholeMenuOpen{position:absolute;/*top:47px;*/right:136px;}
+.wholeMenuOpen img{width:20px;height:14px;}
+/* 박승현 수정 wholeMenu의 top 107px -> 50px 수정 */
+.wholeMenu{display:none;position:absolute;top:50px;right:136px;width:1038px;border:1px solid #d6d6d6;background:url(../../../../../../bdstyle/admin/image/ko/local/wholeMenuBg.gif) repeat-y 0 0 #fff;letter-spacing:-0.5px;}
+.wholeMenu > ul > li{position:relative;padding-left:210px;background:url(../../../../../../bdstyle/admin/image/ko/local/wholeMenuLine.png) no-repeat 0 bottom;line-height:50px;height:50px;}
+.wholeMenu > ul > li h3{position:absolute;top:0;left:0;width:163px;margin:0 30px 0 18px;color:#383838;font-size:14px;font-weight:600;}
+.wholeMenu > ul > li ul{overflow:hidden;}
+.wholeMenu > ul > li ul li{float:left;padding-left:13px;margin-left:10px;background:url(../../../../../../bdstyle/admin/image/ko/local/barOff.gif) no-repeat 0 19px;font-size:13px;}
+.wholeMenu > ul > li ul li:first-child{padding-left:0;margin-left:0;background:none;}
+.wholeMenu > ul > li ul li a{color:#666666;}
+.wholeMenu > ul > li.last{background:none;}
+.wholeMenu .wholeMenuClose{width:26px;height:26px;position:absolute;right:-1px;bottom:-1px;}
+
+/* 전체메뉴 hover */
+.wholeMenu.on{display:block;}
+.wholeMenu > ul > li:hover{background:#de7300;border-top:1px solid #de7300;margin-top:-1px;}
+.wholeMenu > ul > li:hover h3{background:url(../../../../../../bdstyle/admin/image/ko/local/wholeMenuArrow.png) no-repeat 152px 20px;}
+.wholeMenu > ul > li:hover h3 a{color:#fff;}
+.wholeMenu > ul > li:hover ul li{background:url(../../../../../../bdstyle/admin/image/ko/local/barOn.gif) no-repeat 0 19px;}
+.wholeMenu > ul > li:hover ul li:first-child{background:none;}
+.wholeMenu > ul > li:hover ul li a{color:#ffffff;}
+.wholeMenu > ul > li:hover ul li a:hover{text-decoration:underline;font-weight:600;}
+
+/* divContents */ /* 박승현 수정 본문 width 1040->1200으로 변경 */
+#divContents{position:relative;width:1200px;min-height:700px;margin:0 auto;padding:0 65px 65px 0;}
+/* 박승현 수정 width 600px -> 1020px 으로 수정 */
+#divContents_info{position:relative;width:1020px;min-height:700px;margin:0 auto;padding:0 65px 65px 0;}
+#divContents_write{position:relative;width:900px;min-height:700px;margin:0 auto;padding:0 65px 65px 0;}
+/* divContent layer 박승현 추가 레이어팝업 모바일사이즈 */
+#divContents #layer {position:relative;width:100%;min-height:700px;margin:0 auto;padding:0 65px 65px 0;}
+
+/* divSearch */
+#divSearch{position:absolute;top:50px;right:136px;}
+#divSearch form{position:relative;width:295px;height:53px;padding:0 53px 0 21px;border:2px solid #933128}
+#divSearch input[type="text"]{width:100%;height:53px;border:none;color:#8a8a8a;font-size:14px;}
+#divSearch input.placeholder{line-height:53px;}
+#divSearch input[type="image"]{position:absolute;top:14px;right:11px;}
+
+/* divTitle divLocation */
+#divTitle{padding:50px 0 6px 0;color:#333333;font-size:30px;font-weight:600;font-family:"나눔고딕", NanumGothic, NG, sans-serif;letter-spacing:-0.25px;}
+#divTitle_info{padding:50px 0 6px 0;color:#333333;margin-left: 300px;font-size:30px;font-weight:600;font-family:"나눔고딕", NanumGothic, NG, sans-serif;letter-spacing:-0.25px;}
+#divLocation{height:20px;margin-bottom:42px;line-height:20px;font-family:"나눔고딕", NanumGothic, NG, sans-serif;letter-spacing:-0.5px;overflow:hidden;}
+#divLocation ul{float:left;}
+#divLocation ul li{float:left;padding-left:15px;margin-left:12px;background:url(../../../../../../bdstyle/admin/image/ko/local/arrow.png) no-repeat 0 4px;color:#6f7581;}
+#divLocation ul li a{color:#6f7581;font-size:14px;}
+#divLocation ul li:first-child{padding-left:0;margin-left:0;background:none;}
+
+/* divTabMenu */
+#divTabMenu{height:40px;margin:43px 0 20px 0;border-bottom:1px solid #8f001c;padding:0}
+#divTabMenu p{display:none}
+#divTabMenu > div{padding:0;background-color:#fff}
+#divTabMenu ul li{float:left;height:39px;margin:0;border:1px solid #bdbdbd;border-left:none;border-bottom:none;background-color:#fff;font-size:16px;line-height:39px}
+#divTabMenu ul li:first-child{border-left:1px solid #bdbdbd}
+#divTabMenu ul li.selected{border:1px solid #8f001c;border-bottom:1px solid #fff}
+#divTabMenu ul li a{display:block;padding:0 28px;background-color:#f4f4f4;color:#888}
+#divTabMenu ul li.selected a{background-color:#fff;color:#8f001c}
+
+/* divQuick */
+#divQuick{position:absolute;top:194px;right:0;width:110px;background:#fff;}
+#divQuick .quickMenu{border:1px solid #8b847a;border-bottom:none;}
+#divQuick .quickMenu h2{padding:15px 0 18px 0;color:#5c5252;font-size:15px;font-weight:600;letter-spacing:-0.25px;text-align:center;}
+#divQuick .quickMenu ul{padding-bottom:27px;}
+#divQuick .quickMenu ul li{margin-top:20px;}
+#divQuick .quickMenu ul li:first-child{margin-top:0;}
+#divQuick .quickMenu ul li a{display:block;padding-left:42px;color:#5c5252;font-size:13px;}
+#divQuick .quickMenu ul li.quick1{background:url(../../../../../../bdstyle/admin/image/ko/local/quick1.png) no-repeat 18px 0;}
+#divQuick .quickMenu ul li.quick2{background:url(../../../../../../bdstyle/admin/image/ko/local/quick2.png) no-repeat 18px 0;}
+#divQuick .quickMenu ul li.quick3{background:url(../../../../../../bdstyle/admin/image/ko/local/quick3.png) no-repeat 18px 0;}
+#divQuick .quickMenu ul li.quick4{background:url(../../../../../../bdstyle/admin/image/ko/local/quick4.png) no-repeat 18px 0;}
+#divQuick .myMenu{position:relative;border:1px solid #8b847a;border-top:none;}
+#divQuick .myMenu h2{height:43px;padding-left:9px;background:#5c5252;color:#f5f7fa;font-size:15px;line-height:43px;font-weight:normal;font-family:"나눔고딕", NanumGothic, NG, sans-serif;}
+#divQuick .myMenu ul{padding-bottom:13px;}
+#divQuick .myMenu ul li{position:relative;padding:13px 26px 0 18px;}
+#divQuick .myMenu ul li a{color:#5c5252;font-size:13px;}
+#divQuick .myMenu ul li a.delete{position:absolute;top:11px;right:7px;}
+#divQuick .myMenu .addMenu{position:absolute;top:12px;right:7px;}
+#divQuick .top{height:29px;margin-top:16px;background:#b9aba2;font-size:12px;font-weight:600;line-height:29px;}
+#divQuick .top a{display:block;padding-left:37px;background:url(../../../../../../bdstyle/admin/image/ko/local/topArrow.png) no-repeat 65px 11px;color:#ffffff;}
+
+/* footer banner */
+.banner{height:57px;background:#e9e9e9;}
+.banner > div{width:1040px;padding-right:136px;margin:0 auto;}
+.banner > div .bannerList{float:left;line-height:57px;}
+.banner > div .bannerList li{float:left;padding-left:68px;background:url(../../../../../../bdstyle/admin/image/ko/local/main/bannerBar.png) no-repeat 26px 22px;}
+.banner > div .bannerList li:first-child{padding-left:0;background:none;}
+.banner > div .bannerList li a img{vertical-align:middle;}
+.banner > div .bannerList li a span{display:none;}
+.banner > div .relatedSite{position:relative;float:right;width:160px;}
+.banner > div .relatedSite > a{display:inline-block;width:143px;height:32px;padding-left:15px;margin-top:12px;border:1px solid #cecece;background:url(../../../../../../bdstyle/admin/image/ko/local/openBg.gif) no-repeat 135px 50% #fff;color:#797878;font-size:12px;line-height:32px;}
+.banner > div .relatedSite ul{display:none;position:absolute;bottom:34px;right:0;width:100%;border-bottom:1px solid #eeeeee;}
+.banner > div .relatedSite ul li{border:1px solid #eeeeee;border-bottom:none;background:#fff;}
+.banner > div .relatedSite ul li a{display:block;padding:8px 15px;color:#797878;font-size:12px;}
+
+/* footer */
+.footer{width:1040px;margin:0 auto;padding:34px 136px 34px 0;color:#9da0ab;}
+.footer .footerMenu{margin-bottom:12px;overflow:hidden;}
+.footer .footerMenu li{float:left;padding-left:13px;margin-left:13px;background:url(../../../../../../bdstyle/admin/image/ko/local/footerbar.gif) no-repeat 0 2px;font-size:13px;}
+.footer .footerMenu li a{color:#9da0ab;}
+.footer .footerMenu li:first-child{padding-left:0;margin-left:0;}
+.footer .footerMenu li.privacy a{color:#fff;}
+.footer address{clear:left;margin-bottom:4px;font-size:12px;letter-spacing:0.25px;}
+.footer .copyright{font-size:12px;letter-spacing:0.25px;}
+.footer .copyrightM{display:none;font-size:12px;}

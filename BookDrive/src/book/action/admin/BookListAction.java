@@ -21,12 +21,12 @@ public class BookListAction implements Action {
 		ArrayList<String> bookStateList = new ArrayList<>(); //책 상태플래그(selectBox)
 		String stateName[] = {"대출가능", "대출중", "예약중", "관외보유", "관외대출", "관외예약", "대출+예약", "대출+관외예약", "관외대출+관외예약"};
 		String libCode = request.getParameter("libcode") != null ? request.getParameter("libcode") : "";
+		String search = request.getParameter("search") != null ? request.getParameter("search") : "";
 		String bookState = request.getParameter("bookstate") != null ? request.getParameter("bookstate") : "";
 		if (!bookState.equals("")) { //jsp의 status.index가 0은 빈값으로 인식하기 때문에 status.index+1 처리를 하였기 때문에 java에서 -1 해줘야함
 			bookState = String.valueOf((Integer.parseInt(bookState) - 1));
 		}
 		String keyword = request.getParameter("keyword") != null ? request.getParameter("keyword") : "";
-		System.out.println("bookState : " + bookState);
 		int nowPage = 1; //디폴트(첫페이지)
 		int limit = 10; //페이지에 보여줄 목록 수
 		int limitPage=10; //페이지 수
@@ -36,9 +36,9 @@ public class BookListAction implements Action {
 		}
 		
 		BookListService bookListService = new BookListService();
-		int listCount = bookListService.getListCount(libCode, keyword, bookState); //총 리스트 수를 받아옴 (총 글 갯수)
+		int listCount = bookListService.getListCount(libCode, search, keyword, bookState); //총 리스트 수를 받아옴 (총 글 갯수)
 		libNameList = bookListService.selectLibNameList();
-		bookList = bookListService.selectBookList(nowPage, limit, libCode, keyword, bookState);
+		bookList = bookListService.selectBookList(nowPage, limit, libCode, search, keyword, bookState);
 		for (int i = 0; i < 8; i++) {
 			bookStateList.add(stateName[i]);
 		}

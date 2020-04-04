@@ -1,9 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<script type="text/javascript"
-	src="./상세정보 _ 경일대학교 도서관_files/cookie.js.다운로드" charset="utf-8"></script>
-
+<script src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
 <link rel="stylesheet" type="text/css"
 	href="bdstyle/style/ko/home/detail.css">
 <link rel="stylesheet" type="text/css"
@@ -193,6 +193,7 @@ href="bdstyle/style/ko/home/toastr.min.css">
 					</div>
 					<div class="searchContents">
 						<div class="mediaContent">
+
 							<h4 class="skip">카카정보 미리보기</h4>
 							<div class="brief" id="kakaoBrief"></div>
 							<p class="bookintroLink" id="kakaoLink">
@@ -239,6 +240,7 @@ href="bdstyle/style/ko/home/toastr.min.css">
 					})
 				}
 				
+
 				$(document).ready(function() {
 					selectBook(${book.ISBN});
 				});
@@ -266,9 +268,9 @@ href="bdstyle/style/ko/home/toastr.min.css">
 					});
 				}
 				
+
 				</script>
 			</div>
 		</div>
 	</div>
 </div>
-

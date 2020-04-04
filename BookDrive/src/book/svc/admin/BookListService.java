@@ -10,23 +10,23 @@ import book.dao.admin.BookDAO;
 import vo.admin.Book;
 
 public class BookListService {
-	public int getListCount(String libCode, String keyword, String bookState) throws Exception { //페이징에 사용
+	public int getListCount(String libCode, String search, String keyword, String bookState) throws Exception { //페이징에 사용
 		int listCount = 0;
 		Connection con = getConnection();
 		BookDAO bookDAO = BookDAO.getInstance();
 		bookDAO.setConnection(con);
-		listCount = bookDAO.selectBookListCount(libCode, keyword, bookState); //전체 글 갯수를 가져옴
+		listCount = bookDAO.selectBookListCount(libCode, search, keyword, bookState); //전체 글 갯수를 가져옴
 		if (con != null) close(con);
 		return listCount;
 	}
 	
-	public ArrayList<Book> selectBookList(int page, int limit, String libCode, String keyword, String bookState) {
+	public ArrayList<Book> selectBookList(int page, int limit, String libCode, String search, String keyword, String bookState) {
 		// TODO Auto-generated method stub
 		ArrayList<Book> bookList = null;
 		Connection con = getConnection();
 		BookDAO bookDAO = BookDAO.getInstance();
 		bookDAO.setConnection(con);
-		bookList = bookDAO.getBookList(page, limit, libCode, keyword, bookState);
+		bookList = bookDAO.getBookList(page, limit, libCode, search, keyword, bookState);
 		if (con != null) close(con);
 		return bookList;
 	}

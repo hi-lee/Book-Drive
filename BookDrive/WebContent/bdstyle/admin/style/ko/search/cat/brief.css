@@ -6,7 +6,7 @@
 #divContents{overflow:hidden}
 
 /* 검색 영역 */ /* 박승현 수정 .dataSearch width 650px -> 80%  height 80px -> 삭제 */
-.dataSearch {position:relative;width:80%;margin:0 auto;text-align:center;padding:10px 0 20px 0}
+.dataSearch {position:relative;width:100%;margin:0 auto;text-align:center;padding:10px 0 20px 0}
 .dataSearch form {float:left;overflow:hidden}
 .dataSearch fieldset {float:left;}
 .dataSearch .searchSelect {margin-bottom:10px;text-align:left}
@@ -322,7 +322,7 @@ select.searchOpt2 {height:35px}
 /* 박승현 수정 .detailInfo display:none 삭제 */
 .resultList.resultDetail .detailInfo {/*display:none; */margin-bottom: 5px;}
 /* 박승현 추가 .holdingInfo margin-left 50px -> 20px 수정 */
-.resultList.resultDetail .holdingInfo {clear:both;position:relative;margin-top:20px;margin-bottom:5px;margin-left:20px !important}
+.resultList.resultDetail .holdingInfo {clear:both;position:relative;margin-top:20px;margin-bottom:5px;margin-left:30px !important}
 .resultList.resultDetail .holdingInfo a {display:inline-block;}
 @media screen and (min-width:0px) and (max-width:767px){
 	.resultList.resultDetail .items dl dd.seriesName{margin-right:0}

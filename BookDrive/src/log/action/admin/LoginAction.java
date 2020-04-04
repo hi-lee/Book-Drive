@@ -43,7 +43,6 @@ public class LoginAction implements Action {
 				session.setAttribute("index", admin.getAdminNum()); //관리자번호 세션값 
 				session.setAttribute("adminCheck", true); //통합관리자 로그인 세션값
 				session.setMaxInactiveInterval(3600);
-//				request.setAttribute("pagefile", "/member/admin_main.jsp");
 				forward = new ActionForward();
 				forward.setPath("Adminmain.logC");
 			}

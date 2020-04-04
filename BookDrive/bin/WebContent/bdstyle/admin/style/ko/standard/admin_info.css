@@ -1,0 +1,60 @@
+@charset "UTF-8";
+/* 상세정보 Table CSS */
+.member_table_view {border-top:2px solid #000;}
+.member_table_view table {width:100%; border-collapse:collapse; border-spacing:0;}
+.member_table_view table th,
+.member_table_view table td {padding:15px; border-bottom:1px solid #ddd; background:#fff}
+.member_table_view table th {background:#eee; border-right:1px solid #ddd; font-weight:bold; color:#000}
+/* 박승현 추가 정보수정 전용 */
+.member_table_info_view {width: 100%; margin: 0 auto; border-top: 1px solid #eee;}
+.member_table_info_view table {width:100%; border-collapse:collapse; border-spacing:0;}
+.member_table_info_view table th,
+.member_table_info_view table td {padding:15px; border-bottom:1px solid #ddd; background:#fff}
+.member_table_info_view table th {background:#eee; border-right:1px solid #ddd; font-weight:bold; color:#000}
+/* 박승현 추가 게시판 글작성 전용 */
+.board_table_write_view {width: 100%; margin: 0 auto; border-top: 1px solid #eee;}
+.board_table_write_view table {width:100%; border-collapse:collapse; border-spacing:0;}
+.board_table_write_view table th,
+.board_table_write_view table td {padding:15px; border-bottom:1px solid #ddd; background:#fff}
+.board_table_write_view table th {background:#eee; border-right:1px solid #ddd; font-weight:bold; color:#000}
+/* 박승현 수정 text-align center 추가 */
+.info_list table th,
+.info_list table td {text-align:center;}
+/* 박승현 추가 책 상세정보 레이어 팝업 추가 */
+.layer {
+    position: fixed;
+    width: 70%;
+    left: 50%;
+    margin-left: -35%; /* half of width */
+    height: 500px;
+    top: 50%;
+    margin-top: -240px; /* half of height */
+    overflow: auto;
+    z-index: 9001;
+	
+    /* decoration */
+    border: 1px solid #000;
+    background-color: #fff;
+    padding: 1em;
+    box-sizing: border-box;
+}
+@media (max-width: 600px;) {
+	.layer {
+		width: 80%;
+		margin-left: -40%;
+	}
+}
+.hidden {
+	display: none;
+}
+/* 박승현 추가 레이어 팝업 생성시 주변을 까맣게 */
+#black_mask {
+	position:fixed;
+	width: 100%;
+	height: 100%;
+	left:0;
+	top:0;
+	z-index:9000;  
+	background:rgba(0, 0, 0, 0.7) repeat;  
+	display:none;
+}

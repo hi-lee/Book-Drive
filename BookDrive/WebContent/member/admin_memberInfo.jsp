@@ -1,8 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <jsp:include page="../bdstyle/admin/include/admin_loginCheck.jsp"/>
-<%@page import="java.util.*"%>
-<%@page import="vo.admin.Library"%>
 <link rel="stylesheet" href="bdstyle/admin/style/ko/thema/mobile/admin_mobiletable.css" media="screen and (max-width:767px)">
 <link rel="stylesheet" type="text/css" href="bdstyle/admin/style/ui/jquery.ui.custom.css">
 <link rel="stylesheet" type="text/css" href="bdstyle/admin/style/ko/standard/admin_info.css">
@@ -15,14 +13,14 @@
 <!-- Toastr 관련 -->
 <script type="text/javascript" src="bdstyle/admin/js/common/toastr.min.js"></script>
 <link rel="stylesheet" type="text/css" href="bdstyle/admin/style/ui/toastr/toastr.min.css">
-<!-- [통합관리자] 도서관 관리자 가입신청을 출력하는 페이지 -->
+<!-- [통합관리자] 일반회원 상세정보를 출력하는 페이지 -->
 <div id="divContentsW">
 	<div id="divContents">
-		<h2 id="divTitle">일반회원 정보</h2>
+		<h2 id="divTitle">일반회원 상세정보</h2>
 		<div id="divLocation">
 			<ul>
 				<li><a href="Adminmain.logC" title="HOME"><img src="bdstyle/admin/image/ko/local/home.png" alt="HOME"></a></li>
-				<li><a href="MemberList.memA">회원정보</a></li><li><a href="MemberInfo.memA">일반회원 정보</a></li>
+				<li><a>회원관리</a></li><li><a href="MemberList.memA">일반회원 상세정보</a></li>
 			</ul>
 		</div>
 		<h2 style="margin: 28px 0 14px 0;color:#4b4b4b;font-size:16px;font-weight:600;">회원정보</h2>
@@ -150,7 +148,7 @@
 		</div>
 		<div class="buttons">
 			<a href="MemberModifyForm.memA?index=${member.memIndex}&id=${member.memId}">회원정보수정</a>
-			<a href="javascript:deleteMember(${member.memIndex}, '${member.memName}');">회원삭제</a>
+			<a href="javascript:deleteMember(${member.memIndex}, '${member.memName}');">회원정보삭제</a>
 			<a href="MemberList.memA">목록</a>
 		</div>
 	</div>
