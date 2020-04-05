@@ -42,9 +42,11 @@ public class BookDAO {
 		int listCount = 0;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		
+		String searchSQL = " and " + flag + " like '%" + keyword + "%'";
+		if (flag.equals("ISBN") && !keyword.equals("")) searchSQL = " and " + flag + " = '" + keyword + "'";
+		if (flag.equals("bookNum") && !keyword.equals("")) searchSQL = " and " + flag + " = '" + keyword + "'";
 		String query = "SELECT count(*) FROM bookInfo where libCode = '" + libCode + "'"; //1차, 도서관코드
-		query = !flag.equals("") ? query + " and " + flag + " like '%" + keyword + "%'" : query + ""; //2차, flag(도서이름, 도서번호, ISBN)
+		query = !flag.equals("") ? query + searchSQL : query + ""; //2차, flag(도서이름, 도서번호, ISBN)
 		query = !bookState.equals("") ? query + " and bookState = '" + bookState + "'" : query + "";
 		System.out.println("페이징 카운트 쿼리 : " + query);
 		try {
@@ -71,13 +73,15 @@ public class BookDAO {
 		ArrayList<Book> bookList = new ArrayList<>();
 		Book book = null;
 		int startrow = (page - 1) * limit; //읽기 시작할 row 번호(넘어온 페이지값에 limit를 곱한 값이 되어야 함)
+		String searchSQL = " where a." + flag + " like '%" + keyword + "%'";
+		if (flag.equals("ISBN") && !keyword.equals("")) searchSQL = " where a." + flag + " = '" + keyword + "'";
+		if (flag.equals("bookNum") && !keyword.equals("")) searchSQL = " where a." + flag + " = '" + keyword + "'";
 		String query = "select * from (" + 
 						"SELECT @rownum := @rownum + 1 AS rownum, a.*, b.libName" + 
 						" FROM bookInfo AS a" + 
-						" JOIN library AS b ON a.libCode = b.libCode, (SELECT @rownum:=0) tmp" +
-//						" where a.bookName like '%" + keyword + "%' and a.libCode like '%" + libCode + "%' and a.bookState like '%" + bookState + "%') as a";
-						" where a." + flag + " like '%" + keyword + "%' and a.libCode like '%" + libCode + "%' and a.bookState like '%" + bookState + "%') as a";
-//			query += " limit " + startrow + ", " + limit;
+						" JOIN library AS b ON a.libCode = b.libCode, (SELECT @rownum:=0) tmp";
+		query += searchSQL;
+		query += " and a.libCode like '%" + libCode + "%' and a.bookState like '%" + bookState + "%') as a";
 		query += " where rownum >= " + (startrow + 1) + " and rownum <= " + (page * limit);
 		System.out.println("Query : " + query);
 		try {

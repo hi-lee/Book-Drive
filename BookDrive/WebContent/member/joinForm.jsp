@@ -20,7 +20,9 @@ function doubleSubmitCheck(){
 }
 var chkId = false;
 function chkForm(f){
-
+	
+	var userCheck = $('input[type=radio][name=userCheck]:checked').val(); //도서관관리자 가입시 생년월일, 차번호, 주소는 값이 없어도 넘어가도록
+	
 	var birth = f.userBirth.value;
 	var mail1 = f.userEmailId.value;
 	var mail2 = f.userEmailAd.value;
@@ -65,10 +67,12 @@ function chkForm(f){
 		f.userPhone.focus();
 		return false;
 	}
-	if (!reg_birth.test(birth)) {
-		alert("올바른 형식이 아닙니다.");
-		f.userBirth.focus();
-		return false;
+	if (userCheck=="member") { //일반사용자 가입일때만 체크
+		if (!reg_birth.test(birth)) {
+			alert("올바른 형식이 아닙니다.");
+			f.userBirth.focus();
+			return false;
+		}
 	}
 	if (!reg_email1.test(mail1)) {
 		alert("올바른 이메일 주소가 아닙니다.");
@@ -85,20 +89,26 @@ function chkForm(f){
 		f.userPhone.focus();
 		return false;
 	}
-	if(f.userZip.value.length!=5){
-		alert("다섯자리 (신)우편번호를 입력해주세요.");
-		f.userAddr1.focus();
-		return false;
+	if (userCheck=="member") {
+		if(f.userZip.value.length!=5){
+			alert("다섯자리 (신)우편번호를 입력해주세요.");
+			f.userAddr1.focus();
+			return false;
+		}
 	}
-	if(f.userAddr1.value.trim()==""){
-		alert("주소는 필수항목입니다.");
-		f.userAddr1.focus();
-		return false;
+	if (userCheck=="member") {
+		if(f.userAddr1.value.trim()==""){
+			alert("주소는 필수항목입니다.");
+			f.userAddr1.focus();
+			return false;
+		}
 	}
-	if(f.userAddr2.value.trim()==""){
-		alert("주소는 필수항목입니다.");
-		f.userAddr2.focus();
-		return false;
+	if (userCheck=="member") {
+		if(f.userAddr2.value.trim()==""){
+			alert("주소는 필수항목입니다.");
+			f.userAddr2.focus();
+			return false;
+		}
 	}
 	if(req == true){
 		num = 1;
@@ -134,10 +144,16 @@ function selectEmail(sel) {
 				
 	<label for="memCheck">회원구분 </label><br><br>
 	<div id="memCheck">
-		<input type="radio" name="userCheck" value="일반  " checked="checked" id="userCheck"/>&nbsp;일반 사용자  &nbsp;&nbsp;&nbsp;&nbsp;
-		<input type="radio" name="userCheck" value="관리자 ">&nbsp;관리자 
+		<input type="radio" name="userCheck" value="member" checked="checked" id="userCheck"/>&nbsp;일반 사용자  &nbsp;&nbsp;&nbsp;&nbsp;
+		<input type="radio" name="userCheck" value="admin">&nbsp;도서관리자 
 		<hr color="#dcccac">
-	</div><br><br>
+	</div>
+	<select id="si1" name="libcode" title="도서관 선택" class="searchOpt1 selectBox">
+		<option value="LIB001">대구광역시립두류도서관</option>
+		<option value="LIB002">대구광역시립남부도서관</option>
+		<option value="LIB003">구미시립중앙도서관</option>
+	</select>
+	<br><br>
 	<label for="userID">아이디</label>
 	<input type="text" name="userID" id="userID" placeholder="6~20자 영문자 또는 영문자+숫자" class="input100">
 	<button class="input100" name="check" id="check" type="button"
@@ -175,7 +191,7 @@ function selectEmail(sel) {
 	</span>
 	<label for="userAddr">주소</label><br>
 	<input type="text" name="userZip" id="userZip" size="7" />
-	<button type="button" onclick="sample6_execDaumPostcode()">주소검색</button><br>
+	<button type="button" name="userAddrButton" onclick="sample6_execDaumPostcode()">주소검색</button><br>
 	<input type="text" name="userAddr1" id="userAddr1" class="input100"/ placeholder="주소">
 	<input type="text" name="userAddr2" id="userAddr2" class="input100"/ placeholder="상세주소">
 	<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
@@ -229,7 +245,7 @@ function selectEmail(sel) {
 		placeholder="ex)01나4243" class="input100"/>
 		<br>
 		<p style="font-size:12px;">개인정보 수집 및 이용 동의</p>
-		<textarea id="use" rows="10" cols="56" readonly>
+		<textarea id="use" rows="10" cols="56" readonly style="width:98%;">
 1. 개인정보 수집목적 및 이용목적
 
 가. 서비스 제공에 관한 계약 이행 및 서비스 제공에 따른 
@@ -289,3 +305,33 @@ o 로그 기록
 		</div>
 	</div>
 </div>
+<script>
+$('#si1').hide();
+$('input[type=radio][name=userCheck]').change(function() {
+	if (this.value == 'admin') {
+		$('label[for=userBirth]').hide();
+		$('#userBirth').hide();
+		$('label[for=userAddr]').hide();
+		$('button[name=userAddrButton]').hide();
+		$('#userZip').hide();
+		$('#userAddr1').hide();
+		$('#userAddr2').hide();
+		$('label[for=userCarNum]').hide();
+		$('#userCarNum').hide();
+		$('#si1').show();
+	} else {
+		$('label[for=userBirth]').show();
+		$('#userBirth').show();
+		$('label[for=userAddr]').show();
+		$('button[name=userAddrButton]').show();
+		$('#userZip').show();
+		$('#userAddr1').show();
+		$('#userAddr2').show();
+		$('label[for=userCarNum]').show();
+		$('#userCarNum').show();
+		$('#si1').hide();
+	}
+});
+	//$('label[for="userPass"]').hide();
+	//$('#userPass').hide();
+</script>

@@ -190,4 +190,26 @@ public class MemberDAO {
 		}
 		return member;
 	}
+
+	public int insertAdmin(Member member, String libcode) { //도서관관리자 가입
+		// TODO Auto-generated method stub
+		PreparedStatement pstmt = null;
+		int insertCount = 0;
+		try {
+			pstmt = con.prepareStatement("insert into admin values(0, ?, ?, ?, ?, ?, ?, 'L', 'NO')");
+			pstmt.setString(1, libcode);
+			pstmt.setString(2, member.getId());
+			pstmt.setString(3, member.getPassword());
+			pstmt.setString(4, member.getName());
+			pstmt.setString(5, member.getTel());
+			pstmt.setString(6, member.getEmail());
+			insertCount = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			System.out.println("adminJoin 에러 : " + e);
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		return insertCount;
+	}
 }

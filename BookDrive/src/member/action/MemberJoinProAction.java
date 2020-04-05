@@ -18,6 +18,7 @@ public class MemberJoinProAction implements Action {
 		request.setCharacterEncoding("UTF-8");
 		Member member = new Member();
 		ActionForward forward = null;
+		boolean joinResult = false;
 		member.setId(request.getParameter("userID"));
 		member.setPassword(request.getParameter("userPass"));
 		member.setName(request.getParameter("userName"));
@@ -29,8 +30,14 @@ public class MemberJoinProAction implements Action {
 		member.setAddr2(request.getParameter("userAddr2"));
 		member.setCarNum(request.getParameter("userCarNum"));		
 		
-		MemberJoinProSvc memberJoinProSvc = new MemberJoinProSvc();
-		boolean joinResult = memberJoinProSvc.memberJoin(member);
+		if (request.getParameter("userCheck").equals("member")) { //일반사용자 가입
+			MemberJoinProSvc memberJoinProSvc = new MemberJoinProSvc();
+			joinResult = memberJoinProSvc.memberJoin(member);
+		} else { //도서관관리자 가입
+			String libcode = request.getParameter("libcode");
+			MemberJoinProSvc memberJoinProSvc = new MemberJoinProSvc();
+			joinResult = memberJoinProSvc.adminJoin(member, libcode);
+		}
 		
 		System.out.println(request.getParameter("userID") + joinResult);
 		

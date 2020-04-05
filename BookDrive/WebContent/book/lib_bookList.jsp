@@ -78,7 +78,7 @@
 								<div class="listInfo1">
 									<div class="breifPaging">
 										<span class="current">${pageinfo.nowPage * 10 - 9}</span> - ${pageinfo.nowPage * 10} <a
-											href="BookList.bookA?page=${pageinfo.nowPage+1}&libcode=${param.libcode}&keyword=${param.keyword}"
+											href="BookList.bookL?page=${pageinfo.nowPage+1}&libcode=${param.libcode}&keyword=${param.keyword}"
 											class="lastPage" title="다음페이지로"><img
 											src="bdstyle/admin/image/ko/solution/common/btn/breifLast.png"
 											alt="다음페이지로"></a>
@@ -89,6 +89,9 @@
 						<!-- //listInfo -->
 						</div>
 						<!-- 책 리스트 출력 부분 -->
+						<c:if test="${empty bookList}">
+							<h2 style="text-align:center;">검색결과가 없습니다.</h2>
+						</c:if>
 						<c:set var="replace_hilight" value="<span class=hilight>${param.keyword}</span>"/>
 						<c:forEach var="booklist" items="${bookList}" varStatus="status">
 							<!-- 카테고리 변경부분 -->
