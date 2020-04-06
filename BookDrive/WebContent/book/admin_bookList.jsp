@@ -47,7 +47,7 @@
 		<div id="divContent">
 			<div class="searchBrief">
 				<!-- 시작 -->
-				<!-- git테스트0 -->
+				<!-- git테스트1 -->
 				<div class="dataSearch">
 					<form name="refineSearch" method="get" action="BookList.bookA">
 						<fieldset>
