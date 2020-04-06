@@ -79,12 +79,9 @@
 				<form class="login-form" id="loginform" name="loginform"
 					action="login.log" method="post" onsubmit="return chkForm(this)"><br>
 					<div id="header">
-					<img src="bdstyle/image/ko/solution/common/bkicon.png" width="30px"><h3>Book-Drive</h3></div>
+					<img src="bdstyle/image/mainlogo.png" height="40px"></div>
 					<br>
 					<br>
-					<!--  a href="/FarmParm/main.im" id="logo"><img src="../images/farm_logo.png" width="150px"></a><br><br>							
-					<input type="hidden" id="returnURI" name="returnURI" value="http://118.131.179.138/FarmParm/main.im">
-				 -->
 
 					<input type="text" id="userID" name="userID" placeholder="아이디"
 						maxlength="20" class="input100" value="" /> <input type="password"

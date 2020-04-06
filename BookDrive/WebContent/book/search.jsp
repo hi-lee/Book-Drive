@@ -6,20 +6,23 @@
 <link rel="stylesheet" type="text/css"
 	href="bdstyle/style/ko/home/advanced.css">
 <style>
-#divContents{position:relative;width:1040px;min-height:700px;margin:0 auto;padding:0 0 65px 0;}
+#divContents {
+	position: relative;
+	width: 1040px;
+	min-height: 700px;
+	margin: 0 auto;
+	padding: 0 0 65px 0;
+}
 </style>
 
 <div id="divContentsW">
 	<div id="divContents">
-		<script type="text/javascript" src="./소장자료검색_files/cookie.js"
-			charset="utf-8"></script>
-
 		<h2 id="divTitle">소장자료검색</h2>
 
 		<div id="divLocation">
 			<ul>
-				<li><a href="template_main.jsp" title="HOME"> <img src="bdstyle/image/ko/local/home.png"
-						alt="HOME"></a></li>
+				<li><a href="template_main.jsp" title="HOME"> <img
+						src="bdstyle/image/ko/local/home.png" alt="HOME"></a></li>
 				<li><a href="#">소장자료검색</a></li>
 				<li><a href="#">전체</a></li>
 			</ul>
@@ -31,6 +34,7 @@
 			<div class="advancedSearch">
 				<form id="search" action="bookSearchPro.bk" name="search"
 					method="get">
+					<input type="hidden" name="index" value="${sessionScope.userIndex}">
 					<!-- 디지털컬렉션 파라미터  -->
 					<fieldset>
 						<legend>통합검색 </legend>
@@ -48,63 +52,14 @@
 								onfocus="setTextObj(this)"
 								class="inputTextType1 inputSearchKeyword" title="검색어를 입력하세요">
 						</div>
-			</div>
 
-			<div class="searchLimit">
-				<dl class="searchLimitSelect">
-					<dt>분류유형</dt>
-					<dd>
-						<ul>
-							<li><input id="lmt0tot" name="category"
-								onclick="toggleCheckbox(this, document.search)" type="checkbox"
-								value="TOTAL" checked="checked"> <label for="lmt0tot">전체</label></li>
 
-							<li><input id="lmt00" name="category"
-								onclick="toggleCheckbox(this, document.search)" type="checkbox"
-								value="0"> <label for="lmt00">총류</label></li>
-
-							<li><input id="lmt02" name="category"
-								onclick="toggleCheckbox(this, document.search)" type="checkbox"
-								value="1"> <label for="lmt02">철학</label></li>
-
-							<li><input id="lmt04" name="category"
-								onclick="toggleCheckbox(this, document.search)" type="checkbox"
-								value="2"> <label for="lmt04">종교</label></li>
-
-							<li><input id="lmt06" name="category"
-								onclick="toggleCheckbox(this, document.search)" type="checkbox"
-								value="3"> <label for="lmt06"> 사회과학</label></li>
-
-							<li><input id="lmt016" name="category"
-								onclick="toggleCheckbox(this, document.search)" type="checkbox"
-								value="4"> <label for="lmt016">순수과학</label></li>
-
-							<li><input id="lmt016" name="category"
-								onclick="toggleCheckbox(this, document.search)" type="checkbox"
-								value="5"> <label for="lmt016">기술과학</label></li>
-							<li><input id="lmt016" name="category"
-								onclick="toggleCheckbox(this, document.search)" type="checkbox"
-								value="6"> <label for="lmt016">예술</label></li>
-							<li><input id="lmt016" name="category"
-								onclick="toggleCheckbox(this, document.search)" type="checkbox"
-								value="7"> <label for="lmt016">언어</label></li>
-							<li><input id="lmt016" name="category"
-								onclick="toggleCheckbox(this, document.search)" type="checkbox"
-								value="8"> <label for="lmt016">문학</label></li>
-							<li><input id="lmt016" name="category"
-								onclick="toggleCheckbox(this, document.search)" type="checkbox"
-								value="9"> <label for="lmt016">역사 </label></li>
-						</ul>
-					</dd>
-				</dl>
-
-			</div>
-
-			</fieldset>
-			<div class="buttons">
-				<input type="submit" value="검색" title="검색" class="searchBtn">
-				<a href="#" title="검색 History">검색 History</a> <input id="resetAll"
-					type="button" value="다시쓰기" title="다시쓰기">
+					</fieldset>
+					<div class="buttons">
+						<input type="submit" value="검색" title="검색" class="searchBtn">
+						<a href="SearchHistory.bk" title="검색 History">검색 History</a> <input
+							id="resetAll" type="button" value="다시쓰기" title="다시쓰기">
+					</div>
 			</div>
 			</form>
 		</div>

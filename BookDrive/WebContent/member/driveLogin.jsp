@@ -15,8 +15,10 @@
 	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0
 		rgba(0, 0, 0, 0.24);
 }
+
 #divContentsW {
-	padding-bottom: 105px;
+	padding-bottom: 0;
+	min-height:0;
 }
 </style>
 <script>
@@ -66,22 +68,28 @@
 </script>
 <!-- 컨텐츠 영역 시작  -->
 <div id="divContentsW">
-	<h2 id="divTitle"><br></h2>
-	<div class="login-page">
-		<div class="form">
-			<form class="login-form" id="loginform" name="loginform"
-				action="driveLogin.log" method="post" onsubmit="return chkForm(this)">
-				<div id="header">
-					<hr color="#4CAF50">
-					<h3>회원인증</h3>
-					<br><br>
-				</div>
-				<input type="text" id="memIndex" name="memIndex"
-					placeholder="회원번호 또는 차량번호 입력" maxlength="20" class="input100"
-					value="" />
-				<button type="submit" class="input100">회원인증</button>
-				<br> <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			</form>
+	<div id="divContents">
+		<h2 id="divTitle">
+			<br>
+		</h2>
+		<div class="login-page">
+			<div class="form">
+				<form class="login-form" id="loginform" name="loginform"
+					action="driveLogin.log" method="post"
+					onsubmit="return chkForm(this)">
+					<div id="header">
+						<hr color="#4CAF50">
+						<h3>회원인증</h3>
+						<br>
+						<br>
+					</div>
+					<input type="text" id="memIndex" name="memIndex"
+						placeholder="회원번호 또는 차량번호 입력" maxlength="20" class="input100"
+						value="" />
+					<button type="submit" class="input100">회원인증</button>
+					<br> <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				</form>
+			</div>
 		</div>
 	</div>
 </div>

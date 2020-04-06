@@ -287,6 +287,7 @@ public class BookDAO {
 			}
 
 		} else { // usage==null(관내)일때
+			return_sql = "update bookInfo set bookState = ";
 			if (state.equals("6")) { // 6:대출+예약 > 반납 > 2:예약중
 				return_sql += "2 where bookNum = ?";
 			} else if (state.equals("2")) { // 2:예약중 > 대출 > 1:대출중
@@ -435,9 +436,9 @@ public class BookDAO {
 		ResultSet rs = null;
 		ArrayList<Cart> cartList = new ArrayList<Cart>();
 		Cart cart = null;
+		String cart_sql = "select * from cart left join bookInfo on cart.bookNum = bookInfo.bookNum where memIndex = ?";
 		try {
-			pstmt = con.prepareStatement(
-					"select * from cart left join bookInfo on cart.bookNum = bookInfo.bookNum where memIndex = ?");
+			pstmt = con.prepareStatement(cart_sql);
 			pstmt.setString(1, memIndex);
 			rs = pstmt.executeQuery();
 

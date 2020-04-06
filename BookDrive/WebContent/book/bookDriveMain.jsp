@@ -7,13 +7,12 @@
 .input100 {
 	width: 30%;
 	font-family: 'NanumBarunGothic', sans-serif;
-	font-weight: 700;
+	font-weight: 200;
 	text-transform: uppercase;
 	outline: 0;
-	background: #dcccac;
-	border: 0;
+	border: 3px solid #dcccac;
 	padding: 70px;
-	color: #FFFFFF;
+	color: #4c4c4c;
 	font-size: 30px;
 	-webkit-transition: all 0.3 ease;
 	transition: all 0.3 ease;

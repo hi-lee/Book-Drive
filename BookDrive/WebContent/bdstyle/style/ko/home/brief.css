@@ -300,7 +300,7 @@ select.searchOpt2 {height:35px}
 .resultList.resultDetail .book img {width:96px;height:133px;border:1px solid #e6e6e6}
 .resultList.resultDetail .book .selectBtn {position:absolute;top:14px;right:25px;text-align:center}
 .resultList.resultDetail .items dl dd{margin-bottom: 5px;margin-left:170px}
-.resultList.resultDetail .items dl dd.dataCheck{float:left;display:inline-block;margin:0 15px 0 0}
+.resultList.resultDetail .items dl dd.dataCheck{float:left;display:inline-block;margin:0 15px 0 30px}
 .resultList.resultDetail .items dl dd.dataCheck input{vertical-align:bottom}
 .resultList.resultDetail .items dl dd.num {position: relative; ;top:3px;display:inline-block;color:#1a1a1a;font-size:14px; float: left;margin-left:0}
 .resultList.resultDetail .items dl dd.title {position:relative;left:0;margin-right:70px;overflow:hidden;font-size:16px;color:#1a1a1a;line-height:1.2;font-weight:normal}
