@@ -13,6 +13,8 @@ import book.action.admin.BookBrwListAction;
 import book.action.admin.BookInfoAction;
 import book.action.admin.BookListAction;
 import book.action.admin.BookModifyStateAction;
+import book.action.admin.BookOutBrwListAction;
+import book.action.admin.BookOutRevListAction;
 import book.action.admin.BookRevListAction;
 import vo.admin.ActionForward;
 import vo.admin.Action;
@@ -66,6 +68,20 @@ public class BookController extends javax.servlet.http.HttpServlet
 			}
 		} else if(command.equals("/BookBrwList.bookA")){ //도서 대출내역
 			action = new BookBrwListAction();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if(command.equals("/BookOutBrwList.bookA")){ //도서 관외대출내역
+			action = new BookOutBrwListAction();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if(command.equals("/BookOutRevList.bookA")){ //도서 관외예약내역
+			action = new BookOutRevListAction();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {

@@ -1,8 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <jsp:include page="../bdstyle/admin/include/admin_loginCheck.jsp"/>
-<%@page import="java.util.*"%>
-<%@page import="vo.admin.Library"%>
 <link rel="stylesheet" href="bdstyle/admin/style/ko/thema/mobile/admin_mobiletable.css" media="screen and (max-width:767px)">
 <link rel="stylesheet" type="text/css" href="bdstyle/admin/style/ko/standard/admin_list.css">
 <link rel="stylesheet" type="text/css" href="bdstyle/admin/style/ko/svp/bbs/admin_list.css">
@@ -19,14 +17,14 @@
 	font-weight: bold;
 }
 </style>
-<!-- [통합관리자] 도서관 관리자 가입신청을 출력하는 페이지 -->
+<!-- [통합관리자] 일반회원 목록을 출력하는 페이지 -->
 <div id="divContentsW">
    <div id="divContents">
-<h2 id="divTitle">일반회원 리스트</h2>
+<h2 id="divTitle">일반회원 목록</h2>
 <div id="divLocation">
 	<ul>
-		<li><a href="https://cham.kiu.ac.kr/" title="HOME"><img src="bdstyle/admin/image/ko/local/home.png" alt="HOME"></a></li>
-		<li><a>회원정보</a></li><li><a href="MemberList.memA">일반회원 리스트</a></li>
+		<li><a href="Adminmain.logC" title="HOME"><img src="bdstyle/admin/image/ko/local/home.png" alt="HOME"></a></li>
+		<li><a>회원관리</a></li><li><a href="javascript:void();">일반회원 목록</a></li>
 	</ul>
 </div>
 <div id="divContent">

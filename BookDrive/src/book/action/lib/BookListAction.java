@@ -32,8 +32,10 @@ public class BookListAction implements Action {
 		int limit = 10; //페이지에 보여줄 목록 수
 		int limitPage=10; //페이지 수
 		
-		if (!request.getParameter("page").equals("") && request.getParameter("page") != null) {
-			nowPage = Integer.parseInt(request.getParameter("page"));
+		if (request.getParameter("page") != null) {
+			if (!request.getParameter("page").equals("")) {
+				nowPage = Integer.parseInt(request.getParameter("page"));
+			}
 		}
 		
 		BookListService bookListService = new BookListService();

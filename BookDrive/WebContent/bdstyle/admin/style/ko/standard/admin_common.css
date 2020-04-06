@@ -221,3 +221,6 @@ input.inputFileType1{height:35px;}
 	input.inputFileType1{width:100%}
 	a.btnType8{display:none}
 }
+
+/* a tag bold */
+.linkA {text-decoration: underline;font-weight: bold;}

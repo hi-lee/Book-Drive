@@ -27,7 +27,7 @@
             $.ajax({
                 method:"POST",
                 headers : headers,
-                url:"https://api2.sktelecom.com/tmap/routes?version=1&format=xml",
+                url:"https://api1.sktelecom.com/tmap/routes?version=1&format=xml",
                 async:false,
                 data:{
                     startX : startX,

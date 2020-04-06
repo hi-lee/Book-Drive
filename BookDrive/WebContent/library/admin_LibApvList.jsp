@@ -2,9 +2,6 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <jsp:include page="../bdstyle/admin/include/admin_loginCheck.jsp" />
-<%@page import="java.util.*"%>
-<%@page import="vo.admin.LibAdminApv"%>
-
 <link rel="stylesheet"
 	href="bdstyle/admin/style/ko/thema/mobile/admin_mobiletable.css"
 	media="screen and (max-width:767px)">
@@ -24,33 +21,21 @@
 <!-- Toastr관련 -->
 <script type="text/javascript" src="bdstyle/admin/js/common/toastr.min.js"></script>
 <link rel="stylesheet" type="text/css" href="bdstyle/admin/style/ui/toastr/toastr.min.css">
-<!-- [통합관리자] 도서관 관리자 가입신청을 출력하는 페이지 -->
+<!-- [통합관리자] 도서관 관리자 가입신청 목록을 출력하는 페이지 -->
 <div id="divContentsW">
 	<div id="divContents">
 		<h2 id="divTitle">도서관 관리자 가입신청 확인</h2>
 		<div id="divLocation">
 			<ul>
-				<li><a href="https://cham.kiu.ac.kr/" title="HOME"><img
+				<li><a href="Adminmain.logC" title="HOME"><img
 						src="bdstyle/admin/image/ko/local/home.png" alt="HOME"></a></li>
-				<li><a href="https://cham.kiu.ac.kr/bbs/list/2">도서관정보</a></li>
-				<li><a href="https://cham.kiu.ac.kr/bbs/list/1#">도서관 관리자
-						가입신청 확인</a></li>
+				<li><a>도서관정보</a></li>
+				<li><a href="javascript:void();">도서관 관리자 가입신청 확인</a></li>
 			</ul>
 		</div>
 		<div id="divContent">
 			<!-- Content Header -->
 			<h3 class="skip">게시판 안내</h3>
-			<!-- Content Num Of Search Result -->
-			<div class="listInfo">
-				<div class="listInfo1">
-					<p class="totalCnt">
-						총 <span class="totalcount">102</span> 건
-					</p>
-					<p class="pageNum">
-						,<span>1</span>/6페이지
-					</p>
-				</div>
-			</div>
 			<!-- List -->
 			<div class="listTable">
 				<table class="mobileTable default">

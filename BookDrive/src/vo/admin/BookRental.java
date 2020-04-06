@@ -3,7 +3,9 @@ package vo.admin;
 public class BookRental {
 	private String bookName;
 	private String bookWriter;
+	private String ISBN;
 	private String libName;
+	private String libCode;
 	private String memId;
 	private String memName;
 	private String renDate;
@@ -56,5 +58,17 @@ public class BookRental {
 	}
 	public void setRenIdvDelFlag(String renIdvDelFlag) {
 		this.renIdvDelFlag = renIdvDelFlag;
+	}
+	public String getLibCode() {
+		return libCode;
+	}
+	public void setLibCode(String libCode) {
+		this.libCode = libCode;
+	}
+	public String getISBN() {
+		return ISBN;
+	}
+	public void setISBN(String iSBN) {
+		ISBN = iSBN;
 	}
 }

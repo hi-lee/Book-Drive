@@ -1,0 +1,114 @@
+@charset "utf-8";
+
+/* Layout */
+#divWrapper{min-width:0;}
+.contents1{position:relative;padding-right:371px;}
+.contents2{position:relative;padding-right:371px;}
+.contents3{position:relative;padding-right:372px;}
+
+/* hidden */
+.hiddenT{display:none;}
+
+/* 상단공지 */
+.information .information1 .todayClose{width:auto}
+.information .todayClose > div{right:20px}
+.information2{height:auto}
+.information2 ul{width:auto;padding:29px 20px}
+.information2 ul li{float:none;width:auto !important;margin-top:17px;margin-left:0;padding-left:0;background:none}
+.information2 ul li:first-child{margin-top:0}
+
+/* divGlobalMenu */
+#divGlobalMenu > div{width:auto;padding:0 20px;}
+#divGlobalMenu > div .myMenuBtn{top:71px;right:104px;background:url(../../../../image/ko/local/infoIcoT.png) no-repeat 0 6px;color:#5c5252;text-decoration:underline;}
+
+/* 마이메뉴 */
+#divGlobalMenu .myMenu > div > div{float:none;margin:0 28px}
+#divGlobalMenu .myMenu .myMenuList{float:none;margin:20px 28px 0}
+#divGlobalMenu .myMenu .summary{overflow:hidden}
+#divGlobalMenu .myMenu .close{bottom:auto;top:17px}
+
+/* Header */
+.header{width:auto;}
+.header .logo{left:20px;}
+
+/* divTopMenu */
+#divTopMenu{display:none;}
+
+/* wholeMenu */
+.wholeMenuOpen{right:40px;}
+.wholeMenuOpen.on{display:inline-block;top:24px;right:20px;padding:23px 20px;background:#e5e4df;}
+.wholeMenu{top:84px;right:20px;width:299px;background:#e5e4df;border:none;}
+.wholeMenu > ul > li{height:auto;padding:0;background:none;}
+.wholeMenu > ul > li h3{position:static;width:auto;padding-left:26px;margin:0;background:url(../../../../image/ko/local/plus.png) no-repeat 265px 50%;border-bottom:1px solid #5c5252;font-size:16px;cursor:pointer;}
+.wholeMenu > ul > li:first-child h3{border-top:none;}
+.wholeMenu > ul > li ul{display:none;}
+.wholeMenu > ul > li ul li{float:none;height:40px;padding-left:26px;margin-left:0;border-top:1px solid #746c6c;background:#5c5252;font-size:13px;font-weight:600;line-height:40px;}
+.wholeMenu > ul > li ul li:first-child{padding-left:26px;border-top:none;background:#5c5252;}
+.wholeMenu > ul > li ul li a{display:block;color:#c1c1c1;}
+.wholeMenu > ul > li.last h3{border-bottom:none;}
+.wholeMenu .wholeMenuClose{display:none;}
+
+/* 전체메뉴 hover */
+.wholeMenu.on{display:block;}
+.wholeMenu > ul > li.on{background:none;border:none;margin-top:0;}
+.wholeMenu > ul > li h3:hover{background:url(../../../../image/ko/local/plus.png) no-repeat 265px 50% #bf4040;border-top:1px solid #bf4040;border-bottom:1px solid #bf4040;color:#fff;margin-top:-1px;}
+.wholeMenu > ul > li.on h3{background:url(../../../../image/ko/local/minus.gif) no-repeat 265px 50% #bf4040;border-top:1px solid #bf4040;border-bottom:1px solid #bf4040;margin-top:-1px;}
+.wholeMenu > ul > li.on h3 a{color:#fff}
+.wholeMenu > ul > li.on ul{display:block;}
+.wholeMenu > ul > li.on ul li{background:#5c5252;}
+.wholeMenu > ul > li.on ul li:first-child{background:#5c5252;}
+.wholeMenu > ul > li.on ul li a{color:#c1c1c1;}
+.wholeMenu > ul > li.on ul li a:hover{color:#fff;text-decoration:none;}
+
+/* divContents */
+#divContents{width:auto;padding:0 20px 24px 20px;}
+
+/* divSearch */
+#divSearch{width:100%;}
+#divSearch > ul li{float:none;}
+#divSearch > ul li h2{display:none;}
+#divSearch > ul li h2 a{cursor:default;}
+#divSearch > ul li:first-child h2{display:block;width:100%;text-align:left;}
+#divSearch > ul li form div{padding:0 29px;}
+#divSearch ul li.on h2 a{padding:27px 0 0 35px;}
+.keyword dl{width:auto;}
+
+/* popupZone */
+.popupZone{position:absolute;top:0;right:0;}
+
+/* newArrival */
+.newArrival{float:none;width:100%;border-right:none;}
+.newArrival > ul > li div ul{padding: 0 22px;}
+.newArrival > ul > li div ul li{width:33%;margin-left:0;}
+.newArrival > ul > li div ul li a img{padding:0;background:none;border:1px solid #e9e9e9;}
+.newArrival > ul > li div ul li a span{padding:0 10px;}
+.newArrival .more{right:29px;}
+
+/* quickMenu */
+.quickMenu{float:none;position:absolute;top:0;right:0;}
+
+/* notice */
+.notice{float:none;width:100%;padding:0;border-right:none;}
+.notice div{padding:0 28px;}
+.notice div > ul > li ul li{padding-right:0;}
+.notice div > ul > li ul li .date{display:none;}
+
+/* eData */
+.eData{float:none;position:absolute;top:0;right:0;width:350px;padding-left:20px;border-left:1px solid #dedede;background:#f7f6f6;}
+.eData h2{margin-top:14px}
+.eData ul{width:auto;}
+.eData ul li{width:80px;}
+.eData ul li a{background:url(../../../../image/ko/local/main/arrowOff.png) no-repeat 55px 6px}
+.eData ul li a:hover{background:url(../../../../image/ko/local/main/arrowOn.png) no-repeat 55px 6px}
+
+/* footer banner */
+.banner > div{width:auto;}
+.banner > div .bannerList{padding-left:20px;}
+.banner > div .bannerList li{padding-left:32px;background:url(../../../../image/ko/local/main/bannerBar.png) no-repeat 10px 22px}
+.banner > div .bannerList li a img{display:none;}
+.banner > div .bannerList li a span{display:block;color:#646464;font-size:12px;}
+.banner > div .relatedSite{margin-right:20px;}
+
+/* footer */
+.footer{width:auto;padding-left:20px;}
+.footer .visit{right:20px;}

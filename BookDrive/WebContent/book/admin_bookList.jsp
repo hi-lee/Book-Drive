@@ -37,14 +37,13 @@
 		<h2 id="divTitle">도서검색</h2>
 		<div id="divLocation">
 			<ul>
-				<li><a href="https://cham.kiu.ac.kr/" title="HOME"><img
+				<li><a href="Adminmain.logC" title="HOME"><img
 						src="bdstyle/admin/image/ko/local/home.png" alt="HOME"></a></li>
-				<li><a>도서검색</a></li>
-				<li><a href="https://cham.kiu.ac.kr/bbs/list/1#">도서 리스트</a></li>
+				<li><a>도서관리</a></li>
+				<li><a href="javascript:void();">도서 목록</a></li>
 			</ul>
 		</div>
 		<!-- content -->
-		<%String a = request.getParameter("keyword"); %>
 		<div id="divContent">
 			<div class="searchBrief">
 				<!-- 시작 -->
@@ -57,7 +56,12 @@
 									<option id="${liblist.code}" value="${liblist.code}" <c:if test="${param.libcode eq liblist.code}">selected</c:if>>${liblist.name}</option>
 								</c:forEach>
 							</select>
-							<select id="si2" name="bookstate" title="책 상태 선택" class="searchOpt1 selectBox" style="display: none;">
+							<select id="si2" name="search" title="도서 분류 선택" class="searchOpt1 selectBox" style="display: none;">
+								<option value="bookName">도서명</option>
+								<option value="bookWriter">저자</option>
+								<option value="ISBN">ISBN</option>
+							</select>
+							<select id="si3" name="bookstate" title="도서 상태 선택" class="searchOpt1 selectBox" style="display: none;">
 								<option value="">전체</option>
 								<c:forEach var="bookstatelist" items="${bookStateList}" varStatus="status">
 									<option id="${status.index+1}" value="${status.index+1}" ${(param.bookstate eq status.index+1)?'selected':''}>${bookstatelist}</option>
@@ -398,6 +402,10 @@ function callBookInfo(bookNum) {
 } //책 상세페이지 함수 끝
 var winWidth = window.innerWidth || document.documentElement.clientWidth;
 $(document).ready(function() {
+	//search selectBox 셀렉트
+	if ('${param.search}' == 'bookName') $('#si2 option:eq(0)').prop('selected', true);
+	if ('${param.search}' == 'bookWriter') $('#si2 option:eq(1)').prop('selected', true);
+	if ('${param.search}' == 'ISBN') $('#si2 option:eq(2)').prop('selected', true);
 	//화면 밖 영역 클릭시 팝업 없애기
 	$('#black_mask').click(function() {
 		$(this).hide();

@@ -21,6 +21,7 @@ import board.action.admin.BoardRepleWriteFormAction;
 import board.action.admin.BoardRepleWriteProAction;
 import board.action.admin.BoardReplyModifyFormAction;
 import board.action.admin.BoardReplyModifyProAction;
+import board.action.admin.BoardWishBookListAction;
 import book.action.admin.BookImageInsertAction;
 import book.action.admin.BookBrwListAction;
 import book.action.admin.BookInfoAction;
@@ -59,8 +60,8 @@ public class BoardController extends javax.servlet.http.HttpServlet
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} else if(command.equals("/BoardList3.boardA")){ //.................희망도서 리스트(추가해야함)...................
-			action = new BoardQnAListAction();
+		} else if(command.equals("/BoardList3.boardA")){ //희망도서 리스트
+			action = new BoardWishBookListAction();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
