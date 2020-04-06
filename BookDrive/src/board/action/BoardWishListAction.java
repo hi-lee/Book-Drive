@@ -28,7 +28,7 @@ public class BoardWishListAction implements Action {
 			response.setContentType("text/html;charset=UTF-8");
 			PrintWriter out = response.getWriter();
 			out.println("<script>");
-			out.println("alert('나의 문의사항-로그인하세요.');");
+			out.println("alert('도서이용신청-로그인하세요.');");
 			out.println("location.href='loginForm.log';");
 			out.println("</script>");
 		} else {
