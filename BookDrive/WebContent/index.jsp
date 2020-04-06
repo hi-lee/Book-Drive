@@ -4,9 +4,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>BookDrive1111</title>
-</head>
-<body>
-<a href="template_main.jsp"><img src="bdstyle/image/index.jpg" width="100%" border="0"></a>
+<title>Book-Drive</title>
+
+<a href="template_main.jsp"><img src="bdstyle/image/index.png" width="100%" border="0" padding="0"></a>
 </body>
 </html>
