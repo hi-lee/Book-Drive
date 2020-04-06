@@ -47,6 +47,7 @@
 		<div id="divContent">
 			<div class="searchBrief">
 				<!-- 시작 -->
+				<!-- git테스트1 -->
 				<div class="dataSearch">
 					<form name="refineSearch" method="get" action="BookList.bookA">
 						<fieldset>
@@ -84,7 +85,7 @@
 								<div class="listInfo1">
 									<div class="breifPaging">
 										<span class="current">${pageinfo.nowPage * 10 - 9}</span> - ${pageinfo.nowPage * 10} <a
-											href="BookList.bookA?page=${pageinfo.nowPage+1}&libcode=${param.libcode}&keyword=${param.keyword}"
+											href="BookList.bookA?page=${pageinfo.nowPage+1}&libcode=${param.libcode}&keyword=${param.keyword}&search=${param.search}&bookstate=${param.bookstate}"
 											class="lastPage" title="다음페이지로"><img
 											src="bdstyle/admin/image/ko/solution/common/btn/breifLast.png"
 											alt="다음페이지로"></a>
@@ -95,6 +96,9 @@
 						<!-- //listInfo -->
 						</div>
 						<!-- 책 리스트 출력 부분 -->
+						<c:if test="${empty bookList}">
+							<h2 style="text-align:center;">검색결과가 없습니다.</h2>
+						</c:if>
 						<c:set var="replace_hilight" value="<span class=hilight>${param.keyword}</span>"/>
 						<c:forEach var="booklist" items="${bookList}" varStatus="status">
 							<!-- 카테고리 변경부분 -->
@@ -110,7 +114,20 @@
 								<c:when test="${booklist.bookCategory eq '800'}"><c:set var="category" value="문학"/></c:when>
 								<c:otherwise><c:set var="category" value="역사"/></c:otherwise>
 							</c:choose>
-							<c:set var="bookname" value="${fn:replace(booklist.bookName, param.keyword, replace_hilight)}"/>
+							<c:set var="bookname" value="${booklist.bookName}"/>
+							<c:set var="bookwriter" value="${booklist.bookWriter}"/>
+							<c:set var="isbn" value="${booklist.ISBN}"/>
+							<c:choose>
+								<c:when test="${param.search eq 'bookName'}">
+									<c:set var="bookname" value="${fn:replace(booklist.bookName, param.keyword, replace_hilight)}"/>
+								</c:when>
+								<c:when test="${param.search eq 'bookWriter'}">
+									<c:set var="bookwriter" value="${fn:replace(booklist.bookNum, param.keyword, replace_hilight)}"/>
+								</c:when>
+								<c:when test="${param.search eq 'ISBN'}">
+									<c:set var="isbn" value="${fn:replace(booklist.ISBN, param.keyword, replace_hilight)}"/>
+								</c:when>
+							</c:choose>
 							<fmt:parseNumber value="${booklist.rowNum}" var="rownum"/>
 							<ul class="resultList resultDetail">
 								<li id="${booklist.bookNum}" class="items">
@@ -134,7 +151,7 @@
 											<!-- <a href="BookInfo.bookA?booknum=${booklist.bookNum}">${bookname}</a> -->
 										</dd>
 										<dt class="title">저자</dt>
-										<dd class="info${booklist.bookNum}">저자 : ${booklist.bookWriter}</dd>
+										<dd class="info${booklist.bookNum}">저자 : ${bookwriter}</dd>
 										<dt class="title">출판사</dt>
 										<dd class="info${booklist.bookNum}">출판사 : ${booklist.bookPub}</dd>
 										<dt class="title">출판년도</dt>
@@ -154,7 +171,7 @@
 												<li>
 													<dl>
 														<dt>서명/저자사항</dt>
-														<dd>${booklist.bookName} / 지은이:${booklist.bookWriter}</dd>
+														<dd>${bookname} / 지은이:${bookwriter}</dd>
 													</dl>
 												</li>
 												<li>
@@ -166,7 +183,7 @@
 												<li>
 													<dl>
 														<dt>ISBN</dt>
-														<dd>${booklist.ISBN}</dd>
+														<dd>${isbn}</dd>
 													</dl>
 												</li>
 												<li>
@@ -250,10 +267,10 @@
 										
 									</c:when>
 									<c:otherwise>
-										<a href="BookList.bookA?page=1&libcode=${param.libcode}&keyword=${param.keyword}" class="page">
+										<a href="BookList.bookA?page=1&libcode=${param.libcode}&keyword=${param.keyword}&search=${param.search}&bookstate=${param.bookstate}" class="page">
 											<img src="bdstyle/admin/image/ko/solution/common/btn/firstPage.gif">
 										</a>
-										<a href="BookList.bookA?page=${pageinfo.nowPage-1}&libcode=${param.libcode}&keyword=${param.keyword}" class="page">
+										<a href="BookList.bookA?page=${pageinfo.nowPage-1}&libcode=${param.libcode}&keyword=${param.keyword}&search=${param.search}&bookstate=${param.bookstate}" class="page">
 											<img src="bdstyle/admin/image/ko/solution/common/btn/prevPage.gif">
 										</a>
 									</c:otherwise>
@@ -265,7 +282,7 @@
 												<span>${a}</span>
 											</c:when>
 											<c:otherwise>
-												<a href="BookList.bookA?page=${a}&libcode=${param.libcode}&keyword=${param.keyword}">${a}</a>
+												<a href="BookList.bookA?page=${a}&libcode=${param.libcode}&keyword=${param.keyword}&search=${param.search}&bookstate=${param.bookstate}">${a}</a>
 											</c:otherwise>
 										</c:choose>
 									</c:forEach>
@@ -275,10 +292,10 @@
 									
 									</c:when>
 									<c:otherwise>
-										<a href="BookList.bookA?page=${pageinfo.nowPage+1}&libcode=${param.libcode}&keyword=${param.keyword}" class="page">
+										<a href="BookList.bookA?page=${pageinfo.nowPage+1}&libcode=${param.libcode}&keyword=${param.keyword}&search=${param.search}&bookstate=${param.bookstate}" class="page">
 											<img src="bdstyle/admin/image/ko/solution/common/btn/nextPage.gif">
 										</a>
-										<a href="BookList.bookA?page=${pageinfo.maxPage}&libcode=${param.libcode}&keyword=${param.keyword}" class="page">
+										<a href="BookList.bookA?page=${pageinfo.maxPage}&libcode=${param.libcode}&keyword=${param.keyword}&search=${param.search}&bookstate=${param.bookstate}" class="page">
 											<img src="bdstyle/admin/image/ko/solution/common/btn/lastPage.gif">
 										</a>
 									</c:otherwise>

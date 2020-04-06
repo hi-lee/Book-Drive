@@ -24,13 +24,13 @@
 	<div id="divContents">
 		<script type="text/javascript" src="bdstyle/js/common/cookie.js"
 			charset="utf-8"></script>
-		<h2 id="divTitle">도서이용신청</h2>
+		<h2 id="divTitle">개인서비스</h2>
 		<div id="divLocation">
 			<ul>
 				<li><a href="https://cham.kiu.ac.kr/" title="HOME"><img
 						src="bdstyle/image/ko/local/home.png" alt="HOME"></a></li>
-				<li><a href="wishBoard.do">게시판</a></li>
-				<li><a href="javascript:void();">도서이용신청 상세보기</a></li>
+				<li><a href="wishBoard.do">나의 문의사항</a></li>
+				<li><a href="javascript:void();">나의 문의사항 상세보기</a></li>
 			</ul>
 		</div>
 		<div id="divContent">

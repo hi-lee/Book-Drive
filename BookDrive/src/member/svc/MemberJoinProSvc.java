@@ -26,4 +26,23 @@ public class MemberJoinProSvc {
 		return joinResult;
 	}
 
+	public boolean adminJoin(Member member, String libcode) {
+		// TODO Auto-generated method stub
+		boolean joinResult = false;
+		Connection con = getConnection();
+		MemberDAO memberDAO = MemberDAO.getInstance();
+		memberDAO.setConnection(con);
+		
+		int insertMember = memberDAO.insertAdmin(member, libcode);
+		
+		if(insertMember > 0) {
+			commit(con);
+			joinResult = true;
+		} else {
+			rollback(con);
+		}
+		close(con);
+		return joinResult;
+	}
+
 }
