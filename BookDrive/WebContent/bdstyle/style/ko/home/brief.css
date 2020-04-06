@@ -199,7 +199,7 @@ select.searchOpt2 {height:35px}
 /* 내바구니, 내보내기 프리뷰버튼 */
 .selectBtn a {position:relative;display:inline-block;width:32px;height:30px;text-indent:-9999em;vertical-align:top}
 .selectBtn .cartBtn {background:url(../../../image/ko/solution/common/btn/cartBtn.png) no-repeat}
-.selectBtn .cartBtn.selected {background-image:url(../../image/ko/solution/common/btn/cartBtnOn.png)}
+.selectBtn .cartBtn.selected {background-image:url(../../../image/ko/solution/common/btn/cartBtnOn.png)}
 .selectBtn .exportBtn {background:url(../../../../image/ko/solution/common/btn/exportBtn.png) no-repeat}
 .selectBtn .exportBtn.selected {background-image:url(../../../image/ko/solution/common/btn/exportBtnOn.png)}
 .selectBtn .myLibBtn{background:url(../../../../image/ko/solution/common/btn/myLibBtn.png) no-repeat 0 0}

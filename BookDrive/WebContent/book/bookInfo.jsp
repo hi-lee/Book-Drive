@@ -203,41 +203,43 @@ href="bdstyle/style/ko/home/toastr.min.css">
 				</div>
 				<script type="text/javascript">
 				function addBookCart(bookNum, libCode, userIndex) {
-					$.ajax({
-						url : 'myBookCartAdd.bk',
-						type : 'POST',
-						dataType : 'json',
-						data : {
-							"bookNum" : bookNum,
-							"libCode" : libCode,
-							"userIndex" : userIndex
-						},
-						success : function(data) {
-							console.log('성공');
-							toastr.options = {
-								"closeButton" : false,
-								"debug" : false,
-								"newestOnTop" : false,
-								"progressBar" : true,
-								"positionClass" : "toast-bottom-center",
-								"preventDuplicates" : false,
-								"onclick" : null,
-								"showDuration" : "300",
-								"hideDuration" : "1000",
-								"timeOut" : "3000",
-								"extendedTimeOut" : "1000",
-								"showEasing" : "swing",
-								"hideEasing" : "linear",
-								"showMethod" : "fadeIn",
-								"hideMethod" : "fadeOut"
+					if (userIndex != null && userIndex != '') {
+						$.ajax({
+							url : 'myBookCartAdd.bk',
+							type : 'POST',
+							dataType : 'json',
+							data : {
+								"bookNum" : bookNum,
+								"libCode" : libCode,
+								"userIndex" : userIndex
+							},
+							success : function(data) {
+								console.log('성공');
+								toastr.options = {
+									"closeButton" : false,
+									"debug" : false,
+									"newestOnTop" : false,
+									"progressBar" : true,
+									"positionClass" : "toast-bottom-center",
+									"preventDuplicates" : false,
+									"onclick" : null,
+									"showDuration" : "300",
+									"hideDuration" : "1000",
+									"timeOut" : "3000",
+									"extendedTimeOut" : "1000",
+									"showEasing" : "swing",
+									"hideEasing" : "linear",
+									"showMethod" : "fadeIn",
+									"hideMethod" : "fadeOut"
+								}
+								toastr.success("보관함에 추가되었습니다", "보관함");
+							},
+							error : function(request, status, error) {
+								console.log('실패');
+								alert('장바구니에 추가가 실패했습니다');
 							}
-							toastr.success("보관함에 추가되었습니다", "보관함");
-						},
-						error : function(request, status, error) {
-							console.log('실패');
-							alert('장바구니에 추가가 실패했습니다');
-						}
-					})
+						}); //ajax end
+					} //if end
 				}
 				
 

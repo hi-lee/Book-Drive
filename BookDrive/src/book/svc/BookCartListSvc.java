@@ -19,4 +19,13 @@ public class BookCartListSvc {
 		return cartList;
 	}
 
+	public String[] selectCart(String[] list, String userIndex) {
+		// TODO Auto-generated method stub
+		Connection con = getConnection();
+		BookDAO bookDAO = BookDAO.getInstance();
+		bookDAO.setConnection(con);
+		String cartList[] = bookDAO.selectCart(list, userIndex);
+		close(con);
+		return cartList;
+	}
 }

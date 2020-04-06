@@ -487,4 +487,38 @@ public class BookDAO {
 		}
 		return delCount;
 	}
+
+	public String[] selectCart(String[] list, String userIndex) {
+		// TODO Auto-generated method stub
+		String cart[] = null;
+		ArrayList<String> aaa = new ArrayList<>();
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String query = "select count(*) from cart where bookNum = ? and memIndex = ?";
+		try {
+			for (int i = 0; i < list.length; i++) {
+				pstmt = con.prepareStatement(query);
+				pstmt.setString(1, list[i]);
+				pstmt.setString(2, userIndex);
+				System.out.println("list : " + list[i] + ", index : " + userIndex);
+				rs = pstmt.executeQuery();
+				rs.next();
+				if (rs.getInt("count(*)") == 1) {
+					System.out.println(list[i] + "는 있다");
+					aaa.add(list[i]);
+				}
+			}
+			cart = new String[aaa.size()];
+			for (int j = 0; j < aaa.size(); j++) {
+				cart[j] = aaa.get(j);
+				System.out.println(aaa.get(j));
+			}
+		} catch (SQLException e) {
+			System.out.println("selectCart Err ::: " + e);
+		} finally {
+			if (rs != null) close(rs);
+			if (pstmt != null) close(pstmt);
+		}
+		return cart;
+	}
 }

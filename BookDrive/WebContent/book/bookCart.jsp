@@ -85,7 +85,7 @@
 						</c:forEach>
 						<div class="buttons">
 							<a
-								href="bookSearchPro.bk?search=${param.search}&value=${param.value}" title="검색결과 돌아가기" class="LinkButton">검색결과 돌아가기</a> 
+								href="bookSearchPro.bk?index=${sessionScope.userIndex}&search=${param.search}&value=${param.value}" title="검색결과 돌아가기" class="LinkButton">검색결과 돌아가기</a> 
 								<input type="submit" value="삭제" title="삭제"> 
 								<a href="#" onclick="document.getElementById('allcheck').checked=true;checkedAll(document.getElementById('allcheck'),'basketFrm','data');document.basketFrm.submit();"
 								title="바구니비우기" class="LinkButton">바구니비우기</a>

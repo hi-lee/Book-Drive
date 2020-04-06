@@ -21,6 +21,7 @@ import book.action.BookReturnAction;
 import book.action.BookRevAction;
 import book.action.BookRevCancelAction;
 import book.action.BookSearchProAction;
+import book.action.BookViewSelectAction;
 import book.action.DriveRentalAction;
 
 /**
@@ -126,6 +127,14 @@ public class BookController extends HttpServlet {
 			forward = new ActionForward();
 			request.setAttribute("pageIn", "/book/SearchHistory.jsp");
 			forward.setPath("template_sub.jsp");
+		}
+		else if (command.equals("/bookViewSelect.bk")) { //카트에 있는 아이템은 리스트에 selected로 변경
+			actionvoid = new BookViewSelectAction();
+			try {
+				actionvoid.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
 
 		if (forward != null) {

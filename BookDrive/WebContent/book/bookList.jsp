@@ -180,7 +180,7 @@
 									<c:forEach var="list" items="${bookList }" varStatus="status">
 										<c:set var="bookname"
 											value="${fn:replace(list.bookName, param.value, replace_hilight)}" />
-										<li id="item_CATTOT000000498079" class="items">
+										<li id="item_${list.bookNum}" class="items">
 											<dl>
 												<dt class="title">No</dt>
 												<dd class="dataCheck">${status.index + ((pageInfo.page-1)*5) + 1 }.</dd>
@@ -193,16 +193,15 @@
 													</a>
 
 													<p class="selectBtn">
-														<a id="basket_CAT000000498079"
+														<a id="cart_${list.bookNum}"
 															href="javascript:addBookCart('${list.bookNum}','${list.libCode}','${sessionScope.userIndex}');"
-															class="cartBtn " title="바구니 담기">바구니 담기</a>
+															class="cartBtn" title="바구니 담기">바구니 담기</a>
 													</p>
 												</dd>
 
 												<dt class="title">서명</dt>
 												<dd class="title">
-													<a
-														href="bookInfo.bk?page=${pageInfo.page }&bookNum=${list.bookNum}&search=${param.search}&value=${param.value}">
+													<a href="bookInfo.bk?page=${pageInfo.page }&bookNum=${list.bookNum}&search=${param.search}&value=${param.value}">
 														${bookname } : ${list.bookWriter }
 
 
@@ -282,7 +281,7 @@
 											</a>
 										</c:when>
 										<c:otherwise>
-											<a href="bookSearchPro.bk?page=${pageInfo.page - 1 }"> <img
+											<a href="bookSearchPro.bk?index=${sessionScope.userIndex}&page=${pageInfo.page - 1}&search=${param.search}&value=${param.value}"> <img
 												src="bdstyle/image/ko/solution/common/btn/prevPage.gif">
 											</a>&nbsp;
 										</c:otherwise>
@@ -296,7 +295,7 @@
 												</c:when>
 												<c:otherwise>
 													<a
-														href="bookSearchPro.bk?page=${a }&search=${param.search}&value=${param.value}">&nbsp;${a }</a>&nbsp;
+														href="bookSearchPro.bk?index=${sessionScope.userIndex}&page=${a }&search=${param.search}&value=${param.value}">&nbsp;${a }</a>&nbsp;
 												</c:otherwise>
 											</c:choose>
 										</c:forEach>
@@ -306,7 +305,7 @@
 										<c:when test="${pageInfo.page >= pageInfo.maxPage }">&nbsp;</c:when>
 										<c:otherwise>
 											<a
-												href="bookSearchPro.bk?page=${pageInfo.page + 1 }&search=${param.search}&value=${param.value}">
+												href="bookSearchPro.bk?index=${sessionScope.userIndex}&page=${pageInfo.page + 1 }&search=${param.search}&value=${param.value}">
 												<img src="bdstyle/image/ko/solution/common/btn/nextPage.gif">
 											</a>
 										</c:otherwise>
@@ -327,19 +326,42 @@
 			</div>
 
 			<script type="text/javascript">
-				function addBookCart(bookNum, libCode, userIndex) {
+				var list = new Array();
+				var userIndex = '${sessionScope.userIndex}';
+				<c:forEach items='${bookList}' var='item'>
+				list.push('${item.bookNum}');
+				</c:forEach>
+				
+				viewCart(list, userIndex);
+				
+				function viewCart(list, userIndex) {
 					$.ajax({
-						url : 'myBookCartAdd.bk',
+						url : 'bookViewSelect.bk',
 						type : 'POST',
 						dataType : 'json',
 						data : {
-							"bookNum" : bookNum,
-							"libCode" : libCode,
+							"arraylist" : list,
 							"userIndex" : userIndex
 						},
 						success : function(data) {
-							console.log('성공');
-							toastr.options = {
+							if (data != null) {
+								console.log(data);
+								for (var i in data.result) {
+									var cartNum = "#cart_"+data.result[i];
+									$(cartNum).addClass("selected");
+								}
+							}
+						},
+						error : function(request, status, error) {
+							console.log('실패');
+						}
+					});
+				}
+				
+				function addBookCart(bookNum, libCode, userIndex) {
+					if (userIndex != null && userIndex != '') {
+						var cart = "#cart_"+bookNum;
+						toastr.options = {
 								"closeButton" : false,
 								"debug" : false,
 								"newestOnTop" : false,
@@ -356,16 +378,34 @@
 								"showMethod" : "fadeIn",
 								"hideMethod" : "fadeOut"
 							}
-							toastr.success("보관함에 추가되었습니다", "보관함");
-						},
-						error : function(request, status, error) {
-							console.log('실패');
-							alert('장바구니에 추가가 실패했습니다');
-						}
-					})
+						if ($(cart).hasClass("selected") == true) { //카트에 담겨져있으면 추가가 되지 않는다.
+							toastr.warning("이미 보관함에 존재하는 도서입니다", "보관함");
+						} else {
+							$(cart).addClass("selected");
+							$.ajax({
+								url : 'myBookCartAdd.bk',
+								type : 'POST',
+								dataType : 'json',
+								data : {
+									"bookNum" : bookNum,
+									"libCode" : libCode,
+									"userIndex" : userIndex
+								},
+								success : function(data) { //보관함 추가 성공시
+									console.log(data);
+									toastr.success("보관함에 추가되었습니다", "보관함");
+									var count = $('#basket_count').text();
+									count = parseInt(count) + 1;
+									$('#basket_count').text(count);
+								},
+								error : function(request, status, error) {
+									console.log('실패');
+									alert('장바구니에 추가가 실패했습니다');
+								}
+							}); //ajax end
+						} //if end
+					} //if end
 				}
-				
-				
 			</script>
 		</div>
 
