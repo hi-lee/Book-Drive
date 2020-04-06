@@ -76,13 +76,13 @@
 								title="도서이용신청">도서이용신청</a></li>
 						</ul>
 					</div></li>
-				<li><a href="javascript:return false;" title="도서관안내">도서관안내</a>
+				<li><a href="javascript:return false;" title="Information">Information</a>
 					<div>
 						<ul>
-							<li><a href="#" title="도서관 소개">도서관 소개</a></li>
-							<li><a href="#" title="이용안내">이용안내</a></li>
-							<li><a href="#" title="도서관서비스">도서관서비스</a></li>
-							<li class="last"><a href="#" title="이용시 유의사항">이용시 유의사항</a></li>
+							<li><a href="about.mem" title="About">About</a></li>
+							<li><a href="loanInfo.mem" title="이용안내">이용안내</a></li>
+							<li><a href="service.mem" title="도서관서비스">도서관서비스</a></li>
+							<li class="last"><a href="note.mem" title="이용시 유의사항">이용시 유의사항</a></li>
 						</ul>
 					</div></li>
 			</ul>
@@ -134,17 +134,16 @@
 
 					</ul></li>
 				<li class="last"><h3>
-						<a href="javascript:return false;" title="도서관안내">도서관안내</a>
+						<a href="javascript:return false;" title="Information">Information</a>
 					</h3>
 					<ul>
-						<li><a href="https://cham.kiu.ac.kr/local/html/introduce"
-							title="도서관 소개">도서관 소개</a></li>
-						<li><a href="https://cham.kiu.ac.kr/local/html/libraryHour"
+						<li><a href="about.mem"
+							title="About">About</a></li>
+						<li><a href="loanInfo.mem"
 							title="이용안내">이용안내</a></li>
-						<li><a
-							href="https://cham.kiu.ac.kr/local/html/purchaserequest"
+						<li><a href="service.mem"
 							title="도서관서비스">도서관서비스</a></li>
-						<li><a href="https://cham.kiu.ac.kr/local/html/note"
+						<li><a href="note.mem"
 							title="이용시 유의사항">이용시 유의사항</a></li>
 					</ul></li>
 			</ul>

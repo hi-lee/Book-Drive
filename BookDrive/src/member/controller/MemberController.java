@@ -97,6 +97,22 @@ public class MemberController extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+		} else if (command.equals("/about.mem")) { //ABOUT
+			forward = new ActionForward();
+			request.setAttribute("pageIn", "/info/bookdriveInfo.jsp");
+			forward.setPath("template_sub.jsp");
+		} else if (command.equals("/loanInfo.mem")) { //이용안내
+			forward = new ActionForward();
+			request.setAttribute("pageIn", "/info/loanInfo.jsp");
+			forward.setPath("template_sub.jsp");
+		} else if (command.equals("/service.mem")) { //도서관서비스
+			forward = new ActionForward();
+			request.setAttribute("pageIn", "/info/service.jsp");
+			forward.setPath("template_sub.jsp");
+		} else if (command.equals("/note.mem")) { //이용시 유의사항
+			forward = new ActionForward();
+			request.setAttribute("pageIn", "/info/note.jsp");
+			forward.setPath("template_sub.jsp");
 		}
 
 		if (forward != null) {

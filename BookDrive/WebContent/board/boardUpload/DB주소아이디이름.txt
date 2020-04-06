@@ -1,0 +1,11 @@
+DB 주소 : 118.131.179.138
+DB 아이디 : java5pl
+DB 비번 : java5pl
+mysql -h 118.131.179.138 -u java5pl -p --default-character-set=utf8
+
+
+118.131.179.138/
+FarmParm
+Project_academy
+StudyG
+LaundryFinder

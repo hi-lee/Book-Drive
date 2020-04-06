@@ -1,0 +1,140 @@
+@charset "utf-8";
+
+/* Base */
+.guide{padding:22px 0 0 0;word-break:break-all;}
+@media screen and (max-width:767px){
+.guide{padding:0 0 15px 0;}
+}
+ol{padding:0;margin:0;list-style:none;}
+
+/* Option */
+.guide .point{color:#b12323;text-decoration:underline;}
+.guide .notice{color:#c35e3f;line-height:24px;}
+.guide .alignLeft{text-align:left !important;}
+.guide .downBtn a{display:inline-block;padding:7px 15px;border:3px solid #ffc765;color:#e18201;}
+.guide ul li .notice{margin-top:4px;}
+.guide ul li .downBtn{margin:7px 0;}
+.guide ul + .downBtn{margin:7px 0;}
+
+/* Title */
+.guide h2{padding-left:25px;margin-bottom:17px;background:url(../../../image/ko/local/guide/bullet1.png) no-repeat 0 1px;color:#2f2f2f;font-size:16px;font-weight:normal}
+.guide h3{margin-bottom:12px;color:#8f001c;font-weight:600;}
+
+/* Text Box */
+.guideBox{padding:22px 26px;margin-bottom:20px;background:#f6f5f2;line-height:24px;}
+.guideBox .contact{padding:7px 0 7px 44px;background:url(../../../image/ko/local/guide/telBg.png) no-repeat 0 50%;}
+.contactBox{padding:22px 26px 22px 70px;background:url(../../../image/ko/local/guide/telBg.png) no-repeat 26px 50% #f6f5f2;margin-bottom:20px;line-height:24px;}
+
+/* Content Area */
+.guideCont{padding-left:10px;margin-bottom:36px;}
+.indentCont{padding-left:10px;}
+.guide .notice + .indentCont{margin-top:15px;}
+@media screen and (max-width:767px){
+	.guideCont{padding-left:0;}
+	.indentCont{padding-left:0;}
+}
+
+/* List */
+.guide ul{line-height:24px;}
+.guide ul > li{margin-top:5px;padding-left:11px;background:url(../../../image/ko/local/guide/bullet2.gif) no-repeat 0 9px;}
+.guide ul > li:first-child{margin-top:0;}
+.guide ul > li > ul > li{margin-top:4px;padding-left:16px;background:url(../../../image/ko/local/guide/bullet3.gif) no-repeat 4px 11px;}
+.guide .notice + ul{margin-top:5px;}
+.guide .notice + ol{margin-top:5px;}
+
+/* Table */
+.guide table{width:100%;margin-bottom:38px;border-collapse:collapse;border-top:2px solid #8f001c;line-height:24px;}
+.guide table thead th{padding:10px 10px;border:1px solid #dddddd;border-right:none;background:url(../../../image/ko/local/guide/thBg.gif) repeat-x 0 0 #f7f1f0;color:#2f2f2f;font-weight:600;}
+.guide table thead th:first-child{border-left:none;}
+.guide table tbody th{padding:9px 10px;border-bottom:1px solid #ddd;border-right:1px solid #ddd;font-weight:normal;}
+.guide table tbody td{padding:9px 10px;border-left:1px solid #ddd;border-bottom:1px solid #ddd;text-align:center;}
+.guide table tbody td:first-child{border-left:none;}
+.guide .notice + table{margin-top:10px;}
+
+/* Mobile Table */
+.guide .mobileTable > thead{display:table-header-group;}
+.guide .breakpoint.mobileTable > tbody > tr > td.expand{background:url(../../../image/ko/local/guide/tableOn.png) no-repeat 97% 50%;}
+.guide .breakpoint.mobileTable > tbody > tr.footable-detail-show > td.expand{background:url(../../../image/ko/local/guide/tableOff.png) no-repeat 97% 50%;border-bottom:none;}
+.guide .breakpoint.mobileTable > tbody > tr > td.footable-cell-detail{background:#f6f6f6;text-align:left;}
+
+/* 인사 */
+.introduction{position:relative;}
+.introduction h2{padding-left:0;margin-bottom:30px;background:none;color:#000000;font-size:16px;}
+.introduction p{margin-bottom:23px;line-height:24px;}
+.introduction p span{color:#8f001c;}
+.introduction .imgWrap{position:absolute;top:284px;right:17px;}
+.introduction > img{margin-top:23px;}
+@media screen and (min-width:768px) and (max-width:1024px){
+	.introduction .imgWrap{position:static;margin-bottom:22px;text-align:center;}
+	.introduction > img{width:100%;margin-top:0;}
+}
+@media screen and (max-width:767px){
+	.introduction p{line-height:22px;}
+	.introduction .imgWrap{position:static;padding:0 60px 0 82px;margin-bottom:20px;}
+	.introduction .imgWrap img{width:100%;}
+	.introduction > img{width:100%;margin-top:0;}
+}
+
+/* 연혁 */
+.guide table.historyTable tbody th{text-align:center;width:15%;padding:9px 5px;border-right:none;color:#727272;font-weight:normal;text-align:left;}
+.guide table.historyTable tbody th .year{margin-right:23px;color:#414141;}
+.guide table.historyTable tbody td{padding-left:47px;border-left:none;background:url(../../../image/ko/local/guide/historyBar.png) no-repeat 0 50%;text-align:left;}
+@media screen and (max-width:767px){
+	.guide table.historyTable tbody th{width:35%;}
+	.guide table.historyTable tbody th .year{margin-right:15px;}
+	.guide table.historyTable tbody td{padding-left:27px;}
+}
+
+/* 조직도 */
+.guide .organization{text-align:center;}
+@media screen and (max-width:767px){
+	.guide .organization img{width:100%;}
+}
+
+/* 규정 */
+.ruleGuide h3{margin:18px 0 15px 0;color:#2f2f2f;font-size:20px;text-align:center;font-weight:normal;}
+.ruleGuide .date{margin-bottom:32px;text-align:right;line-height:24px;}
+.ruleGuide h4{padding:11px 0;margin-bottom:17px;background:#f0f0f0;color:#8f001c;font-size:14px;text-align:center;font-weight:normal;}
+.ruleGuide div{padding:0 0 0 15px;margin-bottom:34px;}
+.ruleGuide div h5{margin:13px 0 5px 0;color:#2f2f2f;font-size:14px;font-weight:600;}
+.ruleGuide div h5:first-child{margin-top:0;}
+.ruleGuide div p{line-height:24px;}
+.ruleGuide div > ul{padding-left:10px;}
+.ruleGuide div ul li{margin-top:0;}
+.ruleGuide dl{margin-bottom:25px;}
+.ruleGuide dl dt{margin-bottom:17px;color:#2f2f2f;font-size:16px;text-align:center;font-weight:600;}
+.ruleGuide dl dd span{margin-right:10px;color:#2f2f2f;font-weight:600;}
+
+/* 대출도서연장예약 */
+.guide .captureList{line-height:24px;}
+.guide .captureList > li{margin-top:45px;color:#2f2f2f;}
+.guide .captureList > li:first-child{margin-top:0;}
+.guide .captureList > li p{width:100%;margin-top:10px;}
+.guide .captureList > li p img{border:1px solid #dcdcdc;}
+.guide .captureList > li .noExpand{border:none;}
+.guide .captureList > li .noExpand img{width:auto;border:1px solid #dcdcdc;}
+@media screen and (min-width:768px) and (max-width:1024px){
+	.guide .captureList > li p{width:auto;border:1px solid #dcdcdc;}
+	.guide .captureList > li p img{width:100%;border:none;}
+}
+@media screen and (max-width:767px){
+	.guide .captureList > li p{width:auto;border:1px solid #dcdcdc;}
+	.guide .captureList > li p img{width:100%;border:none;}
+}
+
+/* 학술DB 서비스 */
+.guide .notice + .dbGuide{margin-top:15px;}
+.dbGuide dl{position:relative;padding:20px 37px 20px 299px;margin-top:4px;border:1px solid #cacaca;line-height:24px;}
+.dbGuide dl:first-child{margin-top:0;}
+.dbGuide dl.height48{height:48px;}
+.dbGuide dl dt{position:absolute;top:0;left:0;height:100%;background:url(../../../image/ko/local/guide/arrow.png) no-repeat  245px 50% #bc6e6b;}
+.dbGuide dl dt a{display:block;width:190px;padding:20px 42px;color:#ffffff;font-size:14px;font-weight:600;word-break:keep-all;word-wrap:break-word;}
+.dbGuide dl dt.moazine a{padding-top:33px}
+@media screen and (max-width:767px){
+	.dbGuide dl{padding:0;}
+	.dbGuide dl.height48{height:auto;}
+	.dbGuide dl dt{position:static;background:url(../../../image/ko/local/guide/arrow.png) no-repeat  90% 50% #bc6e6b;}
+	.dbGuide dl dt a{width:auto;padding:16px 42px;}
+	.dbGuide dl dt.moazine a{width:auto;padding:16px 42px;}
+	.dbGuide dl dd{padding:16px 20px;}
+}

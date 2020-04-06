@@ -1,0 +1,7 @@
+FTP : 118.131.179.138
+ID : java5
+PW : java53313
+
+http://java.swg.co.kr/프로젝트명/
+index.jsp
+main.jsp
