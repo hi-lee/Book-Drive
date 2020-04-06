@@ -6,6 +6,6 @@
 <meta charset="UTF-8">
 <title>Book-Drive</title>
 
-<a href="template_main.jsp"><img src="bdstyle/image/index.png" width="100%" border="0" padding="0"></a>
+<a href="template_main.jsp"><img src="bdstyle/image/index.png" width="100%" border="0" ></a>
 </body>
 </html>
