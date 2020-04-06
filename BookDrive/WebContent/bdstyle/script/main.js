@@ -33,7 +33,7 @@ $(document).ready(function(){
 		return false;
 	});
 
-	/* 모바일 사이즈 로고 변경 */
+	/* 모바일 사이즈 로고 변경 
 	var logoPath = $('.header .logo img').attr('src');
 	if(winWidth < 768){
 		$('.header .logo img').attr('src',logoPath.replace('logo','logoM'));
@@ -46,7 +46,7 @@ $(document).ready(function(){
 			$('.header .logo img').attr('src',logoPath.replace('logoM','logo'));
 		}
 	});
-	
+	*/
 	/* last 클래스 */
 	$('#divTopMenu > ul > li div ul').each(function(i,element){
 		$(this).children().last().addClass('last');

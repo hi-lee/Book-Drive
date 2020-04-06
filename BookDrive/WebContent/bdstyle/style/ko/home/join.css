@@ -2,7 +2,7 @@
 @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
 
 .login-page {
-	width: 360px;
+	/* 박승현 수정 조인Form width 삭제 width: 360px;*/
 	padding: 0 0 0;
 	margin: auto;
 }

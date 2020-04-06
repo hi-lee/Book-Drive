@@ -79,7 +79,7 @@
 						
 						</c:otherwise>
 					</c:choose>
-					<a href="wishBoard.bo?page=${param.page}" title="목록">목록</a>
+					<a href="wishBoard.bo?page=${param.page}&index=${sessionScope.userIndex}" title="목록">목록</a>
 				</div>
 				<!-- board button end-->
 			</div>

@@ -5,6 +5,7 @@ import java.io.PrintWriter;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
@@ -48,10 +49,12 @@ public class BoardModifyProAction implements Action {
 			out.println("</script>");
 		} else { //QnA는 Detail로 이동. 공지,희망,자유는 수정으로 이동
 			forward = new ActionForward();
+			HttpSession session = request.getSession();
+			String index = (String) session.getAttribute("userIndex");
 			System.out.println(boardFlag);
-			if (boardFlag.equals("4")) forward.setPath("boardDetail.bo?boardNum=" + boardNum + "&page=" + page); //자유게시판
-			if (boardFlag.equals("3")) forward.setPath("wishboardDetail.bo?boardNum=" + boardNum + "&page=" + page); //도서이용신청
-			if (boardFlag.equals("2")) forward.setPath("qnaboardDetail.bo?boardNum=" + boardNum + "&page=" + page); //내 문의사항
+			if (boardFlag.equals("4")) forward.setPath("boardDetail.bo?boardNum=" + boardNum + "&page=" + page + "&index=" + index); //자유게시판
+			if (boardFlag.equals("3")) forward.setPath("wishboardDetail.bo?boardNum=" + boardNum + "&page=" + page + "&index=" + index); //도서이용신청
+			if (boardFlag.equals("2")) forward.setPath("qnaboardDetail.bo?boardNum=" + boardNum + "&page=" + page + "&index=" + index); //내 문의사항
 		}
 		return forward;
 	}

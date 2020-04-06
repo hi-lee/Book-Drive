@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:if test="${userID == null}">
 	<script>
 		alert('로그인하세요!');
@@ -23,10 +23,10 @@
 <body>
 	<!-- 내정보 수정 컨텐츠 영역 시작  -->
 <div id="divContentsW">
-	<div class="login-page">
+	<div class="login-page" style="margin-top:40px; padding-bottom:40px;">
 		<div class="form">
 			<form class="login-form" id="loginform" name="modifyform" action="memModPro.mem" method="post" onsubmit="return chkForm(this)">
-				<img src="/bdstyle/image/Book.png" width="150px">
+				<img src="bdstyle/image/ko/solution/common/bkicon.png" width="30px">
 				<br><h3>내정보 수정  </h3><br><br>
 					 <label for="userID">아이디</label>
 					 <input type="text" name="userID" id="userID" value="${member.id }" class="input100" readonly="readonly"> 

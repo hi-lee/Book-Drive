@@ -2,7 +2,6 @@
 	pageEncoding="UTF-8"%>
 
 <script type="text/javascript" src="bdstyle/script/jquery.selectBox.js"></script>
-<script type="text/javascript" src="bdstyle/js/search/main.js"></script>
 <link rel="stylesheet" type="text/css"
 	href="bdstyle/style/ko/home/advanced.css">
 <style>

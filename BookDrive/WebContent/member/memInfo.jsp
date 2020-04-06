@@ -17,13 +17,15 @@
 
 	<!-- 컨텐츠 영역 시작  -->
 <div id="divContentsW">
-	<div class="login-page">
+	<div class="login-page" style="margin-top:40px; padding-bottom: 40px;">
 		<div class="form">
 			<form class="login-form" id="loginform" name="loginform" action="memMod.mem" method="post" onsubmit="return chkForm(this)">
 				<img src="bdstyle/image/ko/solution/common/bkicon.png" width="30px">
 				<h3>내정보보기 </h3><br><br>
 					 <label for="userID">아이디</label>
 					 <input type="text" name="userID" id="userID" value="${member.id }" class="input100" readonly="readonly"> 
+					 <label for="userID">회원번호</label>
+					 <input type="text" name="userIndex" id="userIndex" value="${member.index }" class="input100" readonly="readonly"> 
 						<label for="userPass">비밀번호</label> 
 						<input type="password" name="userPass" id="userPass" value="${member.password }" class="input100" readonly="readonly"/>
 						<label for="userName">이름</label>

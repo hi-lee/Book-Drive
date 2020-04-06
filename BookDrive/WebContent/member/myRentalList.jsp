@@ -20,7 +20,7 @@
 		<div id="divContentsW">
 			<div id="divContents">
 				<div class="searchInfo">
-					<div class="searchHeader">
+					<div class="searchHeader" style="margin-top: 30px;">
 						<h3 class="open">대출중인 내역</h3>
 					</div>
 					<!--  if(renFlag== 'brw' -> 'isBrw'='true', if(isBrw=='true')-> select: renFlag:'brw' -->
@@ -42,6 +42,7 @@
 												<th scope="row" data-class="expand"
 													class="footable-first-column">No.</th>
 												<th scope="row" data-hide="phone">자료정보</th>
+												<th scope="row" data-hide="phone">등록번호</th>
 												<th scope="row" data-hide="phone">대출일자</th>
 												<th scope="row" data-hide="expand">대출기한</th>
 												<th scope="row" data-hide="expand">상태</th>
@@ -56,13 +57,13 @@
 													<tr class="first">
 														<td class="num expand footable-first-column">${Num }</td>
 														<td class="type">${list.bookName }</td>
+														<td class="bookNum">${list.bookNum}</td>
 														<td class="renDate">${list.renBrwDate }</td>
 														<td><span class="renBrwInvDAte">
 																${list.renBrwInvDate } </span></td>
 														<td><span class="status"> <c:choose>
 																	<c:when test="${list.renFlag == 'brw' }">대출중
-													<a
-																			href="bookReturn.bk?id=${sessionScope.userID }&index=${sessionScope.userIndex}&bookNum=${list.bookNum}&state=${list.bookState}&renNum=${list.renIdvNum}">
+													<a href="bookReturn.bk?id=${sessionScope.userID }&index=${sessionScope.userIndex}&bookNum=${list.bookNum}&state=${list.bookState}&renNum=${list.renIdvNum}" style="font-weight: bold;">
 																			(반납하기)</a>
 																	</c:when>
 																	<c:when test="${list.renFlag eq 'outbrw' }">
@@ -115,6 +116,7 @@
 												<th scope="row" data-class="expand"
 													class="footable-first-column">No.</th>
 												<th scope="row" data-hide="phone">자료정보</th>
+												<th scope="row" data-hide="phone">등록번호</th>
 												<th scope="row" data-hide="phone">예약일자</th>
 												<th scope="row" data-hide="expand">예약만기일</th>
 												<th scope="row" data-hide="expand">도서관</th>
@@ -129,6 +131,7 @@
 												<tr class="first">
 													<td class="num expand footable-first-column">${Num}</td>
 													<td class="type">${list.bookName }</td>
+													<td class="bookNum">${list.bookNum}</td>
 													<td class="renDate">${list.renRevDate }</td>
 													<td><span class="renBrwInvDAte">
 															${list.renRevInvDate } </span></td>

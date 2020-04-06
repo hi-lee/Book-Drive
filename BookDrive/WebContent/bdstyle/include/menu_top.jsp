@@ -60,7 +60,7 @@
 								href="bookCartList.bk?index=${sessionScope.userIndex }&page=${param.page }&search=${param.search}&value=${param.value}"
 								title="도서보관함 ">도서 보관함</a></li>
 							<li><a href="qnaBoard.bo?index=${sessionScope.userIndex}"
-								title="내문의사항">내문의사항</a></li>
+								title="나의 문의사항">나의 문의사항</a></li>
 							<li class="last"><a
 								href="memInfo.mem?id=${sessionScope.userID }" title="개인정보 관리">개인정보
 									관리</a></li>
@@ -87,7 +87,7 @@
 					</div></li>
 			</ul>
 		</div>
-		<a href="https://cham.kiu.ac.kr/#" class="wholeMenuOpen" title="전체메뉴"><img
+		<a href="javascript:void();" class="wholeMenuOpen" title="전체메뉴"><img
 			src="bdstyle/image/ko/local/wholeMenuOpen.png" alt="전체메뉴"></a>
 		<!-- //Top Menu -->
 		<!-- Whole Menu -->
@@ -95,8 +95,17 @@
 			<h2 class="skip">전체메뉴보기</h2>
 			<ul>
 				<li><h3>
-						<a href="bookSearch.bk" title="소장자료검색">소장자료검색</a>
+						<a href="javascript:return false;" title="소장자료검색">소장자료검색</a>
 					</h3>
+					<ul>
+						<li><a href="bookSearch.bk" title="소장자료검색">소장자료검색</a></li>
+					</ul></li>
+				<li><h3>
+						<a href="javascript:return false;" title="Book Drive">Book Drive</a>
+					</h3>
+					<ul>
+						<li><a href="bookDriveMain.bk" title="Book Drive">Book Drive</a></li>
+					</ul></li>
 				<li><h3>
 						<a href="javascript:return false;" title="개인서비스">개인서비스</a>
 					</h3>
@@ -139,7 +148,7 @@
 							title="이용시 유의사항">이용시 유의사항</a></li>
 					</ul></li>
 			</ul>
-			<a href="https://cham.kiu.ac.kr/#" class="wholeMenuClose"
+			<a href="javascript:void();" class="wholeMenuClose"
 				title="전체메뉴 닫기"><img
 				src="bdstyle/image/ko/local/wholeMenuClose.gif" alt="전체메뉴 닫기"></a>
 		</div>

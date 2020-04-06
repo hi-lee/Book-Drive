@@ -101,7 +101,7 @@
 						</c:otherwise>
 					</c:choose>
 					
-					<a href="qnaBoard.bo?page=${param.page}">목록</a>
+					<a href="qnaBoard.bo?page=${param.page}&index=${sessionScope.userIndex}">목록</a>
 				</div>
 				<!-- board button end-->
 			</div>

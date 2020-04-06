@@ -113,6 +113,9 @@
 					<c:when test="${boardBean.boardFlag eq '3'}">
 						<a href="wishboardDetail.bo?boardNum=${boardBean.boardNum}&page=${param.page}">돌아가기</a>
 					</c:when>
+					<c:when test="${boardBean.boardFlag eq '2'}">
+						<a href="qnaboardDetail.bo?boardNum=${boardBean.boardNum}&page=${param.page}">돌아가기</a>
+					</c:when>
 					<c:otherwise>
 						<a href="freeboardDetail.bo?boardNum=${boardBean.boardNum}&page=${param.page}">돌아가기</a>
 					</c:otherwise>

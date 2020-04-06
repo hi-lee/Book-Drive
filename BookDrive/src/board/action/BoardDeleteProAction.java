@@ -4,6 +4,7 @@ import java.io.PrintWriter;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import board.svc.BoardDeleteProSvc;
 import board.svc.admin.BoardDeleteProService;
@@ -30,12 +31,14 @@ public class BoardDeleteProAction implements Action {
 		} else {
 			request.setAttribute("isdelete", true);
 			forward = new ActionForward();
+			HttpSession session = request.getSession();
+			String index = (String) session.getAttribute("userIndex");
 			if (flag.equals("4")) {
-				forward.setPath("freeBoard.bo?page="+page);
+				forward.setPath("freeBoard.bo?page="+page+"&index="+index);
 			} else if (flag.equals("3")) {
-				forward.setPath("wishBoard.bo?page="+page);
+				forward.setPath("wishBoard.bo?page="+page+"&index="+index);
 			} else if (flag.equals("2")) {
-				forward.setPath("qnaBoard.bo?page="+page);
+				forward.setPath("qnaBoard.bo?page="+page+"&index="+index);
 			}
 		}
 		return forward;
