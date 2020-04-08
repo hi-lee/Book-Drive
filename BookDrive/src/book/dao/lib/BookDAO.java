@@ -194,6 +194,7 @@ public class BookDAO {
 				bookRental.setBookName(rs.getString("bookName"));
 				bookRental.setBookWriter(rs.getString("bookWriter"));
 				bookRental.setLibName(rs.getString("libName"));
+				bookRental.setISBN(rs.getString("ISBN"));
 				bookRental.setMemId(rs.getString("memId"));
 				bookRental.setMemName(rs.getString("memName"));
 				bookRental.setRenIdvDelFlag(rs.getString("renIdvDelFlag"));
@@ -225,6 +226,7 @@ public class BookDAO {
 				bookRental.setBookName(rs.getString("bookName"));
 				bookRental.setBookWriter(rs.getString("bookWriter"));
 				bookRental.setLibName(rs.getString("libName"));
+				bookRental.setISBN(rs.getString("ISBN"));
 				bookRental.setMemId(rs.getString("memId"));
 				bookRental.setMemName(rs.getString("memName"));
 				bookRental.setRenIdvDelFlag(rs.getString("renIdvDelFlag"));
@@ -256,6 +258,7 @@ public class BookDAO {
 				bookRental.setBookName(rs.getString("bookName"));
 				bookRental.setBookWriter(rs.getString("bookWriter"));
 				bookRental.setLibName(rs.getString("libName"));
+				bookRental.setISBN(rs.getString("ISBN"));
 				bookRental.setMemId(rs.getString("memId"));
 				bookRental.setMemName(rs.getString("memName"));
 				bookRental.setRenIdvDelFlag(rs.getString("renIdvDelFlag"));
@@ -287,6 +290,7 @@ public class BookDAO {
 				bookRental.setBookName(rs.getString("bookName"));
 				bookRental.setBookWriter(rs.getString("bookWriter"));
 				bookRental.setLibName(rs.getString("libName"));
+				bookRental.setISBN(rs.getString("ISBN"));
 				bookRental.setMemId(rs.getString("memId"));
 				bookRental.setMemName(rs.getString("memName"));
 				bookRental.setRenIdvDelFlag(rs.getString("renIdvDelFlag"));

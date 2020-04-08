@@ -137,11 +137,13 @@ href="bdstyle/style/ko/home/toastr.min.css">
 													<c:when test="${book.bookState == '0' }">대출가능</c:when>
 													<c:when test="${book.bookState == '1' }">대출중</c:when>
 													<c:when test="${book.bookState == '2' }">예약중 </c:when>
+													<c:when test="${book.bookState == '3' }">관외보관중 </c:when>
 													<c:when test="${book.bookState == '4' }">관외대출중 </c:when>
 													<c:when test="${book.bookState == '5' }">관외예약중 </c:when>
 													<c:when test="${book.bookState == '6' }">대출중(예약중) </c:when>
 													<c:when test="${book.bookState == '7' }">대출중(관외예약중) </c:when>
 													<c:when test="${book.bookState == '8' }">괸외대출중(관외예약중) </c:when>
+													<c:when test="${book.bookState == '9' }">대출불가(관외예약중) </c:when>
 													<c:otherwise>
 													</c:otherwise>
 												</c:choose>

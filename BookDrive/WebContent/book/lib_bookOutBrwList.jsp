@@ -20,7 +20,7 @@
 				<li><a href="BookBrwList.bookL">도서관외대출내역</a></li>
 			</ul>
 		</div>
-		<h2 style="margin: 28px 0 14px 0;color:#4b4b4b;font-size:16px;font-weight:600;">대출 진행중</h2>
+		<h2 style="margin: 28px 0 14px 0;color:#4b4b4b;font-size:16px;font-weight:600;">관외대출 진행중</h2>
 		<!-- List(책 대출중 리스트) -->
 		<div class="listTable">
 			<table class="mobileTable default">
@@ -41,21 +41,22 @@
 						<c:if test="${list.renIdvDelFlag eq '0'}" >
 							<tr>
 								<td class="libcode footable-first-column">
-									${list.bookName}&nbsp;/&nbsp;${list.bookWriter}
+									<a href="BookList.bookL?flag=ISBN&keyword=${list.ISBN}&libcode=${sessionScope.code}" style="font-weight: bold;">${list.bookName}</a>
+									&nbsp;/&nbsp;${list.bookWriter}
 								</td>
 								<td>${list.libName}</td>
 								<td>${list.memId}</td>
 								<td>${list.memName}</td>
 								<td>${list.renDate}</td>
 								<td>${list.renIdvDate}</td>
-								<td class="libhomepage footable-last-column">대출중</td>
+								<td class="libhomepage footable-last-column">관외대출중</td>
 							</tr>
 						</c:if>
 					</c:forEach>
 				</tbody>
 			</table>
 		</div>
-		<h2 style="margin: 28px 0 14px 0;color:#4b4b4b;font-size:16px;font-weight:600;">대출완료</h2>
+		<h2 style="margin: 28px 0 14px 0;color:#4b4b4b;font-size:16px;font-weight:600;">관외대출완료</h2>
 		<!-- List(책 대출완료 리스트) -->
 		<div class="listTable">
 			<table class="mobileTable default">
@@ -76,14 +77,15 @@
 						<c:if test="${list.renIdvDelFlag eq '1'}">
 							<tr>
 								<td class="libcode footable-first-column">
-									${list.bookName}&nbsp;/&nbsp;${list.bookWriter}
+									<a href="BookList.bookL?flag=ISBN&keyword=${list.ISBN}&libcode=${sessionScope.code}" style="font-weight: bold;">${list.bookName}</a>
+									&nbsp;/&nbsp;${list.bookWriter}
 								</td>
 								<td>${list.libName}</td>
 								<td>${list.memId}</td>
 								<td>${list.memName}</td>
 								<td>${list.renDate}</td>
 								<td>${list.renIdvDate}</td>
-								<td class="libhomepage footable-last-column">대출완료</td>
+								<td class="libhomepage footable-last-column">관외대출완료</td>
 							</tr>
 						</c:if>
 					</c:forEach>

@@ -41,7 +41,8 @@
 						<c:if test="${list.renIdvDelFlag eq '0'}" >
 							<tr>
 								<td class="libcode footable-first-column">
-									${list.bookName}&nbsp;/&nbsp;${list.bookWriter}
+									<a href="BookList.bookL?flag=ISBN&keyword=${list.ISBN}&libcode=${sessionScope.code}" style="font-weight: bold;">${list.bookName}</a>
+									&nbsp;/&nbsp;${list.bookWriter}
 								</td>
 								<td>${list.libName}</td>
 								<td>${list.memId}</td>
@@ -76,7 +77,8 @@
 						<c:if test="${list.renIdvDelFlag eq '1'}">
 							<tr>
 								<td class="libcode footable-first-column">
-									${list.bookName}&nbsp;/&nbsp;${list.bookWriter}
+									<a href="BookList.bookL?flag=ISBN&keyword=${list.ISBN}&libcode=${sessionScope.code}" style="font-weight: bold;">${list.bookName}</a>
+									&nbsp;/&nbsp;${list.bookWriter}
 								</td>
 								<td>${list.libName}</td>
 								<td>${list.memId}</td>
