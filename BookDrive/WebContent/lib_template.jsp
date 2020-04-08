@@ -41,6 +41,7 @@
 	<script type="text/javascript" src="bdstyle/admin/script/sub.js"></script>
     <script type="text/javascript" src="bdstyle/admin/js/common/cookie.js" charset="utf-8"></script>
     <script type="text/javascript" src="bdstyle/admin/script/footable.js"></script>
+    
     <!--[if lt IE 9]>
 	<script type="text/javascript" src="script/css3-mediaqueries.js"></script>
 	<script type="text/javascript" src="/script/respond.src.js"></script>

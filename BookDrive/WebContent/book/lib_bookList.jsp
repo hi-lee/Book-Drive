@@ -105,7 +105,7 @@
 								<c:when test="${booklist.bookCategory eq '600'}"><c:set var="category" value="예술"/></c:when>
 								<c:when test="${booklist.bookCategory eq '700'}"><c:set var="category" value="언어"/></c:when>
 								<c:when test="${booklist.bookCategory eq '800'}"><c:set var="category" value="문학"/></c:when>
-								<c:otherwise><c:set var="category" value="역사"/></c:otherwise>
+								<c:when test="${booklist.bookCategory eq '900'}"><c:set var="category" value="역사"/></c:when>
 							</c:choose>
 							<c:set var="bookname" value="${booklist.bookName}"/>
 							<c:set var="booknum" value="${booklist.bookNum}"/>
@@ -183,7 +183,7 @@
 												<li>
 													<dl>
 														<dt>카테고리</dt>
-														<dd>${booklist.bookCategory}(<c:out value="${category}"/>)</dd>
+														<dd>${booklist.bookCategory}(${category })</dd>
 													</dl>
 												</li>
 											</ul>
@@ -196,7 +196,7 @@
 													<span class="availableBtn enabled">
 														<c:choose>
 															<c:when test="${booklist.bookState eq '0'}">
-																<a href="BookModifyState.bookL?page=${param.page}&flag=${param.flag}&libcode=${param.libcode}&bookState=${param.bookstate}&keyword=${param.keyword}&updatestate=3&num=${booklist.bookNum}">대출가능</a>
+																<a href="BookModifyState.bookL?page=${param.page}&flag=${param.flag}&libcode=${param.libcode}&bookState=${param.bookstate}&keyword=${param.keyword}&updatestate=3&num=${booklist.bookNum}" style="font-weight:bold;">대출가능</a>
 															</c:when>
 															<c:when test="${booklist.bookState eq '1'}">
 																대출중
@@ -205,7 +205,7 @@
 																예약중
 															</c:when>
 															<c:when test="${booklist.bookState eq '3'}">
-																<a href="BookModifyState.bookL?page=${param.page}&flag=${param.flag}&libcode=${param.libcode}&bookState=${param.bookstate}&keyword=${param.keyword}&updatestate=0&num=${booklist.bookNum}">관외보유</a>
+																<a href="BookModifyState.bookL?page=${param.page}&flag=${param.flag}&libcode=${param.libcode}&bookState=${param.bookstate}&keyword=${param.keyword}&updatestate=0&num=${booklist.bookNum}" style="font-weight:bold;">관외보유</a>
 															</c:when>
 															<c:when test="${booklist.bookState eq '4'}">
 																관외대출
@@ -219,8 +219,11 @@
 															<c:when test="${booklist.bookState eq '7'}">
 																대출중(관외예약중)
 															</c:when>
-															<c:otherwise>
+															<c:when test="${booklist.bookState eq '8'}">
 																관외대출중(관외예약중)
+															</c:when>
+															<c:otherwise>
+																<a href="BookModifyState.bookL?page=${param.page}&flag=${param.flag}&libcode=${param.libcode}&bookState=${param.bookstate}&keyword=${param.keyword}&updatestate=5&num=${booklist.bookNum}" style="font-weight:bold;">관외예약(도서이동)</a>
 															</c:otherwise>
 														</c:choose>
 													</span>

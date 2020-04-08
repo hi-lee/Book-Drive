@@ -88,7 +88,7 @@ public class LogDAO {
 				mainCount.setTodayRevCount(rs.getString("todayrev"));
 			}
 			//오늘관외대출
-			query = "SELECT COUNT(*) as todayoutbrw FROM rentalIdv WHERE renFlag = 'outbrw' AND renRevDate = CURDATE() and libCode = '" + loginCode + "'";
+			query = "SELECT COUNT(*) as todayoutbrw FROM rentalIdv WHERE renFlag = 'outbrw' AND renBrwDate = CURDATE() and libCode = '" + loginCode + "'";
 			pstmt = con.prepareStatement(query);
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
@@ -116,7 +116,7 @@ public class LogDAO {
 				mainCount.setProgressRevCount(rs.getString("progressrev"));
 			}
 			//진행관외대출
-			query = "SELECT COUNT(*) as progressoutbrw FROM rentalIdv WHERE renFlag = 'out' AND renIdvDelFlag = 0 and libCode = '" + loginCode + "'";
+			query = "SELECT COUNT(*) as progressoutbrw FROM rentalIdv WHERE renFlag = 'outbrw' AND renIdvDelFlag = 0 and libCode = '" + loginCode + "'";
 			pstmt = con.prepareStatement(query);
 			rs = pstmt.executeQuery();
 			while (rs.next()) {

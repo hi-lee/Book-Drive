@@ -20,7 +20,7 @@
 				<li><a href="BookRevList.bookL">도서관외예약내역</a></li>
 			</ul>
 		</div>
-		<h2 style="margin: 28px 0 14px 0;color:#4b4b4b;font-size:16px;font-weight:600;">예약 진행중</h2>
+		<h2 style="margin: 28px 0 14px 0;color:#4b4b4b;font-size:16px;font-weight:600;">관외예약 진행중</h2>
 		<!-- List(책 예약중 리스트) -->
 		<div class="listTable">
 			<table class="mobileTable default">
@@ -41,7 +41,8 @@
 						<c:if test="${list.renIdvDelFlag eq '0'}" >
 							<tr>
 								<td class="libcode footable-first-column">
-									${list.bookName}&nbsp;/&nbsp;${list.bookWriter}
+									<a href="BookList.bookL?flag=ISBN&keyword=${list.ISBN}&libcode=${sessionScope.code}" style="font-weight: bold;">${list.bookName}</a>
+									&nbsp;/&nbsp;${list.bookWriter}
 								</td>
 								<td>${list.libName}</td>
 								<td>${list.memId}</td>
@@ -55,7 +56,7 @@
 				</tbody>
 			</table>
 		</div>
-		<h2 style="margin: 28px 0 14px 0;color:#4b4b4b;font-size:16px;font-weight:600;">예약완료</h2>
+		<h2 style="margin: 28px 0 14px 0;color:#4b4b4b;font-size:16px;font-weight:600;">관외예약 완료 목록</h2>
 		<!-- List(책 예약완료 리스트) -->
 		<div class="listTable">
 			<table class="mobileTable default">
@@ -75,13 +76,14 @@
 						<c:if test="${list.renIdvDelFlag eq '1'}">
 							<tr>
 								<td class="libcode footable-first-column">
-									${list.bookName}&nbsp;/&nbsp;${list.bookWriter}
+									<a href="BookList.bookL?flag=ISBN&keyword=${list.ISBN}&libcode=${sessionScope.code}" style="font-weight: bold;">${list.bookName}</a>
+									&nbsp;/&nbsp;${list.bookWriter}
 								</td>
 								<td>${list.libName}</td>
 								<td>${list.memId}</td>
 								<td>${list.memName}</td>
 								<td>${list.renDate}</td>
-								<td class="libhomepage footable-last-column">예약만료</td>
+								<td class="libhomepage footable-last-column">완료</td>
 							</tr>
 						</c:if>
 					</c:forEach>

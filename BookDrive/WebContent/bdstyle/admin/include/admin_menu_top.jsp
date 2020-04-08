@@ -134,55 +134,61 @@
 	<div class="wholeMenu">
 		<h2 class="skip">전체메뉴보기</h2>
 		<ul>
-			<li><h3><a href="javascript:return false;" title="회원정보">회원정보</a></h3>
+			<li><h3><a href="javascript:return false;" title="회원관리">회원관리</a></h3>
 						<ul>
 						<li>
-							<a href="https://cham.kiu.ac.kr/search/tot" title="일반회원목록">일반회원목록</a>				
+							<a href="MemberList.memA" title="일반회원목록">일반회원 목록</a>				
 							</li>
 						<li>
-							<a href="https://cham.kiu.ac.kr/search/caz" title="도서관 관리자 목록">도서관 관리자 목록</a>				
+							<a href="LibAdminList.lib" title="도서관 관리자 목록">도서관 관리자 목록</a>				
 							</li>
 						<li>
-							<a href="https://cham.kiu.ac.kr/search/sez" title="통합 관리자 목록">통합 관리자 목록</a>				
+							<a href="AdminList.memA" title="통합 관리자 목록">통합 관리자 목록</a>				
 							</li>
 						</ul>
 					</li>
 					<li><h3><a href="javascript:return false;" title="도서관정보">도서관정보</a></h3>
 						<ul>
 						<li>
-							<a href="https://cham.kiu.ac.kr/local/html/researchDB" title="도서관 목록">도서관 목록</a>				
+							<a href="LibraryList.lib" title="도서관 목록">도서관 목록</a>				
 							</li>
 						<li>
-							<a href="https://cham.kiu.ac.kr/local/html/nursingDB" title="도서관 관리자 가입신청 확인">도서관 관리자 가입신청 확인</a>				
+							<a href="LibraryApvList.lib" title="도서관 관리자 가입신청 확인">도서관 관리자 가입신청 확인</a>				
 							</li>
 						</ul>
 					</li>
 					<li><h3><a href="javascript:return false;" title="도서관리">도서관리</a></h3>
 						<ul>
 						<li>
-							<a href="https://cham.kiu.ac.kr/mynotice/list" title="도서검색">도서검색</a>				
+							<a href="BookList.bookA" title="도서목록">도서목록</a>				
 							</li>
 						<li>
-							<a href="https://cham.kiu.ac.kr/myloan/list" title="도서예약내역">도서예약내역</a>				
+							<a href="BookBrwList.bookA" title="도서대출내역">도서 대출내역</a>				
 							</li>
 						<li>
-							<a href="https://cham.kiu.ac.kr/purchaserequest/write" title="도서대출내역">도서대출내역</a>				
+							<a href="BookRevList.bookA" title="도서예약내역">도서 예약내역</a>				
 							</li>
 						<li>
-							<a href="https://cham.kiu.ac.kr/otherlib/write" title="도서연체내역">도서연체내역</a>				
+							<a href="BookOutBrwList.bookA" title="도서관외대출내역">도서 관외대출내역</a>				
+							</li>
+						<li>
+							<a href="BookOutRevList.bookA" title="도서관외예약내역">도서 관외예약내역</a>				
 							</li>
 						</ul>
 					</li>
 					<li class="last"><h3><a href="javascript:return false;" title="게시판관리">게시판관리</a></h3>
 						<ul>
 						<li>
-							<a href="https://cham.kiu.ac.kr/bbs/list/2" title="공지사항관리">공지사항관리</a>				
+							<a href="BoardList1.boardA" title="공지사항관리">공지사항관리</a>				
 							</li>
 						<li>
-							<a href="https://cham.kiu.ac.kr/bbs/list/1" title="QnA관리">QnA관리</a>				
+							<a href="BoardList2.boardA" title="QnA관리">QnA관리</a>				
 							</li>
 						<li>
-							<a href="https://cham.kiu.ac.kr/main/returnList" title="희망도서관리">희망도서관리</a>				
+							<a href="BoardList3.boardA" title="희망도서관리">희망도서관리</a>				
+							</li>
+						<li>
+							<a href="BoardList4.boardA" title="자유게시판관리">자유게시판관리</a>				
 							</li>
 						</ul>
 					</li>

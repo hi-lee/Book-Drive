@@ -19,7 +19,7 @@ public class BookListAction implements Action {
 		ArrayList<Book> bookList = new ArrayList<Book>(); //책정보
 //		ArrayList<Hashtable<String, String>> libNameList = new ArrayList<>(); //도서관코드(selectBox)
 		ArrayList<String> bookStateList = new ArrayList<>(); //책 상태플래그(selectBox)
-		String stateName[] = {"대출가능", "대출중", "예약중", "관외보유", "관외대출", "관외예약", "대출+예약", "대출+관외예약", "관외대출+관외예약"};
+		String stateName[] = {"대출가능", "대출중", "예약중", "관외보유", "관외대출", "관외예약", "대출+예약", "대출+관외예약", "관외대출+관외예약", "관외예약(도서이동)"};
 		String flag = request.getParameter("flag") != null ? request.getParameter("flag") : "bookName"; //도서이름, 도서번호, ISBN
 		String libCode = request.getParameter("libcode") != null ? request.getParameter("libcode") : ""; //도서관코드(로그인한 코드)
 		String bookState = request.getParameter("bookstate") != null ? request.getParameter("bookstate") : "";
@@ -42,7 +42,7 @@ public class BookListAction implements Action {
 		int listCount = bookListService.getListCount(flag, keyword, libCode, bookState); //총 리스트 수를 받아옴 (총 글 갯수)
 //		libNameList = bookListService.selectLibNameList();
 		bookList = bookListService.selectBookList(nowPage, limit, flag, keyword, libCode, bookState);
-		for (int i = 0; i < 8; i++) {
+		for (int i = 0; i < stateName.length; i++) {
 			bookStateList.add(stateName[i]);
 		}
 		int maxPage = (int) ((double) listCount / limit + 0.95); //총 페이지 수, 0.95를 더해서 올림 처리

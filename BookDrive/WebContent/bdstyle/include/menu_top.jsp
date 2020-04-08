@@ -61,6 +61,8 @@
 								title="도서보관함 ">도서 보관함</a></li>
 							<li><a href="qnaBoard.bo?index=${sessionScope.userIndex}"
 								title="나의 문의사항">나의 문의사항</a></li>
+							<li><a href="wishBoard.bo?index=${sessionScope.userIndex}"
+								title="도서이용신청">도서이용신청</a></li>
 							<li class="last"><a
 								href="memInfo.mem?id=${sessionScope.userID }" title="개인정보 관리">개인정보
 									관리</a></li>
@@ -70,10 +72,7 @@
 					<div>
 						<ul>
 							<li><a href="freeBoard.bo" title="자유게시판">자유게시판</a></li>
-							<li><a href="noticeBoard.bo" title="공지사항">공지사항</a></li>
-							<li class="last"><a
-								href="wishBoard.bo?index=${sessionScope.userIndex}"
-								title="도서이용신청">도서이용신청</a></li>
+							<li class="last"><a href="noticeBoard.bo" title="공지사항">공지사항</a></li>
 						</ul>
 					</div></li>
 				<li><a href="javascript:return false;" title="Information">Information</a>
@@ -118,6 +117,8 @@
 							title="도서보관함 ">도서 보관함</a></li>
 						<li><a href="qnaBoard.bo?index=${sessionScope.userIndex}"
 							title="내문의사항">내문의사항</a></li>
+						<li><a href="wishBoard.bo?index=${sessionScope.userIndex}"
+							title="도서이용신청">도서이용신청</a></li>
 						<li class="last"><a
 							href="memInfo.mem?id=${sessionScope.userID }" title="개인정보 관리">개인정보
 								관리</a></li>
@@ -127,11 +128,7 @@
 					</h3>
 					<ul>
 						<li><a href="freeBoard.bo" title="자유게시판">자유게시판</a></li>
-						<li><a href="noticeBoard.bo" title="공지사항">공지사항</a></li>
-						<li class="last"><a
-							href="wishBoard.bo?index=${sessionScope.userIndex}"
-							title="도서이용신청">도서이용신청</a></li>
-
+						<li class="last"><a href="noticeBoard.bo" title="공지사항">공지사항</a></li>
 					</ul></li>
 				<li class="last"><h3>
 						<a href="javascript:return false;" title="Information">Information</a>

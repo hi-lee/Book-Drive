@@ -64,8 +64,8 @@ public class BookRentalAction implements Action {
 				response.setContentType("text/html;charset=UTF-8");
 				PrintWriter out = response.getWriter();
 				out.print("<script>");
-				out.print("alert('대출 되었습니다.');");
-				out.print("history.back();");
+				out.print("alert('관외대출 되었습니다.');");
+				out.print("location.href='driveRental.bk?memIndex=" + memIndex + "';");
 				out.print("</script>");
 			} else {
 				response.setContentType("text/html;charset=UTF-8");
@@ -76,9 +76,7 @@ public class BookRentalAction implements Action {
 						+ "&value=" + value + "';");
 				out.print("</script>");
 			}
-
 		}
 		return forward;
 	}
-
 }

@@ -118,9 +118,7 @@ a, a:hover, a:active {
 								</c:otherwise>
 						</c:choose><br><br>
 					</div>
-					<div id="footer">
-						<a href="pwFind.jsp">비밀번호 찾기</a>
-					</div>
+					
 				</form>
 			</div>
 		</div>
