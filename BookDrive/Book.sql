@@ -6,10 +6,9 @@ desc rental;
 desc board;
 desc cart;
 desc board;
-select * from bookInfo  where 
-select * from rentalIdv where memIndex = 12
-
-where bookNum = 33376;
+select * from bookInfo  where bookNum = 15508;
+select * from rentalIdv 
+where memIndex = 12
 
 select * from library;
 select * from member;
@@ -17,7 +16,7 @@ select * from bookInfo;
 select * from cart;
 select count(*) from cart;
 
-update bookInfo set bookState = 0 where bookNum = 51619
+update bookInfo set bookState = 1 where bookNum = 15508
 update rentalIdv set renIdvDelFlag = 1 where bookNum = 33376
 
 start transaction;

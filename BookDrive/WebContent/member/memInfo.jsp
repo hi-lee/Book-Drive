@@ -20,8 +20,8 @@
 	<div class="login-page" style="margin-top:40px; padding-bottom: 40px;">
 		<div class="form">
 			<form class="login-form" id="loginform" name="loginform" action="memMod.mem" method="post" onsubmit="return chkForm(this)">
-				<img src="bdstyle/image/ko/solution/common/bkicon.png" width="30px">
-				<h3>내정보보기 </h3><br><br>
+				<img src="bdstyle/image/mainlogo.png" width="30px">
+				<br><br>
 					 <label for="userID">아이디</label>
 					 <input type="text" name="userID" id="userID" value="${member.id }" class="input100" readonly="readonly"> 
 					 <label for="userID">회원번호</label>

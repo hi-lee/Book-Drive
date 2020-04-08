@@ -192,7 +192,7 @@ public class BookDAO {
 //				}
 			} else {
 				if (state.equals("0")) {
-					pstmt.setString(1, "1");
+					pstmt.setString(1, "9");
 				} else if (state.equals("1")) { // 대출중+관외예약
 					pstmt.setString(1, "7");
 				} else if (state.equals("4")) { // 관외대출+관외예약
