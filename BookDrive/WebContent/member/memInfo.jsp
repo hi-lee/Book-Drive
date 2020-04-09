@@ -13,6 +13,10 @@
 	width: 450px;
 	max-width: 500px;
 }
+#header {
+    text-align: center;
+    margin: 0 auto;
+}
 </style>
 
 	<!-- 컨텐츠 영역 시작  -->
@@ -20,7 +24,7 @@
 	<div class="login-page" style="margin-top:40px; padding-bottom: 40px;">
 		<div class="form">
 			<form class="login-form" id="loginform" name="loginform" action="memMod.mem" method="post" onsubmit="return chkForm(this)">
-				<img src="bdstyle/image/mainlogo.png" width="30px">
+				<div id="header"><img src="bdstyle/image/mainlogo.png" height="40px"></div>
 				<br><br>
 					 <label for="userID">아이디</label>
 					 <input type="text" name="userID" id="userID" value="${member.id }" class="input100" readonly="readonly"> 
