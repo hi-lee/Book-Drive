@@ -108,13 +108,18 @@ a, a:hover, a:active {
 						class="input100" />
 					<button id="gbutton" style="width: 100%; padding: 10px;" type="submit">찾기</button>
 					<br> <br>
+					
+					
 					<div id="testform">
 						<c:choose>
-								<c:when test="${memberId ne null }">
+								<c:when test="${memberId ne null && isTrue eq true}">
 									${memberId.name }님의 아이디는 ${memberId.id }입니다. 
 								</c:when>
-								<c:otherwise>
+								<c:when test="${memberId eq null && isTrue eq false }">
 									이름, 생년월일과 일치하는 아이디가 없습니다.
+								</c:when>
+								<c:otherwise>
+									
 								</c:otherwise>
 						</c:choose><br><br>
 					</div>
