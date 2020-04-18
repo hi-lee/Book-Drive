@@ -13,6 +13,10 @@
 	width: 450px;
 	max-width: 500px;
 }
+#header {
+    text-align: center;
+    margin: 0 auto;
+}
 </style>
 <!DOCTYPE html>
 <html>
@@ -26,7 +30,7 @@
 	<div class="login-page" style="margin-top:40px; padding-bottom:40px;">
 		<div class="form">
 			<form class="login-form" id="loginform" name="modifyform" action="memModPro.mem" method="post" onsubmit="return chkForm(this)">
-				<img src="bdstyle/image/ko/solution/common/bkicon.png" width="30px">
+				<div id="header"><img src="bdstyle/image/mainlogo.png" height="40px"></div>
 				<br><h3>내정보 수정  </h3><br><br>
 					 <label for="userID">아이디</label>
 					 <input type="text" name="userID" id="userID" value="${member.id }" class="input100" readonly="readonly"> 

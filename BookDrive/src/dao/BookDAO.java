@@ -191,7 +191,7 @@ public class BookDAO {
 //					pstmt.setString(1, "4");
 //				}
 			} else {
-				if (state.equals("0")) { ////////////////////////////
+				if (state.equals("0")) {
 					pstmt.setString(1, "9");
 				} else if (state.equals("1")) { // 대출중+관외예약
 					pstmt.setString(1, "7");
@@ -282,11 +282,9 @@ public class BookDAO {
 			return_sql = "update bookInfo set bookState = ";
 			if (state.equals("5")) { // 없으면 관외보관으로 변경
 				return_sql += "4 where bookNum = ?";
-			} else if (state.equals("8")) { ///////////////////////////
-				return_sql += "5 where bookNum = ?";
 			} else { // 관외예약중이 있으면 책상태를 5(관외예약중)으로 변경
 				return_sql += "3 where bookNum = ?";
-			} 
+			}
 
 		} else { // usage==null(관내)일때
 			return_sql = "update bookInfo set bookState = ";

@@ -38,7 +38,7 @@
 <style>
 .search {
 	background-image: url(bdstyle/image/search.jpg);
-	max-width:100%;height:600px;
+	max-width:100%;height:1080px;
 	background-size: cover;
 
 }
