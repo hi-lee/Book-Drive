@@ -151,7 +151,7 @@ function selectEmail(sel) {
 	<select id="si1" name="libcode" title="도서관 선택" class="searchOpt1 selectBox">
 		<option value="LIB001">대구광역시립두류도서관</option>
 		<option value="LIB002">대구광역시립남부도서관</option>
-		<option value="LIB003">구미시립중앙도서관</option>
+		<option value="LIB003">대구광역시립수성도서관</option>
 	</select>
 	<br><br>
 	<label for="userID">아이디</label>

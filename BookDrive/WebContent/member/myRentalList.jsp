@@ -155,6 +155,7 @@
 															</c:when>
 															<c:when test="${list.bookState eq 5 }">관외예약중(대출가능)
 															</c:when>
+															<c:when test="${list.bookState eq 9 }">관외예약중(도서이동준비)</c:when>
 														</c:choose></td>
 												</tr>
 											</c:if>

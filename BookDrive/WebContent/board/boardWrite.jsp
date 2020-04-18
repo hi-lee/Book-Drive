@@ -41,7 +41,7 @@
 						<td colspan="3">
 							<select id="si1" name="boardgubun" title="게시판 선택" class="searchOpt1 selectBox" style="display: none;">
 								<option value="4">자유게시판</option>
-								<option value="2">QnA</option>
+								<option value="2">문의사항</option>
 								<option value="3">도서이용신청</option>
 							</select>
 						</td>

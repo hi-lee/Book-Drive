@@ -70,8 +70,6 @@
 												<td class="search_kind">키워드</td>
 												<td class="display_query expand">[키워드 / ${searchV }:${list.value.value }]</td>
 												<td class="search_range">소장자료검색</td>
-
-
 											</tr>
 										</tbody>
 									</c:forEach>

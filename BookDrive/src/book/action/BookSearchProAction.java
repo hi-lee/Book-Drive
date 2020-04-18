@@ -40,6 +40,7 @@ public class BookSearchProAction implements Action {
 			value = request.getParameter("value");
 		}
 
+		System.out.println("Search : " + search + ", value : " + value);
 		if (request.getParameter("usage") != null && !request.getParameter("usage").trim().equals("")) {
 			usage = request.getParameter("usage");
 		}

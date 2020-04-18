@@ -65,7 +65,8 @@ public class BookRentalAction implements Action {
 				PrintWriter out = response.getWriter();
 				out.print("<script>");
 				out.print("alert('관외대출 되었습니다.');");
-				out.print("location.href='driveRental.bk?memIndex=" + memIndex + "';");
+				//out.print("location.href='driveRental.bk?memIndex=" + memIndex + "';");
+				out.print("history.back();");
 				out.print("</script>");
 			} else {
 				response.setContentType("text/html;charset=UTF-8");

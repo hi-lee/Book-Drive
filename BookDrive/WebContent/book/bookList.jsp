@@ -243,7 +243,7 @@
 															<a href="#)"> <c:choose>
 																	<c:when test="${list.libCode == 'LIB001' }">대구광역시립 두류도서관</c:when>
 																	<c:when test="${list.libCode == 'LIB002' }">대구광역시립 남부도서관</c:when>
-																	<c:otherwise>구미시립 중앙도서관</c:otherwise>
+																	<c:otherwise>대구광역시립 수성도서관</c:otherwise>
 																</c:choose> <span id="availableButton_CAT000000498079_1"
 																class="availableBtn enabled"> <c:choose>
 																		<c:when test="${list.bookState == '0' }">대출가능</c:when>
